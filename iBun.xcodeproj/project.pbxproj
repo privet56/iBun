@@ -14,6 +14,14 @@
 		07252FB51EE1992C00FC975F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB31EE1992C00FC975F /* Main.storyboard */; };
 		07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB61EE1992C00FC975F /* Assets.xcassets */; };
 		07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB81EE1992C00FC975F /* LaunchScreen.storyboard */; };
+		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
+		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
+		07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */; };
+		07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA01EE1AD2C00698EAF /* anibun3.gif */; };
+		07AE1AA51EE1B64500698EAF /* meadow in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA41EE1B64500698EAF /* meadow */; };
+		07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */; };
+		07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */; };
+		07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1AAC1EE6C96500698EAF /* Page2DViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,16 @@
 		07252FB61EE1992C00FC975F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07252FB91EE1992C00FC975F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07252FBB1EE1992C00FC975F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
+		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = anibun1.gif; path = ../../../res/anibun1.gif; sourceTree = "<group>"; };
+		07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = anibun2.gif; path = ../../../res/anibun2.gif; sourceTree = "<group>"; };
+		07AE1AA01EE1AD2C00698EAF /* anibun3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = anibun3.gif; path = ../../../res/anibun3.gif; sourceTree = "<group>"; };
+		07AE1AA41EE1B64500698EAF /* meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; path = meadow; sourceTree = "<group>"; };
+		07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.1.gif; sourceTree = "<group>"; };
+		07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.2.gif; sourceTree = "<group>"; };
+		07AE1AAC1EE6C96500698EAF /* Page2DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2DViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +76,34 @@
 		07252FAA1EE1992C00FC975F /* iBun */ = {
 			isa = PBXGroup;
 			children = (
+				07AE1A9D1EE1AD1A00698EAF /* res */,
+				07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */,
+				07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */,
 				07252FAB1EE1992C00FC975F /* AppDelegate.swift */,
 				07252FAD1EE1992C00FC975F /* RootViewController.swift */,
 				07252FAF1EE1992C00FC975F /* DataViewController.swift */,
 				07252FB11EE1992C00FC975F /* ModelController.swift */,
+				07AE1AAC1EE6C96500698EAF /* Page2DViewController.swift */,
 				07252FB31EE1992C00FC975F /* Main.storyboard */,
 				07252FB61EE1992C00FC975F /* Assets.xcassets */,
 				07252FB81EE1992C00FC975F /* LaunchScreen.storyboard */,
 				07252FBB1EE1992C00FC975F /* Info.plist */,
+				07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */,
 			);
 			path = iBun;
+			sourceTree = "<group>";
+		};
+		07AE1A9D1EE1AD1A00698EAF /* res */ = {
+			isa = PBXGroup;
+			children = (
+				07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */,
+				07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */,
+				07AE1AA41EE1B64500698EAF /* meadow */,
+				07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */,
+				07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */,
+				07AE1AA01EE1AD2C00698EAF /* anibun3.gif */,
+			);
+			name = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +138,7 @@
 				TargetAttributes = {
 					07252FA71EE1992C00FC975F = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -130,8 +167,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */,
+				07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */,
 				07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */,
+				07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */,
+				07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */,
+				07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */,
+				07AE1AA51EE1B64500698EAF /* meadow in Resources */,
 				07252FB51EE1992C00FC975F /* Main.storyboard in Resources */,
+				07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +188,8 @@
 				07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */,
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */,
+				07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */,
+				07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */,
 				07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,10 +313,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iBun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibun.iBun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iBun/iBun-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -280,10 +328,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iBun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibun.iBun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iBun/iBun-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -307,6 +357,7 @@
 				07252FC01EE1992C00FC975F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

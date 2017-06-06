@@ -18,21 +18,27 @@ import UIKit
  */
 
 
-class ModelController: NSObject, UIPageViewControllerDataSource {
+class ModelController: NSObject, UIPageViewControllerDataSource
+{
 
-    var pageData: [String] = []
+    var pageData: [String] = ["2","3","4","5","6","7","8",]
 
-
-    override init() {
+    override init()
+    {
         super.init()
         // Create the data model.
-        let dateFormatter = DateFormatter()
-        pageData = dateFormatter.monthSymbols
+        do
+        {
+            //let dateFormatter = DateFormatter()
+            //pageData = dateFormatter.monthSymbols
+        }
     }
 
-    func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
+    func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController?
+    {
         // Return the data view controller for the given index.
-        if (self.pageData.count == 0) || (index >= self.pageData.count) {
+        if (self.pageData.count == 0) || (index >= self.pageData.count)
+        {
             return nil
         }
 
@@ -42,7 +48,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         return dataViewController
     }
 
-    func indexOfViewController(_ viewController: DataViewController) -> Int {
+    func indexOfViewController(_ viewController: DataViewController) -> Int
+    {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
         return pageData.index(of: viewController.dataObject) ?? NSNotFound
@@ -50,9 +57,11 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
     // MARK: - Page View Controller Data Source
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
+    {
         var index = self.indexOfViewController(viewController as! DataViewController)
-        if (index == 0) || (index == NSNotFound) {
+        if (index == 0) || (index == NSNotFound)
+        {
             return nil
         }
         
@@ -60,18 +69,20 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
+    {
         var index = self.indexOfViewController(viewController as! DataViewController)
-        if index == NSNotFound {
+        if index == NSNotFound
+        {
             return nil
         }
         
         index += 1
-        if index == self.pageData.count {
+        if index == self.pageData.count
+        {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
     }
-
 }
 
