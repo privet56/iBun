@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,8 +48,8 @@
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7" customClass="UIImageView">
                                 <rect key="frame" x="20" y="45" width="335" height="602"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgG-pr-gs0">
-                                        <rect key="frame" x="103" y="9" width="128" height="122"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgG-pr-gs0">
+                                        <rect key="frame" x="103" y="9" width="128" height="99"/>
                                         <size key="titleShadowOffset" width="6" height="6"/>
                                         <state key="normal" backgroundImage="bun2">
                                             <attributedString key="attributedTitle">
@@ -68,8 +67,8 @@
                                             <segue destination="slK-3k-kbp" kind="presentation" id="5C7-v4-C9f"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-P3-PIQ" userLabel="Button 3d">
-                                        <rect key="frame" x="103" y="140" width="128" height="122"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-P3-PIQ" userLabel="Button 3d">
+                                        <rect key="frame" x="103" y="140" width="128" height="99"/>
                                         <size key="titleShadowOffset" width="6" height="6"/>
                                         <state key="normal" backgroundImage="bun2">
                                             <attributedString key="attributedTitle">
@@ -98,14 +97,60 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="slK-3k-kbp" kind="presentation" id="PoO-rp-Pwj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM4-RN-d7v" userLabel="Button 2.5d">
+                                        <rect key="frame" x="103" y="271" width="128" height="99"/>
+                                        <size key="titleShadowOffset" width="6" height="6"/>
+                                        <state key="normal" backgroundImage="bun2">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Flip">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name=".SFNSText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name=".SFNSText-Bold"/>
+                                                        <font key="NSOriginalFont" size="18" name=".SFNSText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="2.5">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name=".SFNSText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="D">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name=".SFNSText-Bold"/>
+                                                        <font key="NSOriginalFont" size="18" name=".SFNSText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <segue destination="slK-3k-kbp" kind="presentation" id="C8K-5A-YYQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="pgG-pr-gs0" firstAttribute="top" secondItem="s1b-V9-EN7" secondAttribute="top" constant="9" id="31P-xq-a69"/>
                                     <constraint firstItem="kNW-P3-PIQ" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="ACK-iL-akB"/>
+                                    <constraint firstItem="GM4-RN-d7v" firstAttribute="top" secondItem="kNW-P3-PIQ" secondAttribute="bottom" constant="9" id="Hc8-nG-OmZ"/>
                                     <constraint firstItem="pgG-pr-gs0" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="jHw-xh-L6a"/>
                                     <constraint firstItem="kNW-P3-PIQ" firstAttribute="top" secondItem="pgG-pr-gs0" secondAttribute="bottom" constant="9" id="r7X-sO-DwE"/>
+                                    <constraint firstItem="GM4-RN-d7v" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="u5M-Si-S1R"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -122,6 +167,8 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="ZwX-cT-FIQ" id="tcf-uS-wTh"/>
+                        <outlet property="button25d" destination="GM4-RN-d7v" id="ijQ-jQ-hUE"/>
+                        <outlet property="button25dHoriConstraint" destination="u5M-Si-S1R" id="ZnN-N1-ENq"/>
                         <outlet property="button2d" destination="pgG-pr-gs0" id="oLX-bn-7i1"/>
                         <outlet property="button2dHoriConstraint" destination="jHw-xh-L6a" id="6Gq-42-K0p"/>
                         <outlet property="button3d" destination="kNW-P3-PIQ" id="gpF-kG-IGe"/>
@@ -146,36 +193,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxT-Ob-bFZ">
-                                <rect key="frame" x="170" y="33" width="34" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="bun1" translatesAutoresizingMaskIntoConstraints="NO" id="XzP-wX-5tf">
+                                <rect key="frame" x="59" y="112" width="256" height="256"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORK IN PROGRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-LL-JmI">
+                                <rect key="frame" x="106" y="74" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxT-Ob-bFZ">
+                                <rect key="frame" x="156" y="36" width="63" height="30"/>
+                                <color key="backgroundColor" red="0.58586730190000003" green="1" blue="0.71100694630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" link="YES"/>
+                                </accessibility>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.82579210069999998" green="1" blue="0.71100694630000005" alpha="0.76024721750000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onBackWithSender:" destination="slK-3k-kbp" eventType="touchUpInside" id="bz4-D4-bLH"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="bun1" translatesAutoresizingMaskIntoConstraints="NO" id="XzP-wX-5tf">
-                                <rect key="frame" x="59" y="71" width="256" height="256"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DxT-Ob-bFZ" firstAttribute="centerX" secondItem="RRE-ru-NVg" secondAttribute="centerX" id="GjM-U2-Ey3"/>
-                            <constraint firstItem="DxT-Ob-bFZ" firstAttribute="top" secondItem="RRE-ru-NVg" secondAttribute="topMargin" constant="33" id="H1t-TF-1pW"/>
-                            <constraint firstItem="XzP-wX-5tf" firstAttribute="centerX" secondItem="RRE-ru-NVg" secondAttribute="centerX" id="OYk-r5-BjK"/>
-                            <constraint firstItem="XzP-wX-5tf" firstAttribute="top" secondItem="DxT-Ob-bFZ" secondAttribute="bottom" constant="8" id="Vqu-Bh-48m"/>
+                            <constraint firstItem="g3e-LL-JmI" firstAttribute="centerX" secondItem="RRE-ru-NVg" secondAttribute="centerX" id="4Bf-5A-Qdk"/>
+                            <constraint firstItem="XzP-wX-5tf" firstAttribute="centerX" secondItem="RRE-ru-NVg" secondAttribute="centerX" id="YGi-y9-UTz"/>
+                            <constraint firstItem="DxT-Ob-bFZ" firstAttribute="top" secondItem="WJy-bs-RVf" secondAttribute="bottom" constant="13" id="etB-uh-sMp"/>
+                            <constraint firstItem="XzP-wX-5tf" firstAttribute="top" secondItem="g3e-LL-JmI" secondAttribute="bottom" constant="17" id="ktS-65-w5o"/>
+                            <constraint firstItem="g3e-LL-JmI" firstAttribute="top" secondItem="DxT-Ob-bFZ" secondAttribute="bottom" constant="11" id="r4l-vz-W00"/>
+                            <constraint firstItem="DxT-Ob-bFZ" firstAttribute="centerX" secondItem="RRE-ru-NVg" secondAttribute="centerX" id="x3H-vU-3RG"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af7-Ue-KfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447" y="-619"/>
+            <point key="canvasLocation" x="1445.5999999999999" y="-619.34032983508246"/>
         </scene>
     </scenes>
     <resources>
         <image name="bun1" width="256" height="256"/>
         <image name="bun2" width="128" height="122"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PoO-rp-Pwj"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.82579210069444442" green="1" blue="0.71100694630000005" alpha="0.76024721746575341" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

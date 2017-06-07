@@ -16,8 +16,10 @@ class DataViewController: UIViewController
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var button2d: UIButton!
     @IBOutlet weak var button3d: UIButton!
+    @IBOutlet weak var button25d: UIButton!
     @IBOutlet weak var button2dHoriConstraint: NSLayoutConstraint!
     @IBOutlet weak var button3dHoriConstraint: NSLayoutConstraint!
+    @IBOutlet weak var button25dHoriConstraint: NSLayoutConstraint!
     var dataObject: String = ""
 
     override func viewDidLoad()
@@ -38,16 +40,13 @@ class DataViewController: UIViewController
         }
         do
         {
-            
-            button2d.layer.borderColor = UIColor.green.cgColor;
-            button3d.layer.borderColor = UIColor.green.cgColor;
-            
             do
             {
                 do
                 {
                     self.ani(b:self.button2d, layoutConstraint:self.button2dHoriConstraint, delay:0.1)
                     self.ani(b:self.button3d, layoutConstraint:self.button2dHoriConstraint, delay:0.2)
+                    self.ani(b:self.button25d,layoutConstraint:self.button25dHoriConstraint, delay:0.3)
                 }
                 do
                 {
@@ -92,6 +91,7 @@ class DataViewController: UIViewController
     
     func ani(b:UIButton!, layoutConstraint:NSLayoutConstraint!, delay:Double)
     {
+        b.layer.borderColor = UIColor.green.cgColor;
         layoutConstraint.isActive = false
         
         CATransaction.begin()
