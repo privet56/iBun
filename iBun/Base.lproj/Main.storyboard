@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="703-4V-yAM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,11 +68,44 @@
                                             <segue destination="slK-3k-kbp" kind="presentation" id="5C7-v4-C9f"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-P3-PIQ" userLabel="Button 3d">
+                                        <rect key="frame" x="103" y="140" width="128" height="122"/>
+                                        <size key="titleShadowOffset" width="6" height="6"/>
+                                        <state key="normal" backgroundImage="bun2">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Play ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name=".SFNSText-Bold"/>
+                                                        <font key="NSOriginalFont" size="18" name=".SFNSText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="3">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name=".SFNSText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="D">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name=".SFNSText-Bold"/>
+                                                        <font key="NSOriginalFont" size="18" name=".SFNSText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="pgG-pr-gs0" firstAttribute="top" secondItem="s1b-V9-EN7" secondAttribute="top" constant="9" id="31P-xq-a69"/>
+                                    <constraint firstItem="kNW-P3-PIQ" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="ACK-iL-akB"/>
                                     <constraint firstItem="pgG-pr-gs0" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="jHw-xh-L6a"/>
+                                    <constraint firstItem="kNW-P3-PIQ" firstAttribute="top" secondItem="pgG-pr-gs0" secondAttribute="bottom" constant="9" id="r7X-sO-DwE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -90,6 +123,9 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="ZwX-cT-FIQ" id="tcf-uS-wTh"/>
                         <outlet property="button2d" destination="pgG-pr-gs0" id="oLX-bn-7i1"/>
+                        <outlet property="button2dHoriConstraint" destination="jHw-xh-L6a" id="6Gq-42-K0p"/>
+                        <outlet property="button3d" destination="kNW-P3-PIQ" id="gpF-kG-IGe"/>
+                        <outlet property="button3dHoriConstraint" destination="ACK-iL-akB" id="y9U-p8-stv"/>
                         <outlet property="dataLabel" destination="cF2-Le-7mQ" id="3EH-BK-JV6"/>
                         <outlet property="imageView" destination="s1b-V9-EN7" id="2dK-0s-2Fc"/>
                     </connections>
