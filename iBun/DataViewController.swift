@@ -91,6 +91,10 @@ class DataViewController: UIViewController
     
     func ani(b:UIButton!, layoutConstraint:NSLayoutConstraint!, delay:Double)
     {
+        b.contentMode = UIViewContentMode.scaleAspectFit;
+        b.imageView?.contentMode = UIViewContentMode.scaleAspectFit;
+        b.setValue(1, forKey: "contentMode")
+        
         b.layer.borderColor = UIColor.green.cgColor;
         layoutConstraint.isActive = false
         
@@ -98,6 +102,7 @@ class DataViewController: UIViewController
         CATransaction.setCompletionBlock(
         {
             layoutConstraint.isActive = true
+            //self.view.layoutIfNeeded()
         })
         let aniRound = CABasicAnimation(keyPath: "cornerRadius")    //this attribute wouldn't animate with "UIView.animate"!
         aniRound.fromValue = b.frame.width / 2
@@ -118,12 +123,33 @@ class DataViewController: UIViewController
         aniPos.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseIn)
         aniPos.damping = 2.0
         aniPos.mass = 1.0
-        aniPos.stiffness = 66
+        aniPos.stiffness = 11
         aniPos.initialVelocity = 0.1
         
         let flashAni = CABasicAnimation(keyPath: "borderColor")
         flashAni.fromValue = UIColor.clear.cgColor
         flashAni.toValue = UIColor.green.cgColor
+        
+        let scaleAni = CABasicAnimation(keyPath: "transform")
+        scaleAni.toValue = NSValue(caTransform3D: CATransform3DIdentity)
+        //1
+        scaleAni.fromValue = NSValue(caTransform3D:CATransform3DMakeRotation(/*angle*/3.14, /*x*/0.0, /*y*/0.0, /*z*/1.0))
+        //2 does nothing
+        let radians = 22.5 * .pi / 180
+        var rotationWithPerspective = CATransform3DIdentity;
+        rotationWithPerspective.m34 = -1.0/500.0/2/2
+        rotationWithPerspective = CATransform3DRotate(rotationWithPerspective, CGFloat(radians), 0, 1, 0);
+        scaleAni.fromValue = rotationWithPerspective
+        //3 rotates
+        scaleAni.fromValue = NSValue(caTransform3D:CATransform3DMakeRotation(/*angle*/3.14, /*x*/CGFloat(radians), /*y*/0.0, /*z*/1.0))
+        //4 rotates fine
+        scaleAni.fromValue = NSValue(caTransform3D:CATransform3DMakeRotation(CGFloat(Double.pi), -1.0, 0.0, 0.0))
+        //b.layer.anchorPoint.y = 0
+
+        //scaleAni.duration = 0.33
+        //scaleAni.repeatCount = 0
+        scaleAni.autoreverses = false
+        scaleAni.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseOut)
         
         let buttonAniGroup = CAAnimationGroup()
         buttonAniGroup.duration = 1.3
@@ -131,7 +157,9 @@ class DataViewController: UIViewController
         buttonAniGroup.beginTime = CACurrentMediaTime() + delay
         buttonAniGroup.fillMode = kCAFillModeBackwards
         buttonAniGroup.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-        buttonAniGroup.animations = [aniRound, aniBorder, aniPos, flashAni];
+        buttonAniGroup.animations = [aniRound, aniBorder, aniPos, flashAni, scaleAni];
+        
+
         
         b.layer.add(buttonAniGroup, forKey: nil)
         

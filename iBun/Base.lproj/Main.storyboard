@@ -48,8 +48,11 @@
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7" customClass="UIImageView">
                                 <rect key="frame" x="20" y="45" width="335" height="602"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgG-pr-gs0">
-                                        <rect key="frame" x="103" y="9" width="128" height="99"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgG-pr-gs0">
+                                        <rect key="frame" x="103" y="8" width="128" height="99"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                        </accessibility>
                                         <size key="titleShadowOffset" width="6" height="6"/>
                                         <state key="normal" backgroundImage="bun2">
                                             <attributedString key="attributedTitle">
@@ -68,7 +71,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-P3-PIQ" userLabel="Button 3d">
-                                        <rect key="frame" x="103" y="140" width="128" height="99"/>
+                                        <rect key="frame" x="103" y="115" width="128" height="98"/>
                                         <size key="titleShadowOffset" width="6" height="6"/>
                                         <state key="normal" backgroundImage="bun2">
                                             <attributedString key="attributedTitle">
@@ -102,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM4-RN-d7v" userLabel="Button 2.5d">
-                                        <rect key="frame" x="103" y="271" width="128" height="99"/>
+                                        <rect key="frame" x="103" y="221" width="128" height="99"/>
                                         <size key="titleShadowOffset" width="6" height="6"/>
                                         <state key="normal" backgroundImage="bun2">
                                             <attributedString key="attributedTitle">
@@ -147,9 +150,9 @@
                                 <constraints>
                                     <constraint firstItem="pgG-pr-gs0" firstAttribute="top" secondItem="s1b-V9-EN7" secondAttribute="top" constant="9" id="31P-xq-a69"/>
                                     <constraint firstItem="kNW-P3-PIQ" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="ACK-iL-akB"/>
-                                    <constraint firstItem="GM4-RN-d7v" firstAttribute="top" secondItem="kNW-P3-PIQ" secondAttribute="bottom" constant="9" id="Hc8-nG-OmZ"/>
+                                    <constraint firstItem="GM4-RN-d7v" firstAttribute="top" secondItem="kNW-P3-PIQ" secondAttribute="bottom" constant="11" id="Hc8-nG-OmZ"/>
                                     <constraint firstItem="pgG-pr-gs0" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="jHw-xh-L6a"/>
-                                    <constraint firstItem="kNW-P3-PIQ" firstAttribute="top" secondItem="pgG-pr-gs0" secondAttribute="bottom" constant="9" id="r7X-sO-DwE"/>
+                                    <constraint firstItem="kNW-P3-PIQ" firstAttribute="top" secondItem="pgG-pr-gs0" secondAttribute="bottom" constant="10" id="r7X-sO-DwE"/>
                                     <constraint firstItem="GM4-RN-d7v" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="u5M-Si-S1R"/>
                                 </constraints>
                             </view>
