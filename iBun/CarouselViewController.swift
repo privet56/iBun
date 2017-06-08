@@ -13,25 +13,17 @@ import Foundation
 class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDelegate
 {
     var topics:[String:Int] = ["autumn":3, "home":12, "spring":4,"summer":4,"winter":7];
-    
-    var items: [Int] = []
-    
     @IBOutlet var carousel: iCarousel!
     
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        
-        for i in 0 ... 3
-        {
-            items.append(i)
-        }
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        carousel.type = .coverFlow2
+        carousel.type = .coverFlow
         carousel.dataSource = self
         carousel.delegate = self
         
@@ -42,7 +34,33 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
             let fr:CGRect = CGRect(x:0,y:0,width:greater,height:greater)
             gradient.frame = fr
             gradient.colors = [UIColor.blue.cgColor, UIColor.black.cgColor]
-            self.view.layer.insertSublayer(gradient, at: 0)
+            //self.view.layer.insertSublayer(gradient, at: 0)
+        }
+        do
+        {
+            if let path = Bundle.main.path(forResource:"water", ofType:"gif")
+            {
+                var image:UIImage? = nil
+                var stretch:Bool = true
+                if(!stretch)
+                {
+                    let url : URL = URL.init(fileURLWithPath: path)
+                    image = UIImage.animatedImage(withAnimatedGIFURL:url)
+                }
+                else
+                {
+                    UIGraphicsBeginImageContext(self.view.frame.size)
+                    image = UIImage(named:path)
+                    image!.draw(in:self.view.bounds)
+                    image = UIGraphicsGetImageFromCurrentImageContext()
+                    UIGraphicsEndImageContext()
+                }
+                self.view.backgroundColor = UIColor(patternImage:image!)
+            }
+            else
+            {
+                print("ERR: no water");
+            }
         }
     }
     
@@ -54,7 +72,6 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
             len += topic.value
         }
         return len;
-        //return items.count
     }
     
     func getTopicAndIndex(index:Int) ->  (key: String, val: Int)
@@ -84,6 +101,12 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
         itemView.layer.anchorPoint.y = 0.0
 
         return itemView
+    }
+    
+    @objc func carousel(_ carousel:iCarousel, didSelectItemAt index:Int)
+    {
+        //TODO: grow!
+        print("selected:"+String(index))
     }
     
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat
