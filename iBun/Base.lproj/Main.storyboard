@@ -154,7 +154,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="slK-3k-kbp" kind="presentation" id="C8K-5A-YYQ"/>
+                                            <segue destination="Vbe-rl-iQK" kind="presentation" id="mpb-Nu-8bk"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="qLG-Oi-C8Q" customClass="Arrow" customModule="iBun" customModuleProvider="target">
@@ -219,6 +219,24 @@
             </objects>
             <point key="canvasLocation" x="660" y="-340.47976011994007"/>
         </scene>
+        <!--Flipper View Controller-->
+        <scene sceneID="qMq-n5-BiK">
+            <objects>
+                <viewController id="Vbe-rl-iQK" customClass="FlipperViewController" customModule="iBun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Tf-ih-zF6"/>
+                        <viewControllerLayoutGuide type="bottom" id="TiC-os-WV8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pOV-ND-WCO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLD-yD-ovH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1451" y="34"/>
+        </scene>
         <!--Page2D View Controller-->
         <scene sceneID="jqO-d6-K0i">
             <objects>
@@ -231,7 +249,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="bun1" translatesAutoresizingMaskIntoConstraints="NO" id="XzP-wX-5tf">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bun1" translatesAutoresizingMaskIntoConstraints="NO" id="XzP-wX-5tf">
                                 <rect key="frame" x="59" y="112" width="256" height="256"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORK IN PROGRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-LL-JmI">

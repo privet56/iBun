@@ -10,6 +10,8 @@
 		0701B0721EE93DB000861A73 /* water.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0711EE93DB000861A73 /* water.gif */; };
 		0701B0741EE93EB400861A73 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0731EE93EB400861A73 /* left-arrow.png */; };
 		0701B0761EE941AD00861A73 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0751EE941AD00861A73 /* Arrow.swift */; };
+		0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0771EE972BB00861A73 /* FlipperViewController.swift */; };
+		0701B07A1EE9748A00861A73 /* buns in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0791EE9748A00861A73 /* buns */; };
 		07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAB1EE1992C00FC975F /* AppDelegate.swift */; };
 		07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAD1EE1992C00FC975F /* RootViewController.swift */; };
 		07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAF1EE1992C00FC975F /* DataViewController.swift */; };
@@ -31,6 +33,8 @@
 		0701B0711EE93DB000861A73 /* water.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = water.gif; sourceTree = "<group>"; };
 		0701B0731EE93EB400861A73 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
 		0701B0751EE941AD00861A73 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		0701B0771EE972BB00861A73 /* FlipperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipperViewController.swift; sourceTree = "<group>"; };
+		0701B0791EE9748A00861A73 /* buns */ = {isa = PBXFileReference; lastKnownFileType = folder; path = buns; sourceTree = "<group>"; };
 		07252FA81EE1992C00FC975F /* iBun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07252FAB1EE1992C00FC975F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07252FAD1EE1992C00FC975F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				07252FBB1EE1992C00FC975F /* Info.plist */,
 				07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */,
 				0701B0751EE941AD00861A73 /* Arrow.swift */,
+				0701B0771EE972BB00861A73 /* FlipperViewController.swift */,
 			);
 			path = iBun;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 		07AE1A9D1EE1AD1A00698EAF /* res */ = {
 			isa = PBXGroup;
 			children = (
+				0701B0791EE9748A00861A73 /* buns */,
 				0701B0731EE93EB400861A73 /* left-arrow.png */,
 				0701B0711EE93DB000861A73 /* water.gif */,
 				07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */,
@@ -175,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0701B07A1EE9748A00861A73 /* buns in Resources */,
 				07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */,
 				07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */,
 				0701B0741EE93EB400861A73 /* left-arrow.png in Resources */,
@@ -198,6 +205,7 @@
 			files = (
 				07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */,
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
+				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */,
 				07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */,
 				0701B0761EE941AD00861A73 /* Arrow.swift in Sources */,

@@ -11,8 +11,6 @@ import UIKit
 
 class Arrow: UIImageView
 {
-    //@IBOutlet weak var edgeConstraint: NSLayoutConstraint!
-    
     var _isLeft:Bool = true
     var isLeft:Bool {
         

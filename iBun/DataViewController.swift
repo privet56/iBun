@@ -111,7 +111,6 @@ class DataViewController: UIViewController
             {
                 layoutConstraint.isActive = true
             }
-            //self.view.layoutIfNeeded()
         })
         let aniRound = CABasicAnimation(keyPath: "cornerRadius")    //this attribute wouldn't animate with "UIView.animate"!
         aniRound.fromValue = b.frame.width / 2
@@ -169,7 +168,6 @@ class DataViewController: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewWillAppear(_ animated: Bool)
