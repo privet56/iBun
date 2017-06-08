@@ -219,19 +219,22 @@
             </objects>
             <point key="canvasLocation" x="660" y="-340.47976011994007"/>
         </scene>
-        <!--Flipper View Controller-->
+        <!--Carousel View Controller-->
         <scene sceneID="qMq-n5-BiK">
             <objects>
-                <viewController id="Vbe-rl-iQK" customClass="FlipperViewController" customModule="iBun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vbe-rl-iQK" customClass="CarouselViewController" customModule="iBun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Tf-ih-zF6"/>
                         <viewControllerLayoutGuide type="bottom" id="TiC-os-WV8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pOV-ND-WCO">
+                    <view key="view" contentMode="scaleToFill" id="pOV-ND-WCO" customClass="iCarousel">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="carousel" destination="pOV-ND-WCO" id="XCE-5V-nQm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLD-yD-ovH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

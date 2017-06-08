@@ -57,6 +57,8 @@ class FlipperViewController : UIViewController
             if let image = subview as? UIImageView
             {
                 var imageTransform = CATransform3DIdentity
+                
+                //TODO
                 imageTransform = CATransform3DTranslate(imageTransform, 0.0, imageYOffset, 0.0)
                 imageTransform = CATransform3DScale(imageTransform, 0.95, 0.6, 1.0)
                 imageTransform = CATransform3DRotate(imageTransform, CGFloat((Double.pi / 4)/2), -1.0, 0.0, 0.0)
