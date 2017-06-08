@@ -21,7 +21,8 @@ import UIKit
 class ModelController: NSObject, UIPageViewControllerDataSource
 {
 
-    var pageData: [String] = ["2","3","4","5","6","7","8",]
+    //var pageData: [String] = ["0","1","2","3","4","5","6"]
+    var pageData: [Int] = [0,1,2,3,4,5,6]
 
     override init()
     {
@@ -45,6 +46,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
         dataViewController.dataObject = self.pageData[index]
+        dataViewController.maxIndex   = self.pageData.count - 1
         return dataViewController
     }
 

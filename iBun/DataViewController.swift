@@ -20,7 +20,11 @@ class DataViewController: UIViewController
     @IBOutlet weak var button2dHoriConstraint: NSLayoutConstraint!
     @IBOutlet weak var button3dHoriConstraint: NSLayoutConstraint!
     @IBOutlet weak var button25dHoriConstraint: NSLayoutConstraint!
-    var dataObject: String = ""
+    var dataObject: Int = 0
+    var maxIndex:   Int = 0
+    
+    @IBOutlet weak var arrowLeft:  Arrow!
+    @IBOutlet weak var arrowRight: Arrow!
 
     override func viewDidLoad()
     {
@@ -28,7 +32,7 @@ class DataViewController: UIViewController
 
         do
         {
-            if let path = Bundle.main.path(forResource:"falling_leaves.2", ofType:"gif")
+            if let path = Bundle.main.path(forResource:"water", ofType:"gif")
             {
                 let url : URL = URL.init(fileURLWithPath: path)
                 backgroundImageView.image = UIImage.animatedImage(withAnimatedGIFURL:url)
@@ -45,8 +49,8 @@ class DataViewController: UIViewController
                 do
                 {
                     self.ani(b:self.button2d, layoutConstraint:self.button2dHoriConstraint, delay:0.1)
-                    self.ani(b:self.button3d, layoutConstraint:self.button2dHoriConstraint, delay:0.2)
-                    self.ani(b:self.button25d,layoutConstraint:self.button25dHoriConstraint, delay:0.3)
+                    self.ani(b:self.button3d, layoutConstraint:self.button2dHoriConstraint, delay:0.3)
+                    self.ani(b:self.button25d,layoutConstraint:self.button25dHoriConstraint,delay:0.5)
                 }
                 do
                 {
@@ -82,12 +86,14 @@ class DataViewController: UIViewController
                     //self.button2dHoriConstraint.constant = -222
                     */
                 }
-                
-                //TODO: 3d ani
-                //TODO: show arrow to turn the page
             }
         }
      }
+    
+    override func viewWillDisappear(_ animated:Bool)
+    {
+        super.viewWillDisappear(animated)
+    }
     
     func ani(b:UIButton!, layoutConstraint:NSLayoutConstraint!, delay:Double)
     {
@@ -101,7 +107,10 @@ class DataViewController: UIViewController
         CATransaction.begin()
         CATransaction.setCompletionBlock(
         {
-            layoutConstraint.isActive = true
+            if (self.isViewLoaded && (layoutConstraint != nil))
+            {
+                layoutConstraint.isActive = true
+            }
             //self.view.layoutIfNeeded()
         })
         let aniRound = CABasicAnimation(keyPath: "cornerRadius")    //this attribute wouldn't animate with "UIView.animate"!
@@ -113,7 +122,7 @@ class DataViewController: UIViewController
         aniRound.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseIn)
         
         let aniBorder = CABasicAnimation(keyPath: "borderWidth")
-        aniBorder.fromValue = 99
+        aniBorder.fromValue = 9.9
         aniBorder.toValue = 3.3
         aniBorder.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseIn)
         
@@ -131,35 +140,22 @@ class DataViewController: UIViewController
         flashAni.toValue = UIColor.green.cgColor
         
         let scaleAni = CABasicAnimation(keyPath: "transform")
+        let angle = CGFloat(Double.pi)
+        let x:CGFloat = 0.0
+        let y:CGFloat = -1.0
+        let z:CGFloat = 0.0
+        scaleAni.fromValue = NSValue(caTransform3D:CATransform3DMakeRotation(angle, x, y, z))
         scaleAni.toValue = NSValue(caTransform3D: CATransform3DIdentity)
-        //1
-        scaleAni.fromValue = NSValue(caTransform3D:CATransform3DMakeRotation(/*angle*/3.14, /*x*/0.0, /*y*/0.0, /*z*/1.0))
-        //2 does nothing
-        let radians = 22.5 * .pi / 180
-        var rotationWithPerspective = CATransform3DIdentity;
-        rotationWithPerspective.m34 = -1.0/500.0/2/2
-        rotationWithPerspective = CATransform3DRotate(rotationWithPerspective, CGFloat(radians), 0, 1, 0);
-        scaleAni.fromValue = rotationWithPerspective
-        //3 rotates
-        scaleAni.fromValue = NSValue(caTransform3D:CATransform3DMakeRotation(/*angle*/3.14, /*x*/CGFloat(radians), /*y*/0.0, /*z*/1.0))
-        //4 rotates fine
-        scaleAni.fromValue = NSValue(caTransform3D:CATransform3DMakeRotation(CGFloat(Double.pi), -1.0, 0.0, 0.0))
-        //b.layer.anchorPoint.y = 0
-
-        //scaleAni.duration = 0.33
-        //scaleAni.repeatCount = 0
-        scaleAni.autoreverses = false
         scaleAni.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseOut)
+        //b.layer.anchorPoint.y = 0
         
         let buttonAniGroup = CAAnimationGroup()
-        buttonAniGroup.duration = 1.3
+        buttonAniGroup.duration = 3.3
         //buttonAniGroup.repeatDuration = 1.3
         buttonAniGroup.beginTime = CACurrentMediaTime() + delay
         buttonAniGroup.fillMode = kCAFillModeBackwards
         buttonAniGroup.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         buttonAniGroup.animations = [aniRound, aniBorder, aniPos, flashAni, scaleAni];
-        
-
         
         b.layer.add(buttonAniGroup, forKey: nil)
         
@@ -170,7 +166,8 @@ class DataViewController: UIViewController
         CATransaction.commit()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -178,7 +175,11 @@ class DataViewController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        self.dataLabel!.text = dataObject
+        
+        self.arrowLeft.viewWillAppear(animated , isLeft: true , currentIndex: self.dataObject, maxIndex: self.maxIndex)
+        self.arrowRight.viewWillAppear(animated, isLeft: false, currentIndex: self.dataObject, maxIndex: self.maxIndex)
+        
+        self.dataLabel!.text = String(dataObject)
         
         do
         {
