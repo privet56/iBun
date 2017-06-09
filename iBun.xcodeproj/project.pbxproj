@@ -14,6 +14,7 @@
 		0701B07A1EE9748A00861A73 /* buns in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0791EE9748A00861A73 /* buns */; };
 		0701B07D1EE994A200861A73 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701B07C1EE994A200861A73 /* iCarousel.m */; };
 		0701B07F1EE9961100861A73 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B07E1EE9961100861A73 /* CarouselViewController.swift */; };
+		0701B0811EEAC34300861A73 /* PicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0801EEAC34300861A73 /* PicViewController.swift */; };
 		07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAB1EE1992C00FC975F /* AppDelegate.swift */; };
 		07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAD1EE1992C00FC975F /* RootViewController.swift */; };
 		07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAF1EE1992C00FC975F /* DataViewController.swift */; };
@@ -40,6 +41,7 @@
 		0701B07B1EE994A200861A73 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = icarousel/iCarousel.h; sourceTree = "<group>"; };
 		0701B07C1EE994A200861A73 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = icarousel/iCarousel.m; sourceTree = "<group>"; };
 		0701B07E1EE9961100861A73 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		0701B0801EEAC34300861A73 /* PicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicViewController.swift; sourceTree = "<group>"; };
 		07252FA81EE1992C00FC975F /* iBun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07252FAB1EE1992C00FC975F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07252FAD1EE1992C00FC975F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				0701B0751EE941AD00861A73 /* Arrow.swift */,
 				0701B0771EE972BB00861A73 /* FlipperViewController.swift */,
 				0701B07E1EE9961100861A73 /* CarouselViewController.swift */,
+				0701B0801EEAC34300861A73 /* PicViewController.swift */,
 			);
 			path = iBun;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				0701B07D1EE994A200861A73 /* iCarousel.m in Sources */,
+				0701B0811EEAC34300861A73 /* PicViewController.swift in Sources */,
 				07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */,
 				07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */,
 				0701B0761EE941AD00861A73 /* Arrow.swift in Sources */,

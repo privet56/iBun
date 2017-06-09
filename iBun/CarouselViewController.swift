@@ -16,8 +16,8 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
     
     var topics:[String:Int] = ["autumn":3, "home":12, "spring":4,"summer":4,"winter":7];
     var imgpaths:[String] = [];
-    var bkgImage:UIImage? = nil
-    var bkgImageView:UIImageView? = nil
+    //var bkgImage:UIImage? = nil
+    //var bkgImageView:UIImageView? = nil
     
     @IBOutlet var carousel: iCarousel!
     
@@ -32,11 +32,14 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
         
         for topic in self.topics
         {
-            let indexWithLeadingZero = topic.value > 9 ? String(topic.value) : String(format: "%02d", topic.value)
-            let path = "buns/"+topic.key+indexWithLeadingZero+".png";
-            imgpaths.append(path)
+            for picindex in 1 ... topic.value
+            {
+                let indexWithLeadingZero = picindex > 9 ? String(picindex) : String(format: "%02d", picindex)
+                let path = "buns/"+topic.key+indexWithLeadingZero+".png";
+                imgpaths.append(path)
+            }
         }
-        
+        /*
         do
         {
             let gradient = CAGradientLayer()
@@ -58,7 +61,7 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
                 UIGraphicsEndImageContext()
                 self.view.backgroundColor = UIColor(patternImage:image!)
                 
-                //self.view.backgroundColor = UIColor.clear //result is black
+                
                 //aniBackground(gifimage:image!)
                 
                 self.bkgImageView = UIImageView(image: self.bkgImage!)
@@ -66,20 +69,38 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
                 //self.view.addSubview(self.bkgImageView!)
                 //self.bkgImageView!.isHidden = true
 
-                /*var timer = Timer.scheduledTimer(timeInterval:0.4, target: self,
-                                                     selector: #selector(CarouselViewController.update), userInfo: nil, repeats: true)*/
+                /a*var timer = Timer.scheduledTimer(timeInterval:0.4, target: self,
+                                                     selector: #selector(CarouselViewController.update), userInfo: nil, repeats: true)*a/
                 
             }
             else
             {
                 print("ERR: no water");
             }
-        }
+        }*/
         
-        carousel.type = .coverFlow
+        if let path = Bundle.main.path(forResource:"water", ofType:"gif")
+        {
+            let url : URL = URL.init(fileURLWithPath: path)
+            (self.view as! UIImageView).image = UIImage.animatedImage(withAnimatedGIFURL:url)
+        }
+        else
+        {
+            print("ERR: no water");
+        }
+
+        self.carousel.backgroundColor = UIColor.clear
+ 
+        carousel.type       = .coverFlow
         carousel.dataSource = self
-        carousel.delegate = self
+        carousel.delegate   = self
     }
+    @IBAction func onBack(sender:UIButton)
+    {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    /*
     func update()
     {
         UIGraphicsBeginImageContext(self.bkgImageView!.frame.size)
@@ -108,8 +129,7 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
         anAnimation.fromValue = UIColor.red.cgColor//UIColor(patternImage:gifimage).cgColor
         anAnimation.toValue = UIColor.green.cgColor//UIColor(patternImage:gifimage)
         self.view.layer.add(anAnimation, forKey: nil)
-    }
-    
+    }*/
     func numberOfItems(in carousel: iCarousel) -> Int
     {
         #if LINEARIZEIMGPATHS
@@ -142,7 +162,7 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView
     {
         #if LINEARIZEIMGPATHS
-            let path = self.imgpaths[index]
+            let path = self.imgpaths[index - 1]
         #else
             let topic:(key: String, val: Int) = getTopicAndIndex(index:index)
             let indexWithLeadingZero = topic.val > 9 ? String(topic.val) : String(format: "%02d", topic.val)
@@ -159,8 +179,9 @@ class CarouselViewController: UIViewController, iCarouselDataSource, iCarouselDe
     
     @objc func carousel(_ carousel:iCarousel, didSelectItemAt index:Int)
     {
-        //TODO: grow!
-        print("selected:"+String(index))
+        let vc = PicViewController()
+        vc.imagePath = self.imgpaths[index - 1]
+        self.present(vc, animated: true, completion: nil)
     }
     
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat

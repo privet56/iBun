@@ -23,8 +23,8 @@ class DataViewController: UIViewController
     var dataObject: Int = 0
     var maxIndex:   Int = 0
     
-    @IBOutlet weak var arrowLeft:  Arrow!
-    @IBOutlet weak var arrowRight: Arrow!
+    @IBOutlet weak var arrowLeft:  Arrow?
+    @IBOutlet weak var arrowRight: Arrow?
 
     override func viewDidLoad()
     {
@@ -169,13 +169,25 @@ class DataViewController: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
-
+    
+    func setup(currentIndex:Int, maxIndex:Int)
+    {
+        self.dataObject = currentIndex
+        self.maxIndex = maxIndex
+    }
+ 
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         
-        self.arrowLeft.viewWillAppear(animated , isLeft: true , currentIndex: self.dataObject, maxIndex: self.maxIndex)
-        self.arrowRight.viewWillAppear(animated, isLeft: false, currentIndex: self.dataObject, maxIndex: self.maxIndex)
+        if(self.arrowLeft != nil)
+        {
+            self.arrowLeft!.viewWillAppear(true , isLeft: true , currentIndex: self.dataObject, maxIndex: self.maxIndex)
+        }
+        if(self.arrowRight != nil)
+        {
+            self.arrowRight!.viewWillAppear(true, isLeft: false, currentIndex: self.dataObject, maxIndex: self.maxIndex)
+        }
         
         self.dataLabel!.text = String(dataObject)
         
