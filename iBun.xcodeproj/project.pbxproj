@@ -23,6 +23,8 @@
 		0701B0901EEEBF0E00861A73 /* spaceship in Resources */ = {isa = PBXBuildFile; fileRef = 0701B08F1EEEBF0E00861A73 /* spaceship */; };
 		0701B0921EEEBF6000861A73 /* D2SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0911EEEBF6000861A73 /* D2SpaceShip.swift */; };
 		0701B0941EEEC4B200861A73 /* D2ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0931EEEC4B200861A73 /* D2ScoreLabel.swift */; };
+		0701B09A1EEEE5E400861A73 /* D2Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0991EEEE5E400861A73 /* D2Shot.swift */; };
+		0701B0A61EEEF03500861A73 /* carrot.png in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0A51EEEF03500861A73 /* carrot.png */; };
 		07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAB1EE1992C00FC975F /* AppDelegate.swift */; };
 		07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAD1EE1992C00FC975F /* RootViewController.swift */; };
 		07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07252FAF1EE1992C00FC975F /* DataViewController.swift */; };
@@ -58,6 +60,8 @@
 		0701B08F1EEEBF0E00861A73 /* spaceship */ = {isa = PBXFileReference; lastKnownFileType = folder; name = spaceship; path = ../../../res/spaceship; sourceTree = "<group>"; };
 		0701B0911EEEBF6000861A73 /* D2SpaceShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2SpaceShip.swift; sourceTree = "<group>"; };
 		0701B0931EEEC4B200861A73 /* D2ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2ScoreLabel.swift; sourceTree = "<group>"; };
+		0701B0991EEEE5E400861A73 /* D2Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2Shot.swift; sourceTree = "<group>"; };
+		0701B0A51EEEF03500861A73 /* carrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrot.png; sourceTree = "<group>"; };
 		07252FA81EE1992C00FC975F /* iBun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07252FAB1EE1992C00FC975F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07252FAD1EE1992C00FC975F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				0701B08B1EEE93D100861A73 /* D2Scene.swift */,
 				0701B0911EEEBF6000861A73 /* D2SpaceShip.swift */,
 				0701B0931EEEC4B200861A73 /* D2ScoreLabel.swift */,
+				0701B0991EEEE5E400861A73 /* D2Shot.swift */,
 			);
 			name = 2d;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		07AE1A9D1EE1AD1A00698EAF /* res */ = {
 			isa = PBXGroup;
 			children = (
+				0701B0A51EEEF03500861A73 /* carrot.png */,
 				0701B08F1EEEBF0E00861A73 /* spaceship */,
 				0701B08D1EEE9CFB00861A73 /* sky */,
 				0701B0791EE9748A00861A73 /* buns */,
@@ -242,6 +248,7 @@
 				0701B0741EE93EB400861A73 /* left-arrow.png in Resources */,
 				07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */,
 				07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */,
+				0701B0A61EEEF03500861A73 /* carrot.png in Resources */,
 				07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */,
 				07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */,
 				07AE1AA51EE1B64500698EAF /* meadow in Resources */,
@@ -269,6 +276,7 @@
 				07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */,
 				0701B0921EEEBF6000861A73 /* D2SpaceShip.swift in Sources */,
 				07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */,
+				0701B09A1EEEE5E400861A73 /* D2Shot.swift in Sources */,
 				0701B0761EE941AD00861A73 /* Arrow.swift in Sources */,
 				07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */,
 				07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */,

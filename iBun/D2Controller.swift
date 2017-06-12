@@ -21,6 +21,7 @@ class D2Controller : UIViewController
         iView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(iView)
         self.backgroundImageView = iView
+        iView.isUserInteractionEnabled = true
     
         let sView:SKView = SKView(frame:iView.bounds)
         sView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -29,6 +30,7 @@ class D2Controller : UIViewController
         let sScene:D2Scene = D2Scene(size:sView.bounds.size);
         sScene.scaleMode = .aspectFill;
         sView.allowsTransparency = true;
+        sView.isUserInteractionEnabled = true
         sView.presentScene(sScene);
         
         /*var timer = */Timer.scheduledTimer(timeInterval: 9.99, target: self, selector: #selector(D2Controller.changeBkg), userInfo: nil, repeats: true)
@@ -59,6 +61,13 @@ class D2Controller : UIViewController
         let indexWithLeadingZero = val > 9 ? String(val) : String(format: "%02d", val)
         let path = Bundle.main.path(forResource:"sky/sky"+indexWithLeadingZero, ofType:"gif")
         let url : URL = URL.init(fileURLWithPath: path!)
+        
         self.backgroundImageView?.image = UIImage.animatedImage(withAnimatedGIFURL:url)
+        
+        let tr:CATransition = CATransition()
+        tr.duration = 1.1
+        tr.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        tr.type = kCATransitionMoveIn
+        self.backgroundImageView?.layer.add(tr, forKey: nil)
     }
 }
