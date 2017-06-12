@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class PicViewController : UIViewController
 {
     var imagePath:String? = nil
@@ -34,13 +35,13 @@ class PicViewController : UIViewController
         {
             if(self.view is UIImageView)
             {
-                print("self.view is imageView")
+                print("self.view is imageView")                                             //loaded from the xib/storyboard
                 imageView = (self.view as! UIImageView)
                 imageView!.image = UIImage(named: self.imagePath!)
             }
             else
             {
-                print("self.view is "+(String(describing: type(of: self.view!))))
+                print("self.view is "+(String(describing: type(of: self.view!))))           //instantiated without resource bundle
                 imageView = UIImageView(image:UIImage(named: self.imagePath!))
                 let scrollView:UIScrollView = UIScrollView(frame:self.view.bounds)
                 scrollView.contentSize = imageView!.bounds.size

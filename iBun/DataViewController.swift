@@ -175,7 +175,11 @@ class DataViewController: UIViewController
         self.dataObject = currentIndex
         self.maxIndex = maxIndex
     }
- 
+    @IBAction func on2D(sender:UIButton)
+    {
+        let vc = D2Controller()
+        self.present(vc, animated: true, completion: nil)
+    }
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)

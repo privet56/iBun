@@ -71,7 +71,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="slK-3k-kbp" kind="presentation" id="5C7-v4-C9f"/>
+                                            <action selector="on2DWithSender:" destination="S4R-Ja-viH" eventType="touchUpInside" id="WJ2-ew-GMD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-P3-PIQ" userLabel="Button 3d">
@@ -354,8 +354,5 @@
         <image name="bun2" width="128" height="122"/>
         <image name="left-arrow.png" width="640" height="447"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="PoO-rp-Pwj"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.82579210069444442" green="1" blue="0.71100694630000005" alpha="0.76024721746575341" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

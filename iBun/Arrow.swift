@@ -122,6 +122,16 @@ class Arrow: UIImageView
         {
            self.removeFromSuperview()
         })
+        
+        let aniPosX = CASpringAnimation(keyPath: "position.x")
+        //aniPosX.fromValue = self.superview!.bounds.width / 2
+        aniPosX.toValue = self.isLeft ? (-self.superview!.bounds.width) : (self.superview!.bounds.width)
+        aniPosX.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseIn)
+        aniPosX.damping     = 2.0
+        aniPosX.mass        = 1.0
+        aniPosX.stiffness   = 11
+        aniPosX.initialVelocity = 0.1
+
         if(self.isLeft)
         {
             let sizeAni = CASpringAnimation(keyPath: "transform.scale")
@@ -129,37 +139,45 @@ class Arrow: UIImageView
             sizeAni.toValue     = self.isLeft ? 0.03 : -0.03
 
             let rotAni = CASpringAnimation(keyPath: "transform.rotation")
-            rotAni.fromValue = 0.0
-            rotAni.toValue = 3.14
-            rotAni.repeatCount = 3
+            rotAni.fromValue    = 0.0
+            rotAni.toValue      = 3.14
+            rotAni.repeatCount  = 3
 
-            let buttonAniGroup = CAAnimationGroup()
-            buttonAniGroup.duration = 3.3
-            buttonAniGroup.beginTime = CACurrentMediaTime() + (self.isLeft ? 0.1 : 0.02)
-            buttonAniGroup.fillMode = kCAFillModeBoth
+            let d2AniGroup = CAAnimationGroup()
+            d2AniGroup.duration     = 3.3
+            d2AniGroup.beginTime    = CACurrentMediaTime() + (self.isLeft ? 0.1 : 0.02)
+            d2AniGroup.fillMode     = kCAFillModeBoth
         
-            buttonAniGroup.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-            buttonAniGroup.animations = [sizeAni, rotAni];
+            d2AniGroup.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+            d2AniGroup.animations = [sizeAni, rotAni, aniPosX];
         
-            self.layer.add(buttonAniGroup, forKey: nil)
+            self.layer.add(d2AniGroup, forKey: nil)
         }
         else
         {
             var identity = CATransform3DIdentity
             identity.m34 = -1.0/1000
-            //TODO: rotate only half!
-            let rotationTransform = CATransform3DMakeRotation(CGFloat(1.0 * Double.pi), 1.0, 1.0, 0.0);
-            let translationTransform = CATransform3DMakeTranslation(self.frame.width * 2, 0, 0)
+            
+            let rotationTransform       = CATransform3DMakeRotation(CGFloat(2.0 * Double.pi), 0.0, 0.0, 1.0);
+            let translationTransform    = CATransform3DMakeTranslation(self.frame.width * 2, 0, 0)
             let transform3D:CATransform3D = CATransform3DConcat(rotationTransform, translationTransform)
             
-            let rotationAnimation:CABasicAnimation = CABasicAnimation(keyPath:"transform");
+            let d3Ani:CABasicAnimation = CABasicAnimation(keyPath:"transform");
+            d3Ani.toValue       = transform3D;
+            d3Ani.duration      = 3.3;
+            d3Ani.isCumulative  = true;
+            d3Ani.repeatCount   = 0;
             
-            rotationAnimation.toValue       = transform3D;
-            rotationAnimation.duration      = 3.3;
-            rotationAnimation.isCumulative  = false;
-            rotationAnimation.repeatCount   = 1;
+            let d2AniGroup = CAAnimationGroup()
+            d2AniGroup.duration = 3.3
+            d2AniGroup.beginTime = CACurrentMediaTime() + (self.isLeft ? 0.1 : 0.02)
+            d2AniGroup.fillMode = kCAFillModeBoth
             
-            self.layer.add(rotationAnimation, forKey: nil)
+            d2AniGroup.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+            d2AniGroup.animations = [aniPosX];
+            
+            self.layer.add(d3Ani    , forKey: nil)
+            self.layer.add(d2AniGroup,forKey: nil)
         }
         
         CATransaction.commit()
