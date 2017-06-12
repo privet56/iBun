@@ -17,7 +17,7 @@ class D2Shot: SKSpriteNode
     }
     init(scene:SKScene, spaceship:D2SpaceShip) //constructor needs the scene to be able to scale & position the object in the scene
     {
-        let texture = SKTexture(imageNamed: "carrot")
+        let texture = SKTexture(imageNamed: "spaceship/spaceship6")
         let size:CGSize = CGSize(width:scene.frame.size.width / 20, height:scene.frame.size.height / 30)
         super.init(texture: texture, color: UIColor.clear, size: size)
         self.position = spaceship.position
