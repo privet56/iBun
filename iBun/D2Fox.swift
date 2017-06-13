@@ -11,6 +11,8 @@ import SpriteKit
 
 class D2Fox: SKSpriteNode
 {
+    static let colliderName : String = "fox"
+    
     required init?(coder aDecoder: NSCoder)
     {
         fatalError("init(coder:) has not been implemented")
@@ -44,5 +46,43 @@ class D2Fox: SKSpriteNode
             let moveAction      = SKAction.repeatForever(actionSequence)
             self.run(moveAction)
         }
+        do
+        {
+            self.name = D2Fox.colliderName
+            physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+            physicsBody?.isDynamic          = false
+            physicsBody?.linearDamping      = 1.0
+            physicsBody?.allowsRotation     = true
+            physicsBody?.categoryBitMask    = Globals.CollisionCategoryEnemy
+            physicsBody?.contactTestBitMask = Globals.CollisionCategoryShot
+            physicsBody?.collisionBitMask   = 0
+            self.physicsBody = physicsBody
+        }
+    }
+    func explode()
+    {
+        let pathToEmitter = Bundle.main.path(forResource: "FireParticle", ofType: "sks")
+        let emitter = NSKeyedUnarchiver.unarchiveObject(withFile: pathToEmitter!) as? SKEmitterNode
+        
+        //emitter!.zRotation = CGFloat(Double.pi/2.0);
+        //emitter!.particlePositionRange = CGVector(dx: emitter!.particlePositionRange.dx / 32, dy: emitter!.particlePositionRange.dy / 16)
+        //emitter!.particleScale = 0.3;
+        //emitter!.particleScaleRange = 0.2;
+        //emitter!.particleScaleSpeed = -0.1;
+        
+        self.addChild(emitter!)
+        emitter!.position = CGPoint(x: 0, y: 0)
+        
+        /*var timer = */Timer.scheduledTimer(timeInterval: 1.99, target: self, selector: #selector(D2Fox.explodeFinish), userInfo: nil, repeats: false)
+    }
+    func explodeFinish()
+    {
+        self.scene?.enumerateChildNodes(withName: D2ScoreLabel.colliderName, using:
+        {
+            node, stop in
+            
+            (node as? D2ScoreLabel)?.enemyDestroyed()
+        })
+        self.removeFromParent()
     }
 }

@@ -11,6 +11,8 @@ import SpriteKit
 
 class D2Shot: SKSpriteNode
 {
+    static let colliderName : String = "shot"
+    
     required init?(coder aDecoder: NSCoder)
     {
         fatalError("init(coder:) has not been implemented")
@@ -43,6 +45,18 @@ class D2Shot: SKSpriteNode
             
             self.addChild(emitter!)
             emitter!.position = CGPoint(x: -19, y: 0)
+        }
+        do
+        {
+            self.name = D2Shot.colliderName
+            physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+            physicsBody?.isDynamic          = true
+            physicsBody?.linearDamping      = 1.0
+            physicsBody?.allowsRotation     = true
+            physicsBody?.categoryBitMask    = Globals.CollisionCategoryShot
+            physicsBody?.contactTestBitMask = Globals.CollisionCategoryEnemy// | Globals.CollisionCategoryPlayer
+            physicsBody?.collisionBitMask   = 0
+            self.physicsBody = physicsBody
         }
     }
 }

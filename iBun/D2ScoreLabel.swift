@@ -11,6 +11,9 @@ import SpriteKit
 
 class D2ScoreLabel: SKLabelNode
 {
+    var score:UInt32 = 0
+    static let colliderName : String = "score"
+    
     override init()
     {
         super.init()
@@ -28,5 +31,12 @@ class D2ScoreLabel: SKLabelNode
         self.horizontalAlignmentMode = .left
         
         self.position = CGPoint(x: 0, y: scene.size.height - self.frame.size.height)
+        self.name = D2ScoreLabel.colliderName
+    }
+    
+    func enemyDestroyed()
+    {
+        self.score += 1
+        self.text = "Score : "+String(self.score);
     }
 }
