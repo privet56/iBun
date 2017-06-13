@@ -27,7 +27,7 @@ class D2Controller : UIViewController
         sView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         iView.addSubview(sView)
         
-        let sScene:D2Scene = D2Scene(size:sView.bounds.size);
+        let sScene:D2Scene = D2Scene(size:sView.bounds.size,d2Controller:self);
         sScene.scaleMode = .aspectFill;
         sView.allowsTransparency = true;
         sView.isUserInteractionEnabled = true

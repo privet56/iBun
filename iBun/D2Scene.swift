@@ -11,13 +11,17 @@ import SpriteKit
 
 class D2Scene: SKScene, SKPhysicsContactDelegate
 {
+    var d2Controller:D2Controller? = nil
+    
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
-    override init(size: CGSize)
+    init(size: CGSize, d2Controller:D2Controller)
     {
         super.init(size: size)
+        
+        self.d2Controller = d2Controller
         
         self.isUserInteractionEnabled = true
         
@@ -28,6 +32,9 @@ class D2Scene: SKScene, SKPhysicsContactDelegate
         
         do
         {
+            let backLabel = D2Back(scene:self)
+            addChild(backLabel)
+
             let scoreLabel = D2ScoreLabel(fontNamed:nil, scene:self)
             addChild(scoreLabel)
 
@@ -66,11 +73,19 @@ class D2Scene: SKScene, SKPhysicsContactDelegate
         {
             shot = nodeB as? D2Shot
         }
+        
         if(fox == nil) {return}
         if(shot == nil) {return}
         
         shot?.removeFromParent()
         fox?.explode()
+    }
+    
+    func enemiesDestroyed()
+    {
+        let transition = SKTransition.fade(withDuration: 2.0)
+        let sceneTwo = D2SceneFinish(size: size, d2Controller:self.d2Controller!)
+        view?.presentScene(sceneTwo, transition: transition)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)

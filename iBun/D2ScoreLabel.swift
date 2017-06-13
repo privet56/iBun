@@ -28,9 +28,9 @@ class D2ScoreLabel: SKLabelNode
         
         self.text = "Score : 0";
         self.fontSize = 40;
-        self.horizontalAlignmentMode = .left
+        self.horizontalAlignmentMode = .right
         
-        self.position = CGPoint(x: 0, y: scene.size.height - self.frame.size.height)
+        self.position = CGPoint(x: scene.size.width, y: scene.size.height - self.frame.size.height)
         self.name = D2ScoreLabel.colliderName
     }
     

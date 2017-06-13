@@ -69,11 +69,19 @@ class D2Fox: SKSpriteNode
         //emitter!.particleScale = 0.3;
         //emitter!.particleScaleRange = 0.2;
         //emitter!.particleScaleSpeed = -0.1;
+        emitter!.emissionAngle = 1.0
         
         self.addChild(emitter!)
         emitter!.position = CGPoint(x: 0, y: 0)
         
-        /*var timer = */Timer.scheduledTimer(timeInterval: 1.99, target: self, selector: #selector(D2Fox.explodeFinish), userInfo: nil, repeats: false)
+        do
+        {
+            let rot = SKAction.rotate(byAngle: 360, duration: 0.5)
+            let rotForever = SKAction.repeatForever(rot)
+            self.run(rotForever)
+        }
+        
+        /*var timer = */Timer.scheduledTimer(timeInterval: 2.99, target: self, selector: #selector(D2Fox.explodeFinish), userInfo: nil, repeats: false)
     }
     func explodeFinish()
     {
@@ -83,6 +91,21 @@ class D2Fox: SKSpriteNode
             
             (node as? D2ScoreLabel)?.enemyDestroyed()
         })
+        
+        do
+        {
+            var iFoxes:Int = 0;
+            self.scene?.enumerateChildNodes(withName: D2Fox.colliderName, using:
+            {
+                node, stop in
+                iFoxes += 1
+            })
+            if(iFoxes < 2)
+            {
+                (self.scene as? D2Scene)?.enemiesDestroyed()
+            }
+        }
+
         self.removeFromParent()
     }
 }

@@ -43,6 +43,8 @@
 		07F602A91EEF008100FBE08C /* D2Fox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F602A81EEF008100FBE08C /* D2Fox.swift */; };
 		07F602AB1EEFCF9100FBE08C /* fox.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F602AA1EEFCF9100FBE08C /* fox.png */; };
 		07F602AD1EEFD16B00FBE08C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F602AC1EEFD16B00FBE08C /* Globals.swift */; };
+		07F8D6681EF0266F00C53D15 /* D2SceneFinish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6671EF0266F00C53D15 /* D2SceneFinish.swift */; };
+		07F8D66A1EF02EE800C53D15 /* D2Back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6691EF02EE800C53D15 /* D2Back.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		07F602A81EEF008100FBE08C /* D2Fox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2Fox.swift; sourceTree = "<group>"; };
 		07F602AA1EEFCF9100FBE08C /* fox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fox.png; sourceTree = "<group>"; };
 		07F602AC1EEFD16B00FBE08C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		07F8D6671EF0266F00C53D15 /* D2SceneFinish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2SceneFinish.swift; sourceTree = "<group>"; };
+		07F8D6691EF02EE800C53D15 /* D2Back.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2Back.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				0701B0931EEEC4B200861A73 /* D2ScoreLabel.swift */,
 				0701B0991EEEE5E400861A73 /* D2Shot.swift */,
 				07F602A81EEF008100FBE08C /* D2Fox.swift */,
+				07F8D6671EF0266F00C53D15 /* D2SceneFinish.swift */,
+				07F8D6691EF02EE800C53D15 /* D2Back.swift */,
 			);
 			name = 2d;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 			files = (
 				0701B07F1EE9961100861A73 /* CarouselViewController.swift in Sources */,
 				07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */,
+				07F8D66A1EF02EE800C53D15 /* D2Back.swift in Sources */,
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				0701B07D1EE994A200861A73 /* iCarousel.m in Sources */,
@@ -290,6 +297,7 @@
 				07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */,
 				0701B09A1EEEE5E400861A73 /* D2Shot.swift in Sources */,
 				0701B0761EE941AD00861A73 /* Arrow.swift in Sources */,
+				07F8D6681EF0266F00C53D15 /* D2SceneFinish.swift in Sources */,
 				07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */,
 				07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */,
 				0701B0831EEE8C1D00861A73 /* D2Controller.swift in Sources */,
