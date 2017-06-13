@@ -27,9 +27,7 @@ class D2Scene: SKScene
         {
             let scoreLabel = D2ScoreLabel(fontNamed:nil, scene:self)
             addChild(scoreLabel)
-        }
-        do
-        {
+
             let spaceship:D2SpaceShip = D2SpaceShip(scene:self)
             addChild(spaceship)
             

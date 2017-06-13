@@ -31,6 +31,7 @@
 		07252FB51EE1992C00FC975F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB31EE1992C00FC975F /* Main.storyboard */; };
 		07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB61EE1992C00FC975F /* Assets.xcassets */; };
 		07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB81EE1992C00FC975F /* LaunchScreen.storyboard */; };
+		07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
 		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
 		07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */; };
@@ -72,6 +73,7 @@
 		07252FB61EE1992C00FC975F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07252FB91EE1992C00FC975F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07252FBB1EE1992C00FC975F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		07252FAA1EE1992C00FC975F /* iBun */ = {
 			isa = PBXGroup;
 			children = (
+				07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */,
 				0701B08A1EEE93BA00861A73 /* 2d */,
 				0701B07B1EE994A200861A73 /* iCarousel.h */,
 				0701B07C1EE994A200861A73 /* iCarousel.m */,
@@ -255,6 +258,7 @@
 				07F602AB1EEFCF9100FBE08C /* fox.png in Resources */,
 				07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */,
 				07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */,
+				07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */,
 				07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */,
 				07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */,
 				07AE1AA51EE1B64500698EAF /* meadow in Resources */,

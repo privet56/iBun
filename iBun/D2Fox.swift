@@ -23,7 +23,7 @@ class D2Fox: SKSpriteNode
         do
         {
             let min:UInt32 = UInt32((x / 10) * 8)
-            let max:UInt32 = UInt32(x)
+            let max:UInt32 = UInt32((x))
             x = CGFloat(arc4random_uniform(max - min) + min)
         }
         var y:CGFloat = 0
@@ -38,8 +38,8 @@ class D2Fox: SKSpriteNode
 
         do
         {
-            let moveUp          = SKAction.moveTo(y: 0, duration: TimeInterval(Globals.rand(min:2.0, max:5.0)))
-            let moveDown        = SKAction.moveTo(y: scene.frame.size.height, duration: TimeInterval(Globals.rand(min:2.0, max:5.0)))
+            let moveUp          = SKAction.moveTo(y: 0, duration: TimeInterval(Globals.rand(min:2.0, max:6.0)))
+            let moveDown        = SKAction.moveTo(y: scene.frame.size.height, duration: TimeInterval(Globals.rand(min:2.0, max:6.0)))
             let actionSequence  = SKAction.sequence([moveUp, moveDown])
             let moveAction      = SKAction.repeatForever(actionSequence)
             self.run(moveAction)
