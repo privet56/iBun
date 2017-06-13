@@ -33,8 +33,11 @@ class D2Scene: SKScene
             let spaceship:D2SpaceShip = D2SpaceShip(scene:self)
             addChild(spaceship)
             
-            let shot:D2Shot = D2Shot(scene:self, spaceship:spaceship)
-            scene!.addChild(shot)
+            for _ in 0 ... 2
+            {
+                let fox:D2Fox = D2Fox(scene:self)
+                scene!.addChild(fox)
+            }
         }
     }
     
