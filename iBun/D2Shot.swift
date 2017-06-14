@@ -39,9 +39,12 @@ class D2Shot: SKSpriteNode
             let emitter = NSKeyedUnarchiver.unarchiveObject(withFile: pathToEmitter!) as? SKEmitterNode
             emitter!.zRotation = CGFloat(Double.pi/2.0);
             emitter!.particlePositionRange = CGVector(dx: emitter!.particlePositionRange.dx / 32, dy: emitter!.particlePositionRange.dy / 16)
-            emitter!.particleScale = 0.3;
-            emitter!.particleScaleRange = 0.2;
-            emitter!.particleScaleSpeed = -0.1;
+            
+            emitter!.particleScale = 0.15;
+            emitter!.particleScaleRange = 0.1;
+            emitter!.particleScaleSpeed = -0.05;
+            
+            emitter!.particleBirthRate = emitter!.particleBirthRate / 2
             
             self.addChild(emitter!)
             emitter!.position = CGPoint(x: -19, y: 0)

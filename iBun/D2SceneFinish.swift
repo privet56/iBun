@@ -25,7 +25,7 @@ class D2SceneFinish : SKScene
         
         self.isUserInteractionEnabled = true
         self.scaleMode = SKSceneScaleMode.aspectFill
-        backgroundColor = SKColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        backgroundColor = SKColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         
         do
         {

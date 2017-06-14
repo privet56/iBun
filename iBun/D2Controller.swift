@@ -67,7 +67,7 @@ class D2Controller : UIViewController
         let tr:CATransition = CATransition()
         tr.duration = 1.1
         tr.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-        tr.type = kCATransitionMoveIn
+        tr.type = kCATransitionFade
         self.backgroundImageView?.layer.add(tr, forKey: nil)
     }
 }

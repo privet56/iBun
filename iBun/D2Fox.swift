@@ -70,6 +70,7 @@ class D2Fox: SKSpriteNode
         //emitter!.particleScaleRange = 0.2;
         //emitter!.particleScaleSpeed = -0.1;
         emitter!.emissionAngle = 1.0
+        emitter!.particleBirthRate = emitter!.particleBirthRate / 9
         
         self.addChild(emitter!)
         emitter!.position = CGPoint(x: 0, y: 0)
