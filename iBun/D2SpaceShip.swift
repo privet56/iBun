@@ -18,7 +18,7 @@ class D2SpaceShip: SKSpriteNode
     init(scene:SKScene) //constructor needs the scene to be able to scale & position the object in the scene
     {
         
-        let texture = SKTexture(imageNamed: "spaceship/spaceship1")
+        let texture = SKTexture(imageNamed: "spaceship1")
         let size:CGSize = CGSize(width:scene.frame.size.width / 5, height:scene.frame.size.height / 5)
         super.init(texture: texture, color: UIColor.clear, size: size)
         self.position = CGPoint(x: self.size.width / 2, y: scene.frame.size.height / 2)
@@ -43,7 +43,7 @@ class D2SpaceShip: SKSpriteNode
         let max:UInt32 = 6
         let val = Int(arc4random_uniform(max) + min)
 
-        let texture:SKTexture = SKTexture(imageNamed:"spaceship/spaceship"+String(val));
+        let texture:SKTexture = SKTexture(imageNamed:"spaceship"+String(val));
         let changeFace:SKAction = SKAction.setTexture(texture); //this action cannot animate!
         self.run(changeFace);
     }

@@ -29,7 +29,7 @@ class D2SceneFinish : SKScene
         
         do
         {
-            let backgroundNode = SKSpriteNode(imageNamed: "spaceship/spaceship4")
+            let backgroundNode = SKSpriteNode(imageNamed: "spaceship4")
             backgroundNode.size = frame.size
             backgroundNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             backgroundNode.position = CGPoint(x: size.width / 2.0, y: size.height / 2.0)
