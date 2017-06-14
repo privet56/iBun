@@ -49,6 +49,9 @@
 		07F8D6761EF14DCE00C53D15 /* SceneKitScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 07F8D6751EF14DCE00C53D15 /* SceneKitScene.scn */; };
 		07F8D6781EF14F3C00C53D15 /* d3.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F8D6771EF14F3C00C53D15 /* d3.scnassets */; };
 		07F8D67A1EF161B400C53D15 /* D3LandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6791EF161B400C53D15 /* D3LandNode.swift */; };
+		07F8D67C1EF1797100C53D15 /* D3Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D67B1EF1797100C53D15 /* D3Node.swift */; };
+		07F8D67E1EF17A1B00C53D15 /* D3TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D67D1EF17A1B00C53D15 /* D3TreeNode.swift */; };
+		07F8D6801EF1843600C53D15 /* D3MeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D67F1EF1843600C53D15 /* D3MeNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +102,9 @@
 		07F8D6751EF14DCE00C53D15 /* SceneKitScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SceneKitScene.scn; sourceTree = "<group>"; };
 		07F8D6771EF14F3C00C53D15 /* d3.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = d3.scnassets; sourceTree = "<group>"; };
 		07F8D6791EF161B400C53D15 /* D3LandNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3LandNode.swift; sourceTree = "<group>"; };
+		07F8D67B1EF1797100C53D15 /* D3Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Node.swift; sourceTree = "<group>"; };
+		07F8D67D1EF17A1B00C53D15 /* D3TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3TreeNode.swift; sourceTree = "<group>"; };
+		07F8D67F1EF1843600C53D15 /* D3MeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3MeNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,9 @@
 				07F8D66C1EF134E800C53D15 /* D3Controller.swift */,
 				07F8D66E1EF136E100C53D15 /* D3Scene.swift */,
 				07F8D6791EF161B400C53D15 /* D3LandNode.swift */,
+				07F8D67B1EF1797100C53D15 /* D3Node.swift */,
+				07F8D67D1EF17A1B00C53D15 /* D3TreeNode.swift */,
+				07F8D67F1EF1843600C53D15 /* D3MeNode.swift */,
 			);
 			name = 3d;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 				07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */,
 				07F8D66A1EF02EE800C53D15 /* D2Back.swift in Sources */,
 				07F8D67A1EF161B400C53D15 /* D3LandNode.swift in Sources */,
+				07F8D67C1EF1797100C53D15 /* D3Node.swift in Sources */,
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				0701B07D1EE994A200861A73 /* iCarousel.m in Sources */,
@@ -313,6 +323,7 @@
 				0701B0941EEEC4B200861A73 /* D2ScoreLabel.swift in Sources */,
 				0701B08C1EEE93D100861A73 /* D2Scene.swift in Sources */,
 				07F602AD1EEFD16B00FBE08C /* Globals.swift in Sources */,
+				07F8D6801EF1843600C53D15 /* D3MeNode.swift in Sources */,
 				0701B0811EEAC34300861A73 /* PicViewController.swift in Sources */,
 				07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */,
 				0701B0921EEEBF6000861A73 /* D2SpaceShip.swift in Sources */,
@@ -323,6 +334,7 @@
 				07F8D66D1EF134E800C53D15 /* D3Controller.swift in Sources */,
 				07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */,
 				07F8D66F1EF136E100C53D15 /* D3Scene.swift in Sources */,
+				07F8D67E1EF17A1B00C53D15 /* D3TreeNode.swift in Sources */,
 				07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */,
 				0701B0831EEE8C1D00861A73 /* D2Controller.swift in Sources */,
 			);

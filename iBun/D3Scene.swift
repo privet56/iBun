@@ -29,19 +29,23 @@ class D3Scene : SCNScene
             //self.background.contents = UIImage.animatedImage(withAnimatedGIFURL:url)
         }
 
-        /*do
-        {   //not needed as we do the floor better!
+        do
+        {
             let floorNode = SCNNode()
             floorNode.geometry = SCNFloor()
-            floorNode.geometry?.firstMaterial?.diffuse.contents = "fox"
+            floorNode.geometry?.firstMaterial?.diffuse.contents = "d3.scnassets/hamburger/texture0.jpg"
+            floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
             self.rootNode.addChildNode(floorNode)
-        }*/
+        }
         do
         {
             let environment = UIImage(named: "falling_leaves.1.gif")
             self.lightingEnvironment.contents = environment
             self.lightingEnvironment.intensity = 29.0
         }
+        
+        physicsWorld.gravity = SCNVector3Make(0.0, -9.0, 0.0);
+
         do
         {
             let lightNode = SCNNode()
@@ -60,36 +64,16 @@ class D3Scene : SCNScene
         }
         do
         {
-            let cameraNode = SCNNode()
-            cameraNode.camera = SCNCamera()
-            cameraNode.position = SCNVector3(x:0, y:0, z:5.5);
-            self.rootNode.addChildNode(cameraNode)
+            let meNode = D3MeNode.create()
+            self.rootNode.addChildNode(meNode)
         }
         
         do
         {
-            let land:D3LandNode = D3LandNode.create()
-            do
-            {
-                var materials = [SCNMaterial]()
-                let material = SCNMaterial()
-                //material.diffuse.contents = UIImage.init(named:"meadow/meadow2.gif")
-                material.diffuse.contents = UIImage.init(named:"d3.scnassets/hamburger/texture0.jpg")
-                materials.append(material)
-                land.geometry?.materials = materials
-            }
-            land.physicsBody = SCNPhysicsBody(type: .static, shape: nil/*SCNPhysicsShape*/)
-            self.rootNode.addChildNode(land)
-            do
-            {
-                let path = Bundle.main.path(forResource:"d3.scnassets/tree", ofType:"dae")
-                let url : URL = URL.init(fileURLWithPath: path!)
-                let sceneSource = SCNSceneSource.init(url: url, options: nil)
-                let tree = sceneSource?.entryWithIdentifier("Cylinder", withClass:SCNNode.self);
-                tree?.name = "tree"
-                tree?.physicsBody = SCNPhysicsBody(type: .static, shape: nil/*SCNPhysicsShape*/)
-                self.rootNode.addChildNode(tree!)
-            }
+            //let land:D3LandNode = D3LandNode.create()
+            //self.rootNode.addChildNode(land)
+            let tree:D3TreeNode = D3TreeNode.create()
+            self.rootNode.addChildNode(tree)
         }
         
         //rootNode.childNode(withName: "hero", recursively: true)

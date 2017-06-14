@@ -12,20 +12,15 @@ import UIKit
 import QuartzCore
 import SceneKit
 
-class D3LandNode : SCNNode
+class D3LandNode : D3Node
 {
-    init(scnNode:SCNNode)
+    override init(scnNode:SCNNode)
     {
-        super.init()
-        geometry = scnNode.geometry
-        position = scnNode.position
-        scnNode.childNodes.forEach {
-            addChildNode($0)
-        }
+        super.init(scnNode:scnNode)
     }
     required init(coder aDecoder: NSCoder)
     {
-        super.init(coder: aDecoder)!
+        super.init(coder: aDecoder)
     }
     func buildBoundary()
     {
@@ -35,8 +30,22 @@ class D3LandNode : SCNNode
     {
         let scnNode = Globals.node(name: "d3.scnassets/landscape", ext: "dae", id: "Grid")
         let n = D3LandNode(scnNode:scnNode)
+        n.name = "floor";
+        
+        do
+        {
+            var materials = [SCNMaterial]()
+            let material = SCNMaterial()
+            material.diffuse.contents = UIImage.init(named:"d3.scnassets/hamburger/texture0.jpg")
+            materials.append(material)
+            n.geometry?.materials = materials
+        }
+        
+        //let shape = SCNPhysicsShape(geometry: n.geometry!, options: nil)
+        n.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        
         n.buildBoundary()
-        n.name = "floor"
+        
         return n;
     }
 }
