@@ -109,7 +109,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="slK-3k-kbp" kind="presentation" id="PoO-rp-Pwj"/>
+                                            <action selector="on3DWithSender:" destination="S4R-Ja-viH" eventType="touchUpInside" id="PN8-dq-8pg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM4-RN-d7v" userLabel="Button 2.5d">

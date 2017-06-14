@@ -180,6 +180,11 @@ class DataViewController: UIViewController
         let vc = D2Controller()
         self.present(vc, animated: true, completion: nil)
     }
+    @IBAction func on3D(sender:UIButton)
+    {
+        let vc = D3Controller()
+        self.present(vc, animated: true, completion: nil)
+    }
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
