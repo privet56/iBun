@@ -68,28 +68,28 @@ class D3Scene : SCNScene
         
         do
         {
-            let path = Bundle.main.path(forResource:"d3.scnassets/landscape", ofType:"dae")
-            let url : URL = URL.init(fileURLWithPath: path!)
-            //[SceneKit] Error: COLLADA files are not supported on this platform  ===>  put your dae files into scnassets!
-            let sceneSource = SCNSceneSource.init(url: url, options: nil)
-            let node = sceneSource?.entryWithIdentifier("Grid", withClass:SCNNode.self);    //<geometry id="Grid-mesh" name="Grid">
-            node?.name = "floor"
-            do
-            {
-                //this node has no materials yet
-                node?.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
-                node?.geometry?.firstMaterial?.shininess = 1.0
-            }
+            let land:D3LandNode = D3LandNode.create()
             do
             {
                 var materials = [SCNMaterial]()
                 let material = SCNMaterial()
-                material.diffuse.contents = UIImage.init(named:"meadow/meadow2.gif")
+                //material.diffuse.contents = UIImage.init(named:"meadow/meadow2.gif")
+                material.diffuse.contents = UIImage.init(named:"d3.scnassets/hamburger/texture0.jpg")
                 materials.append(material)
-                node?.geometry?.materials = materials
+                land.geometry?.materials = materials
             }
-            node?.physicsBody = SCNPhysicsBody(type: .static, shape: nil/*SCNPhysicsShape*/)
-            self.rootNode.addChildNode(node!)
+            land.physicsBody = SCNPhysicsBody(type: .static, shape: nil/*SCNPhysicsShape*/)
+            self.rootNode.addChildNode(land)
+            do
+            {
+                let path = Bundle.main.path(forResource:"d3.scnassets/tree", ofType:"dae")
+                let url : URL = URL.init(fileURLWithPath: path!)
+                let sceneSource = SCNSceneSource.init(url: url, options: nil)
+                let tree = sceneSource?.entryWithIdentifier("Cylinder", withClass:SCNNode.self);
+                tree?.name = "tree"
+                tree?.physicsBody = SCNPhysicsBody(type: .static, shape: nil/*SCNPhysicsShape*/)
+                self.rootNode.addChildNode(tree!)
+            }
         }
         
         //rootNode.childNode(withName: "hero", recursively: true)

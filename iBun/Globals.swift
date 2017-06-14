@@ -8,6 +8,9 @@
 
 import Foundation
 import SpriteKit
+import UIKit
+import QuartzCore
+import SceneKit
 
 class Globals
 {
@@ -18,5 +21,15 @@ class Globals
     class func rand(min:CGFloat, max:CGFloat) -> CGFloat
     {
         return CGFloat(arc4random_uniform(UInt32(max - min)) + UInt32(min));
+    }
+    class func node(name:String, ext:String, id:String) -> SCNNode
+    {
+        let path = Bundle.main.path(forResource:name/*"d3.scnassets/landscape"*/, ofType:ext/*"dae"*/)
+        let url : URL = URL.init(fileURLWithPath: path!)
+        //[SceneKit] Error: COLLADA files are not supported on this platform  ===>  put your dae files into scnassets!
+        let sceneSource = SCNSceneSource.init(url: url, options: nil)
+        //<geometry id="Grid-mesh" name="Grid">
+        let scnNode = sceneSource?.entryWithIdentifier(id/*"Grid"*/, withClass:SCNNode.self);
+        return scnNode!;
     }
 }

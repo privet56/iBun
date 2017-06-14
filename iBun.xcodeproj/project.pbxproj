@@ -48,6 +48,7 @@
 		07F8D66F1EF136E100C53D15 /* D3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D66E1EF136E100C53D15 /* D3Scene.swift */; };
 		07F8D6761EF14DCE00C53D15 /* SceneKitScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 07F8D6751EF14DCE00C53D15 /* SceneKitScene.scn */; };
 		07F8D6781EF14F3C00C53D15 /* d3.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F8D6771EF14F3C00C53D15 /* d3.scnassets */; };
+		07F8D67A1EF161B400C53D15 /* D3LandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6791EF161B400C53D15 /* D3LandNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		07F8D66E1EF136E100C53D15 /* D3Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Scene.swift; sourceTree = "<group>"; };
 		07F8D6751EF14DCE00C53D15 /* SceneKitScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SceneKitScene.scn; sourceTree = "<group>"; };
 		07F8D6771EF14F3C00C53D15 /* d3.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = d3.scnassets; sourceTree = "<group>"; };
+		07F8D6791EF161B400C53D15 /* D3LandNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3LandNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			children = (
 				07F8D66C1EF134E800C53D15 /* D3Controller.swift */,
 				07F8D66E1EF136E100C53D15 /* D3Scene.swift */,
+				07F8D6791EF161B400C53D15 /* D3LandNode.swift */,
 			);
 			name = 3d;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				0701B07F1EE9961100861A73 /* CarouselViewController.swift in Sources */,
 				07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */,
 				07F8D66A1EF02EE800C53D15 /* D2Back.swift in Sources */,
+				07F8D67A1EF161B400C53D15 /* D3LandNode.swift in Sources */,
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				0701B07D1EE994A200861A73 /* iCarousel.m in Sources */,
