@@ -26,13 +26,12 @@ class D3TreeNode : D3Node
     {
         
     }
-    class func create() -> D3TreeNode
+    class func create(p:SCNVector3) -> D3TreeNode
     {
         let scnNode = Globals.node(name: "d3.scnassets/tree", ext: "dae", id: "Cylinder")
         let n = D3TreeNode(scnNode:scnNode)
         n.name = "tree";
 
-        //let shape = SCNPhysicsShape(geometry: n.geometry!, options: nil)
         n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
 
         n.physicsBody?.isAffectedByGravity  = true
@@ -42,10 +41,46 @@ class D3TreeNode : D3Node
         n.physicsBody?.angularDamping = 1.0
         n.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
         
-        n.scale = SCNVector3(x: 0.25, y: 0.25, z: 0.25)
+        let s:Float = 0.75
+        n.scale = SCNVector3(x: s, y: s, z: s);
         
-        n.position = SCNVector3Make(0, 5, 0)
+        n.position = p;
         
         return n;
+    }
+    
+    class func createForest(d3Scene:D3Scene, x:Int) -> Void
+    {
+        var i:Int = -36;
+        while(i <= 33)
+        {
+            i += 6
+            if(i >= -3) && (i <= 3){continue}
+            
+            do
+            {
+                let p:SCNVector3 = SCNVector3Make(Float(x), 5, Float(i));
+                let d3TreeNode:D3TreeNode = D3TreeNode.create(p: p)
+                d3Scene.rootNode.addChildNode(d3TreeNode);
+            }
+        }
+    }
+    
+    class func createForest(d3Scene:D3Scene) -> Void
+    {
+        var i:Int = -36;
+        while(i <= 33)
+        {
+            i += 6
+            if(i >= -3) && (i <= 3){continue}
+            D3TreeNode.createForest(d3Scene: d3Scene, x: i)
+            
+            do
+            {
+                let p:SCNVector3 = SCNVector3Make(Float(i), 5, 0);
+                let d3TreeNode:D3TreeNode = D3TreeNode.create(p: p)
+                d3Scene.rootNode.addChildNode(d3TreeNode);
+            }
+        }
     }
 }

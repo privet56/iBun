@@ -51,8 +51,8 @@ class D3D2Scene : SKScene
             return;
         }
         
-        print("D3D2Scene: width:"+(String.init(describing:self.frame.size.width)) +
-            " third:"+String.init(describing:third) +
-            " x:"+String.init(describing:x));
+        //print("D3D2Scene: width:"+(String.init(describing:self.frame.size.width)) +
+        //    " third:"+String.init(describing:third) +
+        //    " x:"+String.init(describing:x));
     }
 }

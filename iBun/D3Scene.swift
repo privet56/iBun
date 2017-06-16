@@ -78,8 +78,10 @@ class D3Scene : SCNScene
         {
             //let land:D3LandNode = D3LandNode.create()
             //self.rootNode.addChildNode(land)
-            let tree:D3TreeNode = D3TreeNode.create()
-            self.rootNode.addChildNode(tree)
+            
+            //let tree:D3TreeNode = D3TreeNode.create()
+            //self.rootNode.addChildNode(tree)
+            D3TreeNode.createForest(d3Scene: self);
         }
         
         //rootNode.childNode(withName: "hero", recursively: true)
