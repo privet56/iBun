@@ -34,14 +34,25 @@ class D3Scene : SCNScene
         do
         {
             let floorNode = SCNNode()
-            floorNode.geometry = SCNFloor()
-            floorNode.geometry?.firstMaterial?.diffuse.contents = "d3.scnassets/hamburger/texture0.jpg"
-            floorNode.geometry?.firstMaterial!.locksAmbientWithDiffuse  = true
+            let floor = SCNFloor()
+            floor.reflectivity = 1.0
+            floor.reflectionFalloffEnd = 1
+            floorNode.geometry = floor
+            floorNode.geometry?.firstMaterial?.diffuse.contents = "meadow/meadow3.gif"
             floorNode.geometry?.firstMaterial!.diffuse.wrapS            = SCNWrapMode.repeat
             floorNode.geometry?.firstMaterial!.diffuse.wrapT            = SCNWrapMode.repeat
             floorNode.geometry?.firstMaterial!.diffuse.mipFilter        = SCNFilterMode.linear
+
+            floorNode.geometry?.firstMaterial?.ambient.contents = "meadow/meadow5.gif"
+            floorNode.geometry?.firstMaterial!.ambient.wrapS            = SCNWrapMode.repeat
+            floorNode.geometry?.firstMaterial!.ambient.wrapT            = SCNWrapMode.repeat
+            floorNode.geometry?.firstMaterial!.ambient.mipFilter        = SCNFilterMode.linear
+
+            floorNode.geometry?.firstMaterial!.shininess = 0.0
+            floorNode.geometry?.firstMaterial!.locksAmbientWithDiffuse  = true
+
             floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
-            floorNode.physicsBody?.restitution = 0.0
+            floorNode.physicsBody?.restitution = 1.0
             self.rootNode.addChildNode(floorNode)
         }
         do
@@ -53,20 +64,44 @@ class D3Scene : SCNScene
         
         physicsWorld.gravity = SCNVector3Make(0.0, -99.0, 0.0);
 
-        do
+        do  //LIGHTS
         {
+            do
+            {
+                let ambientLight = SCNLight()
+                ambientLight.type = SCNLight.LightType.ambient
+                ambientLight.color = UIColor(white: 0.65, alpha: 1.0)
+                let ambientLightNode = SCNNode()
+                ambientLightNode.light = ambientLight
+                self.rootNode.addChildNode(ambientLightNode)
+            }
+            let sunPos = SCNVector3Make(0, 7, 30);
+            self.rootNode.addChildNode(self.sphereNode(pos:sunPos))
+            
             let lightNode = SCNNode()
             lightNode.light = SCNLight()
-            lightNode.light!.type = SCNLight.LightType.spot
-            lightNode.light!.castsShadow = true
+
+            let bUseSpotLight:Bool = false;
+            if( bUseSpotLight)
+            {
+                lightNode.light!.type = SCNLight.LightType.spot
+                lightNode.rotation = SCNVector4Make(0, 0, 0, 0)
+                lightNode.light!.spotInnerAngle = 0
+                lightNode.light!.spotOuterAngle = 950
+                lightNode.light!.zFar = 500
+                lightNode.light!.zNear = 50
+                self.rootNode.addChildNode(lightNode)
+            }
+            else
+            {
+                lightNode.light!.type = SCNLight.LightType.directional
+                lightNode.rotation = SCNVector4Make(1, 0, 0, Float(-Double.pi/2.8))
+            }
+            
             lightNode.light!.color = UIColor(white: 0.8, alpha: 1.0)
-            lightNode.position = SCNVector3Make(0, 80, 30)
-            lightNode.rotation = SCNVector4Make(1, 0, 0, Float(-Double.pi/2.8))
-            lightNode.light!.spotInnerAngle = 0
-            lightNode.light!.spotOuterAngle = 50
-            lightNode.light!.shadowColor = UIColor.black
-            lightNode.light!.zFar = 500
-            lightNode.light!.zNear = 50
+            lightNode.light!.castsShadow = true
+            lightNode.position = sunPos
+            lightNode.light!.shadowColor = UIColor.green
             self.rootNode.addChildNode(lightNode)
         }
         do
@@ -98,5 +133,15 @@ class D3Scene : SCNScene
     public func move(forward:Bool)
     {
         self.d3MeNode?.move(forward:forward);
+    }
+    
+    private func sphereNode(pos:SCNVector3) -> SCNNode
+    {
+        let sphere = SCNSphere(radius: 3.0)
+        let sphereNode = SCNNode(geometry: sphere)
+        sphereNode.position = pos
+        sphereNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        sphereNode.geometry?.firstMaterial?.shininess = 91.0
+        return sphereNode
     }
 }

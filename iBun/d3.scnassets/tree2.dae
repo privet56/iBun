@@ -136,7 +136,7 @@
   </library_geometries>
   <library_visual_scenes>
     <visual_scene id="Scene">
-      <node id="Tree" type="NODE">
+      <node id="Tree" name="Tree" type="NODE">
         <translate sid="location">0 0 0</translate>
         <rotate sid="rotationZ">0 0 1 0</rotate>
         <rotate sid="rotationY">0 1 0 0</rotate>
