@@ -61,7 +61,7 @@ class D3TreeNode : D3Node
         let n = D3TreeNode(scnNode:scnNode)
         n.name = "tree";
 
-        n.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
 
         n.physicsBody?.isAffectedByGravity  = false
         n.physicsBody?.mass                 = 9
@@ -69,6 +69,10 @@ class D3TreeNode : D3Node
         n.physicsBody?.friction             = 991.0
         n.physicsBody?.angularDamping       = 1.0
         n.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
+        n.physicsBody?.categoryBitMask    = 8//Int(Globals.CollisionCategoryShot)
+        n.physicsBody?.contactTestBitMask = 4//Int(Globals.CollisionCategoryEnemy)
+        n.physicsBody?.collisionBitMask   = 0
+        
         do
         {
             let x:Float = Float(Globals.rand(min: 50, max: 150)) / 100.0

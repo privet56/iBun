@@ -12,7 +12,7 @@ import UIKit
 import QuartzCore
 import SceneKit
 
-class D3Scene : SCNScene
+class D3Scene : SCNScene, SCNPhysicsContactDelegate
 {
     var d3MeNode:D3MeNode? = nil
     
@@ -133,6 +133,10 @@ class D3Scene : SCNScene
     public func move(forward:Bool)
     {
         self.d3MeNode?.move(forward:forward);
+    }
+    public func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact)
+    {
+        print("collided!");
     }
     
     private func sphereNode(pos:SCNVector3) -> SCNNode

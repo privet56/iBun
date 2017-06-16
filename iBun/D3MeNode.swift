@@ -45,13 +45,8 @@ class D3MeNode : SCNNode
     }
     public func move(forward:Bool)
     {
-        /*do
-        {
-            let rot:SCNVector4 = self.rotation;
-            print("rot: x:"+String(rot.x)+" y:"+String(rot.y)+" z:"+String(rot.z)+" w:"+String(rot.w));
-        }*/
-        
-        self.position = getZForward(m:0.333,p:self.position);
+        let forward = getZForward(m:1.333,p:self.position);
+        self.runAction(SCNAction.move(to: forward, duration: 1.0));
     }
     class func create() -> D3MeNode
     {
@@ -61,12 +56,15 @@ class D3MeNode : SCNNode
         
         meNode.camera = SCNCamera()
 
-        meNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil) //.static would fall through the floor
+        meNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil) //.static would fall through the floor
         meNode.physicsBody?.isAffectedByGravity = false
         meNode.position = SCNVector3Make(0, 2, 8)
         meNode.physicsBody?.mass                 = 9
         meNode.physicsBody?.restitution          = 1.0
         meNode.physicsBody?.friction             = 991.0
+        meNode.physicsBody?.categoryBitMask    = 4//Int(Globals.CollisionCategoryEnemy)
+        meNode.physicsBody?.contactTestBitMask = 8//Int(Globals.CollisionCategoryShot)
+        meNode.physicsBody?.collisionBitMask   = 0
         
         //meNode.isHidden = true    //if hidden, no gravitation effects
         

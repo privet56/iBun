@@ -50,6 +50,10 @@ class D3D2Scene : SKScene
             self.d3Scene?.rotateMe(right: true);
             return;
         }
+        else
+        {
+            self.d3Scene?.move(forward: true);
+        }
         
         //print("D3D2Scene: width:"+(String.init(describing:self.frame.size.width)) +
         //    " third:"+String.init(describing:third) +
