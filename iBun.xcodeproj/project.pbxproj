@@ -52,6 +52,8 @@
 		07F8D67C1EF1797100C53D15 /* D3Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D67B1EF1797100C53D15 /* D3Node.swift */; };
 		07F8D67E1EF17A1B00C53D15 /* D3TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D67D1EF17A1B00C53D15 /* D3TreeNode.swift */; };
 		07F8D6801EF1843600C53D15 /* D3MeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D67F1EF1843600C53D15 /* D3MeNode.swift */; };
+		07F8D6821EF3D94100C53D15 /* D3D2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6811EF3D94100C53D15 /* D3D2Scene.swift */; };
+		07F8D6841EF3F3AD00C53D15 /* D3D2Forward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6831EF3F3AD00C53D15 /* D3D2Forward.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,8 @@
 		07F8D67B1EF1797100C53D15 /* D3Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Node.swift; sourceTree = "<group>"; };
 		07F8D67D1EF17A1B00C53D15 /* D3TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3TreeNode.swift; sourceTree = "<group>"; };
 		07F8D67F1EF1843600C53D15 /* D3MeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3MeNode.swift; sourceTree = "<group>"; };
+		07F8D6811EF3D94100C53D15 /* D3D2Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3D2Scene.swift; sourceTree = "<group>"; };
+		07F8D6831EF3F3AD00C53D15 /* D3D2Forward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3D2Forward.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,8 @@
 				07F8D67B1EF1797100C53D15 /* D3Node.swift */,
 				07F8D67D1EF17A1B00C53D15 /* D3TreeNode.swift */,
 				07F8D67F1EF1843600C53D15 /* D3MeNode.swift */,
+				07F8D6811EF3D94100C53D15 /* D3D2Scene.swift */,
+				07F8D6831EF3F3AD00C53D15 /* D3D2Forward.swift */,
 			);
 			name = 3d;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				0701B07D1EE994A200861A73 /* iCarousel.m in Sources */,
+				07F8D6821EF3D94100C53D15 /* D3D2Scene.swift in Sources */,
 				07F602A91EEF008100FBE08C /* D2Fox.swift in Sources */,
 				0701B0941EEEC4B200861A73 /* D2ScoreLabel.swift in Sources */,
 				0701B08C1EEE93D100861A73 /* D2Scene.swift in Sources */,
@@ -328,6 +335,7 @@
 				07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */,
 				0701B0921EEEBF6000861A73 /* D2SpaceShip.swift in Sources */,
 				07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */,
+				07F8D6841EF3F3AD00C53D15 /* D3D2Forward.swift in Sources */,
 				0701B09A1EEEE5E400861A73 /* D2Shot.swift in Sources */,
 				0701B0761EE941AD00861A73 /* Arrow.swift in Sources */,
 				07F8D6681EF0266F00C53D15 /* D2SceneFinish.swift in Sources */,

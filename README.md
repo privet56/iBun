@@ -7,6 +7,6 @@ iBun - an iOS App with Swift 3; incl. picture Carousel
 ## SpriteKit 2D game:
 ![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.spritekit.gif)
 
-TODO:
+TODO->
 - SceneKit - 3D game
 - windows build with VS

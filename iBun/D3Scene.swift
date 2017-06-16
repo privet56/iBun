@@ -14,6 +14,8 @@ import SceneKit
 
 class D3Scene : SCNScene
 {
+    var d3MeNode:D3MeNode? = nil
+    
     override init()
     {
         super.init()
@@ -34,7 +36,12 @@ class D3Scene : SCNScene
             let floorNode = SCNNode()
             floorNode.geometry = SCNFloor()
             floorNode.geometry?.firstMaterial?.diffuse.contents = "d3.scnassets/hamburger/texture0.jpg"
+            floorNode.geometry?.firstMaterial!.locksAmbientWithDiffuse  = true
+            floorNode.geometry?.firstMaterial!.diffuse.wrapS            = SCNWrapMode.repeat
+            floorNode.geometry?.firstMaterial!.diffuse.wrapT            = SCNWrapMode.repeat
+            floorNode.geometry?.firstMaterial!.diffuse.mipFilter        = SCNFilterMode.linear
             floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+            floorNode.physicsBody?.restitution = 0.0
             self.rootNode.addChildNode(floorNode)
         }
         do
@@ -44,7 +51,7 @@ class D3Scene : SCNScene
             self.lightingEnvironment.intensity = 29.0
         }
         
-        physicsWorld.gravity = SCNVector3Make(0.0, -9.0, 0.0);
+        physicsWorld.gravity = SCNVector3Make(0.0, -99.0, 0.0);
 
         do
         {
@@ -64,10 +71,9 @@ class D3Scene : SCNScene
         }
         do
         {
-            let meNode = D3MeNode.create()
-            self.rootNode.addChildNode(meNode)
+            self.d3MeNode = D3MeNode.create()
+            self.rootNode.addChildNode(self.d3MeNode!)
         }
-        
         do
         {
             //let land:D3LandNode = D3LandNode.create()
@@ -82,5 +88,13 @@ class D3Scene : SCNScene
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)!
+    }
+    public func rotateMe(right:Bool)
+    {
+        self.d3MeNode?.rotateMe(right:right);
+    }
+    public func move(forward:Bool)
+    {
+        self.d3MeNode?.move(forward:forward);
     }
 }

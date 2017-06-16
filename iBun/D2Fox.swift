@@ -74,7 +74,7 @@ class D2Fox: SKSpriteNode
         
         self.addChild(emitter!)
         emitter!.position = CGPoint(x: 0, y: 0)
-        
+
         do
         {
             let rot = SKAction.rotate(byAngle: 360, duration: 0.5)

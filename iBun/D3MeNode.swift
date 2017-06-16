@@ -31,21 +31,51 @@ class D3MeNode : SCNNode
     {
         
     }
+    public func rotateMe(right:Bool)
+    {
+        self.runAction(SCNAction.rotateBy(x:0,y:(right ? -0.333 : 0.333),z:0,duration:1.0));
+    }
+    func getZForward(m:Float, p:SCNVector3) -> SCNVector3
+    {
+        var v:SCNVector3 = SCNVector3(self.worldTransform.m31*m, self.worldTransform.m32*m, self.worldTransform.m33*m)
+        v.x = p.x - v.x;
+        v.y = p.y - v.y;
+        v.z = p.z - v.z;
+        return v;
+    }
+    public func move(forward:Bool)
+    {
+        /*do
+        {
+            let rot:SCNVector4 = self.rotation;
+            print("rot: x:"+String(rot.x)+" y:"+String(rot.y)+" z:"+String(rot.z)+" w:"+String(rot.w));
+        }*/
+        
+        self.position = getZForward(m:0.333,p:self.position);
+    }
     class func create() -> D3MeNode
     {
         //let meNode = D3MeNode()   //if !gemoetry, no gravitation effects
-        let meNode = D3MeNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
+        let meNode = D3MeNode(geometry: SCNBox(width: 3, height: 3, length: 1, chamferRadius: 0))
         meNode.name = "me"
         
         meNode.camera = SCNCamera()
 
-        meNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-        meNode.physicsBody?.isAffectedByGravity = true
-        meNode.position = SCNVector3Make(0, 5, 10)
-        meNode.physicsBody?.mass = 999
-        //meNode.physicsBody?.friction =
+        meNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil) //.static would fall through the floor
+        meNode.physicsBody?.isAffectedByGravity = false
+        meNode.position = SCNVector3Make(0, 2, 8)
+        meNode.physicsBody?.mass                 = 9
+        meNode.physicsBody?.restitution          = 1.0
+        meNode.physicsBody?.friction             = 991.0
         
         //meNode.isHidden = true    //if hidden, no gravitation effects
+        
+        /*  TODO: fly at the beginning into the scene
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 1.0
+        meNode.position = position
+        SCNTransaction.commit()
+        */
         
         return meNode;
     }
