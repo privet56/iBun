@@ -11,12 +11,15 @@ import SpriteKit
 
 class D2Back : SKSpriteNode
 {
+    var viewController:UIViewController? = nil
+    
     required init?(coder aDecoder: NSCoder)
     {
         fatalError("init(coder:) has not been implemented")
     }
-    init(scene:SKScene) //constructor needs the scene to be able to scale & position the object in the scene
+    init(scene:SKScene, viewController:UIViewController) //constructor needs the scene to be able to scale & position the object in the scene
     {
+        self.viewController = viewController;
         let texture = SKTexture(imageNamed: "left-arrow")
         let size:CGSize = CGSize(width:(scene.frame.size.width / 10),height:(scene.frame.size.height / 10))
         super.init(texture: texture, color: UIColor.clear, size: size)
@@ -25,6 +28,7 @@ class D2Back : SKSpriteNode
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        (self.scene as? D2Scene)?.d2Controller!.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.viewController!.presentingViewController?.dismiss(animated: true, completion: nil)
+        //(self.scene as? D2Scene)?.d2Controller!.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

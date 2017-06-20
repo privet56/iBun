@@ -29,6 +29,7 @@ class D2Controller : UIViewController
         
         let sScene:D2Scene = D2Scene(size:sView.bounds.size,d2Controller:self);
         sScene.scaleMode = .aspectFill;
+        sView.ignoresSiblingOrder = true;   //speedup!
         sView.allowsTransparency = true;
         sView.isUserInteractionEnabled = true
         sView.presentScene(sScene);

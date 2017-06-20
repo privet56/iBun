@@ -18,8 +18,8 @@ class D3Node : SCNNode
     {
         super.init()
         
-        geometry = scnNode.geometry
-        position = scnNode.position
+        geometry = scnNode.geometry;
+        position = scnNode.position;
         
         scnNode.childNodes.forEach
         {

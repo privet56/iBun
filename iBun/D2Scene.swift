@@ -32,7 +32,7 @@ class D2Scene: SKScene, SKPhysicsContactDelegate
         
         do
         {
-            let backLabel = D2Back(scene:self)
+            let backLabel = D2Back(scene:self, viewController:self.d2Controller!)
             addChild(backLabel)
 
             let scoreLabel = D2ScoreLabel(fontNamed:nil, scene:self)

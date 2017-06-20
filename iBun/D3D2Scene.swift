@@ -11,25 +11,29 @@ import SpriteKit
 
 class D3D2Scene : SKScene
 {
-    var d3Scene:D3Scene? = nil
+    var d3Scene:D3Scene? = nil;
+    var viewController:UIViewController? = nil;
     
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
-    init(size: CGSize, d3Scene:D3Scene)
+    init(size: CGSize, d3Scene:D3Scene, viewController:UIViewController)
     {
         super.init(size: size)
         
-        self.d3Scene = d3Scene
+        self.d3Scene = d3Scene;
+        self.viewController = viewController;
         
         self.isUserInteractionEnabled = true
         self.scaleMode = SKSceneScaleMode.aspectFill
         //backgroundColor = SKColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         do
         {
-            let d3d2Forward:D3D2Forward = D3D2Forward(scene:self, d3Scene:self.d3Scene!)
-            self.addChild(d3d2Forward)
+            //let d3d2Forward:D3D2Forward = D3D2Forward(scene:self, d3Scene:self.d3Scene!)
+            //self.addChild(d3d2Forward)
+            let backLabel = D2Back(scene:self, viewController:self.viewController!)
+            self.addChild(backLabel)
         }
     }
     

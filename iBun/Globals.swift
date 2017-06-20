@@ -32,4 +32,18 @@ class Globals
         let scnNode = sceneSource?.entryWithIdentifier(id/*"Grid"*/, withClass:SCNNode.self);
         return scnNode!;
     }
+    
+    class func matsFromPic(pathFN:String, ext:String) -> [SCNMaterial]
+    {
+        //let path = Bundle.main.path(forResource:"meadow/meadow"+String(threeOrFive ? "3" : "5"), ofType:"gif")
+        let path = Bundle.main.path(forResource:pathFN, ofType:ext)
+        let url : URL = URL.init(fileURLWithPath: path!)
+        let i:UIImage = UIImage.animatedImage(withAnimatedGIFURL:url)!
+        var materials = [SCNMaterial]()
+        let material = SCNMaterial()
+        material.diffuse.contents = i
+        materials.append(material);
+        return materials;
+        
+    }
 }

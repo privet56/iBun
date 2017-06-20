@@ -19,7 +19,7 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
     override init()
     {
         super.init()
-        
+                
         do
         {   //not needed, as background transparent
             //TODO: use sky with clouds, animate clouds
@@ -37,22 +37,26 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
             let floor = SCNFloor()
             floor.reflectivity = 1.0
             floor.reflectionFalloffEnd = 1
-            floorNode.geometry = floor
-            floorNode.geometry?.firstMaterial?.diffuse.contents = "meadow/meadow3.gif"
+            floorNode.geometry = floor;
+            let fn = "buns/autumn01.png"//"meadow/meadow3.gif";
+            floorNode.geometry?.firstMaterial?.diffuse.contents = fn;
             floorNode.geometry?.firstMaterial!.diffuse.wrapS            = SCNWrapMode.repeat
             floorNode.geometry?.firstMaterial!.diffuse.wrapT            = SCNWrapMode.repeat
             floorNode.geometry?.firstMaterial!.diffuse.mipFilter        = SCNFilterMode.linear
-
-            floorNode.geometry?.firstMaterial?.ambient.contents = "meadow/meadow5.gif"
-            floorNode.geometry?.firstMaterial!.ambient.wrapS            = SCNWrapMode.repeat
-            floorNode.geometry?.firstMaterial!.ambient.wrapT            = SCNWrapMode.repeat
-            floorNode.geometry?.firstMaterial!.ambient.mipFilter        = SCNFilterMode.linear
+            
+            let noiseTexture = SKTexture(noiseWithSmoothness: 0.0, size: CGSize(width: 200, height: 200), grayscale: false);
+            let noiseNormalMapTexture = noiseTexture.generatingNormalMap(withSmoothness: 0.1, contrast: 1.0);
+            
+            floorNode.geometry?.firstMaterial?.normal.contents         = noiseNormalMapTexture;
+            floorNode.geometry?.firstMaterial!.normal.wrapS            = SCNWrapMode.repeat
+            floorNode.geometry?.firstMaterial!.normal.wrapT            = SCNWrapMode.repeat
+            floorNode.geometry?.firstMaterial!.normal.mipFilter        = SCNFilterMode.linear
 
             floorNode.geometry?.firstMaterial!.shininess = 0.0
             floorNode.geometry?.firstMaterial!.locksAmbientWithDiffuse  = true
 
-            floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
-            floorNode.physicsBody?.restitution = 1.0
+            floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape(geometry:floor, options: nil))
+            floorNode.physicsBody?.restitution = 0.0;   //A restitution of 1.0 means that the body loses no energy in a collision, eg. a ball
             self.rootNode.addChildNode(floorNode)
         }
         do
@@ -62,7 +66,8 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
             self.lightingEnvironment.intensity = 29.0
         }
         
-        physicsWorld.gravity = SCNVector3Make(0.0, -99.0, 0.0);
+        self.physicsWorld.gravity = SCNVector3Make(0.0, -99.0, 0.0);
+        self.physicsWorld.contactDelegate = self;
 
         do  //LIGHTS
         {
@@ -136,16 +141,31 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
     }
     public func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact)
     {
-        print("collided!");
+        print("collided:"+contact.nodeA.name!+" & "+contact.nodeB.name!);
     }
     
     private func sphereNode(pos:SCNVector3) -> SCNNode
     {
         let sphere = SCNSphere(radius: 3.0)
         let sphereNode = SCNNode(geometry: sphere)
-        sphereNode.position = pos
+        sphereNode.position = pos;
         sphereNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
         sphereNode.geometry?.firstMaterial?.shininess = 91.0
+        /*
+        sphereNode.position = SCNVector3Make(0, 7, 0);
+        do
+        {
+            sphereNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: sphereNode.geometry!, options: nil));
+            sphereNode.physicsBody?.isAffectedByGravity  = true
+            sphereNode.physicsBody?.mass                 = 999;
+            sphereNode.physicsBody?.restitution          = 0.0;
+            sphereNode.physicsBody?.friction             = 999;
+            sphereNode.physicsBody?.angularDamping       = 1.0;
+            sphereNode.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
+            sphereNode.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryShot)
+            sphereNode.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryEnemy)
+            //sphereNode.physicsBody?.collisionBitMask   = 0    //if you activate this, you fall through the floor!
+        }*/
         return sphereNode
     }
 }

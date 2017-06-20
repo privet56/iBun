@@ -26,52 +26,61 @@ class D3TreeNode : D3Node
     {
         
     }
+    
+    //Global constants and variables are always computed lazily
+    static let TREE1 = Globals.node(name: "d3.scnassets/tree" , ext: "dae", id: "Cylinder");
+    static let TREE2 = Globals.node(name: "d3.scnassets/tree2", ext: "dae", id: "Tree");
+    
+    static let MAT1:[SCNMaterial] = Globals.matsFromPic(pathFN: "meadow/meadow3", ext: "gif");
+    static let MAT2:[SCNMaterial] = Globals.matsFromPic(pathFN: "meadow/meadow5", ext: "gif")
+    
     class func create(p:SCNVector3) -> D3TreeNode
     {
-        let tree2:Bool = (Globals.rand(min: 0, max: 100) < 50) ? true : false;
+        let tree2:Bool      = (Globals.rand(min: 0, max: 100) < 50) ? true : false;
+        let scnNode:SCNNode = tree2 ? TREE2 : TREE1;  //use once loaded models == speedup!
         
-        
-        let scnNode = tree2 ?   Globals.node(name: "d3.scnassets/tree2", ext: "dae", id: "Tree") :
-                                Globals.node(name: "d3.scnassets/tree", ext: "dae", id: "Cylinder");
-        
-        do//if(tree2)//tree2.dae has no mat(colors)
+        if(tree2)//tree2.dae has no mat(colors)
         {
             let threeOrFive:Bool = (Globals.rand(min: 0, max: 100) < 50) ? true : false;
             
-            let path = Bundle.main.path(forResource:"meadow/meadow"+String(threeOrFive ? "3" : "5"), ofType:"gif")
-            let url : URL = URL.init(fileURLWithPath: path!)
-            let i:UIImage = UIImage.animatedImage(withAnimatedGIFURL:url)!
-            var materials = [SCNMaterial]()
-            let material = SCNMaterial()
-            material.diffuse.contents = i
-            materials.append(material)
-            do//if(scnNode.geometry == nil)
+            let materials : [SCNMaterial] = threeOrFive ? MAT1 : MAT2;  //use once loaded mats == speedup!
+            if(scnNode.geometry == nil)
             {
                 scnNode.childNodes.forEach
                 {
                     $0.geometry?.materials = materials
                 }
             }
-            do//else
+            else
             {
-                //scnNode.geometry!.materials = materials
+                scnNode.geometry!.materials = materials
             }
         }
         
         let n = D3TreeNode(scnNode:scnNode)
         n.name = "tree";
+        var shape:SCNPhysicsShape? = nil;
+        if(n.geometry != nil)
+        {
+            shape = SCNPhysicsShape(geometry: n.geometry!, options: nil);
+        }
+        else
+        {
+//            TODO: compound
+            shape = SCNPhysicsShape(node:n,options: [SCNPhysicsShape.Option.keepAsCompound: true]);
+        }
+        
+        n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape);
 
-        n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-
-        n.physicsBody?.isAffectedByGravity  = false
-        n.physicsBody?.mass                 = 9
-        n.physicsBody?.restitution          = 1.0
-        n.physicsBody?.friction             = 991.0
+        n.physicsBody?.isAffectedByGravity  = true
+        n.physicsBody?.mass                 = 999
+        n.physicsBody?.restitution          = 0.0
+        n.physicsBody?.friction             = 999
         n.physicsBody?.angularDamping       = 1.0
         n.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
-        n.physicsBody?.categoryBitMask    = 8//Int(Globals.CollisionCategoryShot)
-        n.physicsBody?.contactTestBitMask = 4//Int(Globals.CollisionCategoryEnemy)
-        n.physicsBody?.collisionBitMask   = 0
+        n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryShot)
+        n.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryEnemy)
+        //n.physicsBody?.collisionBitMask   = 0
         
         do
         {
@@ -94,13 +103,22 @@ class D3TreeNode : D3Node
         return n;
     }
     
+    static let TREEDISTANCE:Int = 6;
+    
     class func createForest(d3Scene:D3Scene, x:Int) -> Void
     {
-        var i:Int = -36;
-        while(i <= 33)
+        var i:Int = -(TREEDISTANCE * 6);
+        while(i <=   (TREEDISTANCE * 6))
         {
-            i += 6
-            if(i >= -3) && (i <= 3){continue}
+            i += TREEDISTANCE;
+            let distanceFromMe = TREEDISTANCE;
+            if(i >= -distanceFromMe) && (i <= distanceFromMe)
+            {
+                if(x >= -distanceFromMe) && (x <= distanceFromMe)
+                {
+                    continue;
+                }
+            }
             
             do
             {
@@ -115,11 +133,10 @@ class D3TreeNode : D3Node
     {
         let start = DispatchTime.now()
 
-        var i:Int = -36;
-        while(i <= 33)
+        var i:Int = -(TREEDISTANCE * 6);
+        while(i <=   (TREEDISTANCE * 6))
         {
-            i += 6
-            if(i >= -3) && (i <= 3){continue}
+            i += TREEDISTANCE;
             D3TreeNode.createForest(d3Scene: d3Scene, x: i)
         }
         do
