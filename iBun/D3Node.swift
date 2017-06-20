@@ -14,12 +14,19 @@ import SceneKit
 
 class D3Node : SCNNode
 {
+    override init()
+    {
+        super.init()
+    }
+
     init(scnNode:SCNNode)
     {
         super.init()
         
         geometry = scnNode.geometry;
         position = scnNode.position;
+        physicsBody = scnNode.physicsBody;
+        name = scnNode.name;
         
         scnNode.childNodes.forEach
         {

@@ -14,6 +14,13 @@ import SceneKit
 
 class D3TreeNode : D3Node
 {
+    static let NAME = "tree";
+    
+    override init()
+    {
+        super.init()
+    }
+
     override init(scnNode:SCNNode)
     {
         super.init(scnNode:scnNode)
@@ -22,14 +29,17 @@ class D3TreeNode : D3Node
     {
         super.init(coder: aDecoder)
     }
-    func buildBoundary()
+    func onLanded()->Void
     {
-        
+        if(self.physicsBody!.isAffectedByGravity == false) {return;}
+        self.physicsBody!.isAffectedByGravity  = false;
+        self.physicsBody!.type = .static;
+        self.position = self.presentation.position;
     }
     
     //Global constants and variables are always computed lazily
     static let TREE1 = Globals.node(name: "d3.scnassets/tree" , ext: "dae", id: "Cylinder");
-    static let TREE2 = Globals.node(name: "d3.scnassets/tree2", ext: "dae", id: "Tree");
+    static let TREE2 = Globals.node(name: "d3.scnassets/tree2", ext: "dae", id: "Tree", flattenGeometry: true);
     
     static let MAT1:[SCNMaterial] = Globals.matsFromPic(pathFN: "meadow/meadow3", ext: "gif");
     static let MAT2:[SCNMaterial] = Globals.matsFromPic(pathFN: "meadow/meadow5", ext: "gif")
@@ -58,7 +68,7 @@ class D3TreeNode : D3Node
         }
         
         let n = D3TreeNode(scnNode:scnNode)
-        n.name = "tree";
+        n.name = D3TreeNode.NAME;
         var shape:SCNPhysicsShape? = nil;
         if(n.geometry != nil)
         {
@@ -66,8 +76,7 @@ class D3TreeNode : D3Node
         }
         else
         {
-//            TODO: compound
-            shape = SCNPhysicsShape(node:n,options: [SCNPhysicsShape.Option.keepAsCompound: true]);
+            print("ERR: no geometry!");
         }
         
         n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape);
@@ -78,9 +87,14 @@ class D3TreeNode : D3Node
         n.physicsBody?.friction             = 999
         n.physicsBody?.angularDamping       = 1.0
         n.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
-        n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryShot)
-        n.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryEnemy)
-        //n.physicsBody?.collisionBitMask   = 0
+        //which categories this physics body belongs to
+        n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryTree)
+        //which categories of bodies cause intersection notifications with this physics body
+        n.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryPlayer | Globals.CollisionCategoryFloor)
+        //if you set 0 on this, you fall through the floor!
+        //which categories of physics bodies can collide with this physics body.
+        //n.physicsBody?.collisionBitMask   = 0;
+        
         
         do
         {

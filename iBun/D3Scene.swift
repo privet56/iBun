@@ -24,41 +24,8 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         {   //not needed, as background transparent
             //TODO: use sky with clouds, animate clouds
             //self.background.contents = UIImage(named: "water.gif")
-            
-            //animated gifs are not supported
-            //let path = Bundle.main.path(forResource:"water", ofType:"gif")
-            //let url : URL = URL.init(fileURLWithPath: path!)
-            //self.background.contents = UIImage.animatedImage(withAnimatedGIFURL:url)
         }
 
-        do
-        {
-            let floorNode = SCNNode()
-            let floor = SCNFloor()
-            floor.reflectivity = 1.0
-            floor.reflectionFalloffEnd = 1
-            floorNode.geometry = floor;
-            let fn = "buns/autumn01.png"//"meadow/meadow3.gif";
-            floorNode.geometry?.firstMaterial?.diffuse.contents = fn;
-            floorNode.geometry?.firstMaterial!.diffuse.wrapS            = SCNWrapMode.repeat
-            floorNode.geometry?.firstMaterial!.diffuse.wrapT            = SCNWrapMode.repeat
-            floorNode.geometry?.firstMaterial!.diffuse.mipFilter        = SCNFilterMode.linear
-            
-            let noiseTexture = SKTexture(noiseWithSmoothness: 0.0, size: CGSize(width: 200, height: 200), grayscale: false);
-            let noiseNormalMapTexture = noiseTexture.generatingNormalMap(withSmoothness: 0.1, contrast: 1.0);
-            
-            floorNode.geometry?.firstMaterial?.normal.contents         = noiseNormalMapTexture;
-            floorNode.geometry?.firstMaterial!.normal.wrapS            = SCNWrapMode.repeat
-            floorNode.geometry?.firstMaterial!.normal.wrapT            = SCNWrapMode.repeat
-            floorNode.geometry?.firstMaterial!.normal.mipFilter        = SCNFilterMode.linear
-
-            floorNode.geometry?.firstMaterial!.shininess = 0.0
-            floorNode.geometry?.firstMaterial!.locksAmbientWithDiffuse  = true
-
-            floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape(geometry:floor, options: nil))
-            floorNode.physicsBody?.restitution = 0.0;   //A restitution of 1.0 means that the body loses no energy in a collision, eg. a ball
-            self.rootNode.addChildNode(floorNode)
-        }
         do
         {
             let environment = UIImage(named: "falling_leaves.1.gif")
@@ -113,14 +80,10 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         {
             self.d3MeNode = D3MeNode.create()
             self.rootNode.addChildNode(self.d3MeNode!)
-        }
-        do
-        {
-            //let land:D3LandNode = D3LandNode.create()
-            //self.rootNode.addChildNode(land)
-            
-            //let tree:D3TreeNode = D3TreeNode.create()
-            //self.rootNode.addChildNode(tree)
+
+            let floorNode = D3LandNode.create();
+            self.rootNode.addChildNode(floorNode);
+
             D3TreeNode.createForest(d3Scene: self);
         }
         
@@ -141,6 +104,51 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
     }
     public func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact)
     {
+        let nodeA = contact.nodeA;
+        let nodeB = contact.nodeB;
+        
+        var floor:D3LandNode?   = nil;
+        var me:D3MeNode?        = nil;
+        var tree:D3TreeNode?    = nil;
+        
+        if(nodeA.name == D3LandNode.NAME)           //floor
+        {
+            floor = nodeA as? D3LandNode;
+        }
+        else if(nodeB.name == D3LandNode.NAME)
+        {
+            floor = nodeB as? D3LandNode
+        }
+        if(nodeA.name == D3MeNode.NAME)             //player
+        {
+            me = nodeA as? D3MeNode
+        }
+        else if(nodeB.name == D3MeNode.NAME)
+        {
+            me = nodeB as? D3MeNode
+        }
+        if(nodeA.name == D3TreeNode.NAME)           //tree
+        {
+            tree = nodeA as? D3TreeNode;
+        }
+        else if(nodeB.name == D3TreeNode.NAME)
+        {
+            tree = nodeB as? D3TreeNode;
+        }
+        
+        if(tree != nil){ tree!.onLanded(); }
+        if(me   != nil){ me!.onLanded(); }
+        
+        if((tree != nil) && (floor != nil))
+        {
+            return;
+        }
+        
+        if((me != nil) && (tree != nil))
+        {
+            me!.onCollidedWithTree(tree:tree!);
+        }
+
         print("collided:"+contact.nodeA.name!+" & "+contact.nodeB.name!);
     }
     
