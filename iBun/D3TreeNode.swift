@@ -90,7 +90,7 @@ class D3TreeNode : D3Node
         //which categories this physics body belongs to
         n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryTree)
         //which categories of bodies cause intersection notifications with this physics body
-        n.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryPlayer | Globals.CollisionCategoryFloor)
+        n.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryPlayer | Globals.CollisionCategoryFloor | Globals.CollisionCategoryShot)
         //if you set 0 on this, you fall through the floor!
         //which categories of physics bodies can collide with this physics body.
         //n.physicsBody?.collisionBitMask   = 0;

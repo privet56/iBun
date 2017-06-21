@@ -50,6 +50,5 @@ class Globals
         material.diffuse.contents = i
         materials.append(material);
         return materials;
-        
     }
 }

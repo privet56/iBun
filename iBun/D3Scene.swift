@@ -102,6 +102,10 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
     {
         self.d3MeNode?.move(forward:forward);
     }
+    public func fire()
+    {
+        self.d3MeNode?.fire(d3Scene:self);
+    }
     public func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact)
     {
         let nodeA = contact.nodeA;
@@ -110,6 +114,7 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         var floor:D3LandNode?   = nil;
         var me:D3MeNode?        = nil;
         var tree:D3TreeNode?    = nil;
+        var shot:D3ShotNode?    = nil;
         
         if(nodeA.name == D3LandNode.NAME)           //floor
         {
@@ -135,9 +140,18 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         {
             tree = nodeB as? D3TreeNode;
         }
+        if(nodeA.name == D3ShotNode.NAME)           //shot
+        {
+            shot = nodeA as? D3ShotNode;
+        }
+        else if(nodeB.name == D3ShotNode.NAME)
+        {
+            shot = nodeB as? D3ShotNode;
+        }
         
         if(tree != nil){ tree!.onLanded(); }
-        if(me   != nil){ me!.onLanded(); }
+        if(shot != nil){ shot!.onCollided()}
+        if(me   != nil){ me!.onLanded();   }
         
         if((tree != nil) && (floor != nil))
         {
