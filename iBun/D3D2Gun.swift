@@ -27,7 +27,7 @@ class D3D2Gun : SKSpriteNode
         let size:CGSize = CGSize(width:RESTINGSIZE,height:RESTINGSIZE)
         super.init(texture: texture, color: UIColor.clear, size: size);
         
-        let x = (((scene.size.width) / 2) - (size.width / 2));
+        let x = (((scene.size.width) / 2) - (size.width / 2999));
         let y = (0 + (self.frame.size.width / 2));
         self.position = CGPoint(x: x, y: y);
         
@@ -62,6 +62,10 @@ class D3D2Gun : SKSpriteNode
     }
     func fireResizeGun()
     {
+        if(self.size.height > (CGFloat(RESTINGSIZE) * 2.333))
+        {
+            return;
+        }
         let resizeAction:SKAction = SKAction.resize(byWidth: 0, height: (self.size.height / 3), duration: FIREDURATION);
         self.run(resizeAction, completion:
         {

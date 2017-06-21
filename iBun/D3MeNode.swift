@@ -90,7 +90,7 @@ class D3MeNode : D3Node
         self.stop();
         //self.fromPresentation();
         let y:CGFloat = (right ? -0.333 : 0.333);
-        print("rotByAction right:"+String(describing: right)+" curRot: x:"+String(self.rotation.x)+" y:"+String(self.rotation.y)+" z:"+String(self.rotation.z)+" w:"+String(self.rotation.w));
+        //print("rotByAction right:"+String(describing: right)+" curRot: x:"+String(self.rotation.x)+" y:"+String(self.rotation.y)+" z:"+String(self.rotation.z)+" w:"+String(self.rotation.w));
         self.runAction(SCNAction.rotateBy(x:0,y:y,z:0,duration:1.0));
     }
     private func rotateMeByForce(right:Bool) -> Void
@@ -101,7 +101,7 @@ class D3MeNode : D3Node
         let y4:Float = (right ? -3.333 : 3.333);
         let v4:SCNVector4 = SCNVector4Make(0, y4, 0, 0.0);
         self.physicsBody?.applyTorque(v4, asImpulse: true);     //TODO: make it working!
-        print("rotByForce right:"+String(describing: right));
+        //print("rotByForce right:"+String(describing: right));
     }
     public func rotateMe(right:Bool) -> Void
     {
@@ -113,7 +113,7 @@ class D3MeNode : D3Node
     {   //works!
         let forward:SCNVector3 = self.getZForward(m:(forward ? 1.333 : -1.333),p:self.position);
         self.runAction(SCNAction.move(to: forward, duration: 1.0));
-        print("moveByAction forward:"+String(describing: forward));
+        //print("moveByAction forward:"+String(describing: forward));
     }
     private func moveByForce(forward:Bool)
     {   //works!
@@ -121,7 +121,7 @@ class D3MeNode : D3Node
         let factor:Float = 133.3;
         let forward:SCNVector3 = getZForward(m:(forward ? factor : -factor),p:self.position);
         self.physicsBody?.applyForce(forward, asImpulse: false);
-        print("moveByForce forward:"+String(describing: forward));
+        //print("moveByForce forward:"+String(describing: forward));
     }
     public func move(forward:Bool)
     {
@@ -175,6 +175,8 @@ class D3MeNode : D3Node
     public func fire(d3Scene:D3Scene)
     {
         //self.fromPresentation();
-        D3ShotNode.createAndRun(pos:self.position, rot:self.rotation);
+        let d3ShotNode:D3ShotNode = D3ShotNode.create(pos:self.position, rot:self.rotation);
+        d3Scene.rootNode.addChildNode(d3ShotNode);
+        d3ShotNode.fire();
     }
 }

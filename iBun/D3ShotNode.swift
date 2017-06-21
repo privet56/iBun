@@ -31,12 +31,26 @@ class D3ShotNode : D3Node
     }
     func onCollided()->Void
     {
-
+        print("TODO: explode!");
+    }
+    func fire()
+    {
+        let height:Float = 0.75;
+        self.position.y = height;
+        
+        var forward:SCNVector3 = self.getZForward(m:6,p:self.position);
+        forward.y = self.position.y;
+        //print("shoty-start:"+String(self.position.y)+" = "+String(self.presentation.position.y));
+        self.runAction(SCNAction.move(to: forward, duration: 3), completionHandler:
+        {
+            //print("shoty-end:::"+String(self.position.y)+" = "+String(self.presentation.position.y));
+            self.removeFromParentNode();
+        });
     }
     
-    class func createAndRun(pos:SCNVector3, rot:SCNVector4) -> D3ShotNode
+    class func create(pos:SCNVector3, rot:SCNVector4) -> D3ShotNode
     {
-        let sphereGeometry = SCNSphere(radius: 1.0);
+        let sphereGeometry = SCNSphere(radius: 0.03);
         let scnNode:SCNNode = SCNNode(geometry: sphereGeometry);
         scnNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
         scnNode.geometry?.firstMaterial?.shininess = 91.0
@@ -46,13 +60,13 @@ class D3ShotNode : D3Node
         
         let shape:SCNPhysicsShape = SCNPhysicsShape(geometry: n.geometry!, options: nil);
         
-        n.physicsBody = SCNPhysicsBody(type: .static, shape: shape);
-        
+        n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape);
+
         n.physicsBody?.isAffectedByGravity  = false
-        n.physicsBody?.mass                 = 999
+        n.physicsBody?.mass                 = 0.0
         n.physicsBody?.restitution          = 0.0
-        n.physicsBody?.friction             = 999
-        n.physicsBody?.angularDamping       = 1.0
+        n.physicsBody?.friction             = 0.0
+        n.physicsBody?.angularDamping       = 0.0
         n.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
         //which categories this physics body belongs to
         n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryShot)
@@ -64,9 +78,6 @@ class D3ShotNode : D3Node
         
         n.position = pos;
         n.rotation = rot;
-        
-        let forward:SCNVector3 = n.getZForward(m:9,p:scnNode.position);
-        scnNode.runAction(SCNAction.move(to: forward, duration: 9));
 
         return n;
     }
