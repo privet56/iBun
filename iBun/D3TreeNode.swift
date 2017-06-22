@@ -29,8 +29,10 @@ class D3TreeNode : D3Node
     {
         super.init(coder: aDecoder)
     }
-    func onLanded()->Void
+    override func onCollided(other:SCNNode?)->Void
     {
+        super.onCollided(other: other);
+        
         if(self.physicsBody!.isAffectedByGravity == false) {return;}
         self.physicsBody!.isAffectedByGravity  = false;
         self.physicsBody!.type = .static;
@@ -69,24 +71,9 @@ class D3TreeNode : D3Node
         
         let n = D3TreeNode(scnNode:scnNode)
         n.name = D3TreeNode.NAME;
-        var shape:SCNPhysicsShape? = nil;
-        if(n.geometry != nil)
-        {
-            shape = SCNPhysicsShape(geometry: n.geometry!, options: nil);
-        }
-        else
-        {
-            print("ERR: no geometry!");
-        }
         
-        n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape);
+        n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.dynamic, geo: n.geometry!);
 
-        n.physicsBody?.isAffectedByGravity  = true
-        n.physicsBody?.mass                 = 999
-        n.physicsBody?.restitution          = 0.0
-        n.physicsBody?.friction             = 999
-        n.physicsBody?.angularDamping       = 1.0
-        n.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
         //which categories this physics body belongs to
         n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryTree)
         //which categories of bodies cause intersection notifications with this physics body

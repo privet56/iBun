@@ -24,10 +24,6 @@ class D3LandNode : D3Node
     {
         super.init(coder: aDecoder)
     }
-    func buildBoundary()
-    {
-        
-    }
     class func create() -> D3LandNode
     {
         let floor = SCNFloor()
@@ -56,8 +52,7 @@ class D3LandNode : D3Node
         let n = D3LandNode(scnNode:floorNode);
         n.name = D3LandNode.NAME;
         
-        n.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape(geometry:floor, options: nil))
-        n.physicsBody?.restitution = 0.0;   //A restitution of 1.0 means that the body loses no energy in a collision, eg. a ball
+        n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.static, geo: floor);
         
         //which categories this physics body belongs to
         n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryFloor)

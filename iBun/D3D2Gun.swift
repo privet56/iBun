@@ -12,8 +12,8 @@ import SpriteKit
 class D3D2Gun : SKSpriteNode
 {
     var d3Scene:D3Scene? = nil;
-    let FIREDURATION = 0.555
-    let RESTINGSIZE = 66
+    let FIREDURATION = 0.4
+    let RESTINGSIZE  = 66
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -49,9 +49,10 @@ class D3D2Gun : SKSpriteNode
             //emitter!.particleScale = 0.3;
             //emitter!.particleScaleRange = 0.2;
             //emitter!.particleScaleSpeed = -0.1;
-            emitter!.emissionAngle = 1.0
-            emitter!.particleBirthRate = emitter!.particleBirthRate / 9
-            
+            emitter!.emissionAngle = 1.0;
+            emitter!.particleBirthRate = emitter!.particleBirthRate / 9;
+            //emitter!.warmUpDuration = 10;
+        
             self.addChild(emitter!)
             emitter!.position = CGPoint(x: 0, y: self.size.height)
             

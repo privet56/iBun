@@ -149,9 +149,9 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
             shot = nodeB as? D3ShotNode;
         }
         
-        if(tree != nil){ tree!.onLanded(); }
-        if(shot != nil){ shot!.onCollided()}
-        if(me   != nil){ me!.onLanded();   }
+        if(tree != nil){ tree!.onCollided(other:nil);  }
+        if(shot != nil){ shot!.onCollided(other:nil);  }
+        if(me   != nil){ me!.onCollided(other:nil);    }
         
         if((tree != nil) && (floor != nil))
         {

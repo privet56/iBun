@@ -20,6 +20,11 @@ class Globals
     static let CollisionCategoryTree   : UInt32 = 0x1 << 4
     static let CollisionCategoryFloor  : UInt32 = 0x1 << 5
     
+    class func rand_bool() -> Bool
+    {
+        let f:UInt32 = arc4random_uniform(2) + 1;
+        return f == 1;
+    }
     class func rand(min:CGFloat, max:CGFloat) -> CGFloat
     {
         return CGFloat(arc4random_uniform(UInt32(max - min)) + UInt32(min));

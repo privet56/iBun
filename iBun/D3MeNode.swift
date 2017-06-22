@@ -30,8 +30,10 @@ class D3MeNode : D3Node
         super.init(coder: aDecoder)
     }
     private var m_bOnLandedDone:Bool = false;
-    func onLanded()->Void
+    override func onCollided(other:SCNNode?)->Void
     {
+        super.onCollided(other: other);
+        
         self.stop();
 
         if(m_bOnLandedDone)
@@ -46,6 +48,12 @@ class D3MeNode : D3Node
         //let pos = SCNVector3Make(self.presentation.position.x, self.presentation.position.y+1, self.presentation.position.z);
         //self.presentation.position = pos;     //Error: can't set a property on the presentation instance 'player'  | no child> - ignoring
         //self.position = pos;
+    }
+    public func jump()
+    {
+        self.stop();
+        self.ensureForcePossible();
+        self.physicsBody?.applyForce(SCNVector3Make(0, 1111, 0), asImpulse: true);
     }
     
     public func fromPresentation()
@@ -141,14 +149,7 @@ class D3MeNode : D3Node
         meNode.name = D3MeNode.NAME;
         
         meNode.camera = SCNCamera();
-        let shape:SCNPhysicsShape = SCNPhysicsShape(geometry: meNode.geometry!, options: nil);
-        meNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape);
-        meNode.physicsBody?.isAffectedByGravity  = true
-        meNode.physicsBody?.mass                 = 0.9
-        meNode.physicsBody?.restitution          = 0.0
-        meNode.physicsBody?.friction             = 0.9
-        meNode.physicsBody?.angularDamping       = 1.0
-        meNode.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
+        meNode.physicsBody = D3Node.createBody(sType: D3MeNode.NAME, type:.dynamic, geo: meNode.geometry!);
         
         //which categories this physics body belongs to
         meNode.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryPlayer)

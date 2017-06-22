@@ -29,8 +29,9 @@ class D3ShotNode : D3Node
     {
         super.init(coder: aDecoder)
     }
-    func onCollided()->Void
+    override func onCollided(other:SCNNode?)->Void
     {
+        super.onCollided(other: other);
         print("TODO: explode!");
     }
     func fire()
@@ -48,26 +49,25 @@ class D3ShotNode : D3Node
         });
     }
     
+    class func createBlueprint() -> SCNNode
+    {
+        let sphereGeometry  = SCNSphere(radius: 0.03);
+        let scnNode:SCNNode = SCNNode(geometry: sphereGeometry);
+        scnNode.name        = D3ShotNode.NAME;
+        scnNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        scnNode.geometry?.firstMaterial?.shininess = 91.0;
+        //TODO: make more realistic
+        return scnNode;
+    }
+    
+    static let SHOTBLUEPRINT:SCNNode = D3ShotNode.createBlueprint();
+    
     class func create(pos:SCNVector3, rot:SCNVector4) -> D3ShotNode
     {
-        let sphereGeometry = SCNSphere(radius: 0.03);
-        let scnNode:SCNNode = SCNNode(geometry: sphereGeometry);
-        scnNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
-        scnNode.geometry?.firstMaterial?.shininess = 91.0
-
-        let n = D3ShotNode(scnNode:scnNode);
-        n.name = D3ShotNode.NAME;
+        let n = D3ShotNode(scnNode:D3ShotNode.SHOTBLUEPRINT);
         
-        let shape:SCNPhysicsShape = SCNPhysicsShape(geometry: n.geometry!, options: nil);
+        n.physicsBody = D3Node.createBody(sType: D3ShotNode.NAME, type:.dynamic, geo: n.geometry!);
         
-        n.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape);
-
-        n.physicsBody?.isAffectedByGravity  = false
-        n.physicsBody?.mass                 = 0.0
-        n.physicsBody?.restitution          = 0.0
-        n.physicsBody?.friction             = 0.0
-        n.physicsBody?.angularDamping       = 0.0
-        n.physicsBody?.angularVelocityFactor = SCNVector3(0,0,0)
         //which categories this physics body belongs to
         n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryShot)
         //which categories of bodies cause intersection notifications with this physics body
