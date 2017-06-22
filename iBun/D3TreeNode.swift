@@ -42,6 +42,7 @@ class D3TreeNode : D3Node
             if(m_hit > 3)
             {
                 self.removeFromParentNode();
+                Globals.Log(message: "tree destroyed");
                 return;
             }
         }

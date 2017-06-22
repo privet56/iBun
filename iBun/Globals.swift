@@ -63,4 +63,14 @@ class Globals
         materials.append(material);
         return materials;
     }
+    
+    class func Log(message: String,
+                   file: String = #file,
+                   line : Int = #line,
+                   function: String = #function)
+    {
+        let url:URL = URL.init(fileURLWithPath:file);
+        //NSLog("\(function) (\(file.lastPathComponent):\(line)): \(message)")      //=swift 2
+        NSLog("\(function) (\(url.lastPathComponent):\(line)): \(message)")
+    }
 }

@@ -42,6 +42,8 @@
 		07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */; };
 		07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */; };
 		07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1AAC1EE6C96500698EAF /* Page2DViewController.swift */; };
+		07D427F01EFC24EC005577F5 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D427EF1EFC24EC005577F5 /* Math.swift */; };
+		07D427F21EFC260E005577F5 /* D2ParallaxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D427F11EFC260E005577F5 /* D2ParallaxScene.swift */; };
 		07F602A91EEF008100FBE08C /* D2Fox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F602A81EEF008100FBE08C /* D2Fox.swift */; };
 		07F602AD1EEFD16B00FBE08C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F602AC1EEFD16B00FBE08C /* Globals.swift */; };
 		07F8D6681EF0266F00C53D15 /* D2SceneFinish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6671EF0266F00C53D15 /* D2SceneFinish.swift */; };
@@ -104,6 +106,8 @@
 		07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.1.gif; sourceTree = "<group>"; };
 		07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.2.gif; sourceTree = "<group>"; };
 		07AE1AAC1EE6C96500698EAF /* Page2DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2DViewController.swift; sourceTree = "<group>"; };
+		07D427EF1EFC24EC005577F5 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		07D427F11EFC260E005577F5 /* D2ParallaxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2ParallaxScene.swift; sourceTree = "<group>"; };
 		07F602A81EEF008100FBE08C /* D2Fox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2Fox.swift; sourceTree = "<group>"; };
 		07F602AC1EEFD16B00FBE08C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		07F8D6671EF0266F00C53D15 /* D2SceneFinish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2SceneFinish.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				07F602A81EEF008100FBE08C /* D2Fox.swift */,
 				07F8D6671EF0266F00C53D15 /* D2SceneFinish.swift */,
 				07F8D6691EF02EE800C53D15 /* D2Back.swift */,
+				07D427F11EFC260E005577F5 /* D2ParallaxScene.swift */,
 			);
 			name = 2d;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				07F602AC1EEFD16B00FBE08C /* Globals.swift */,
 				07F8D6751EF14DCE00C53D15 /* SceneKitScene.scn */,
 				07F8D6771EF14F3C00C53D15 /* d3.scnassets */,
+				07D427EF1EFC24EC005577F5 /* Math.swift */,
 			);
 			path = iBun;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0701B07F1EE9961100861A73 /* CarouselViewController.swift in Sources */,
+				07D427F01EFC24EC005577F5 /* Math.swift in Sources */,
 				07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */,
 				07F8D66A1EF02EE800C53D15 /* D2Back.swift in Sources */,
 				07F8D67A1EF161B400C53D15 /* D3LandNode.swift in Sources */,
@@ -351,6 +358,7 @@
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				0701B07D1EE994A200861A73 /* iCarousel.m in Sources */,
+				07D427F21EFC260E005577F5 /* D2ParallaxScene.swift in Sources */,
 				07F8D6821EF3D94100C53D15 /* D3D2Scene.swift in Sources */,
 				07F602A91EEF008100FBE08C /* D2Fox.swift in Sources */,
 				0701B0941EEEC4B200861A73 /* D2ScoreLabel.swift in Sources */,
