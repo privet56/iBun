@@ -46,6 +46,13 @@ class D3MeNode : D3Node
         }
         m_bOnLandedDone = true;
         self.fromPresentation();
+        do
+        {
+            let string:String = "shoot if you can!   ";
+            let msg:D3MsgNode = D3MsgNode.init(string: string, extrusionDepth: 0.25, inFrontOf:self);
+            d3Scene.rootNode.addChildNode(msg);
+            print(string);
+        }
     }
     public func jump()
     {
