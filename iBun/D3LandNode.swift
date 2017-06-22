@@ -29,7 +29,8 @@ class D3LandNode : D3Node
         let floor = SCNFloor()
         floor.reflectivity = 1.0
         floor.reflectionFalloffEnd = 1
-        let fn = "buns/autumn01.png"//"meadow/meadow3.gif";
+        let fn = "div/bkg.png"//"sunnyday/sunnyday07.gif"//"buns/autumn01.png"//"meadow/meadow3.gif";
+        let img:UIImage = UIImage(named:fn)!;
         let floorNode = SCNNode();
         floorNode.geometry = floor;
         floorNode.name = D3LandNode.NAME;
@@ -38,7 +39,7 @@ class D3LandNode : D3Node
         floorNode.geometry?.firstMaterial!.diffuse.wrapT            = SCNWrapMode.repeat
         floorNode.geometry?.firstMaterial!.diffuse.mipFilter        = SCNFilterMode.linear
         
-        let noiseTexture = SKTexture(noiseWithSmoothness: 0.0, size: CGSize(width: 200, height: 200), grayscale: false);
+        let noiseTexture = SKTexture(noiseWithSmoothness: 0.0, size: CGSize(width: img.size.width, height: img.size.height), grayscale: false);
         let noiseNormalMapTexture = noiseTexture.generatingNormalMap(withSmoothness: 0.1, contrast: 1.0);
         
         floorNode.geometry?.firstMaterial?.normal.contents         = noiseNormalMapTexture;
