@@ -86,8 +86,8 @@ class D3MeNode : D3Node
     }*/
     private func rotateMeByAction(right:Bool) -> Void
     {
-        self.stop();
-        //self.fromPresentation();
+        //self.stop();
+        self.fromPresentation();
         let y:CGFloat = (right ? -0.333 : 0.333);
         //print("rotByAction right:"+String(describing: right)+" curRot: x:"+String(self.rotation.x)+" y:"+String(self.rotation.y)+" z:"+String(self.rotation.z)+" w:"+String(self.rotation.w));
         self.runAction(SCNAction.rotateBy(x:0,y:y,z:0,duration:1.0));

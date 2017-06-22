@@ -117,6 +117,11 @@ class Arrow: UIImageView
     
     func remove()
     {
+        if(self.superview == nil)
+        {
+            return;
+        }
+        
         CATransaction.begin()
         CATransaction.setCompletionBlock(
         {
