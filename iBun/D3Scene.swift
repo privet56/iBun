@@ -111,59 +111,14 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         let nodeA = contact.nodeA;
         let nodeB = contact.nodeB;
         
-        var floor:D3LandNode?   = nil;
-        var me:D3MeNode?        = nil;
-        var tree:D3TreeNode?    = nil;
-        var shot:D3ShotNode?    = nil;
-        
-        if(nodeA.name == D3LandNode.NAME)           //floor
+        if((nodeA is D3Node) && (nodeB is D3Node))
         {
-            floor = nodeA as? D3LandNode;
-        }
-        else if(nodeB.name == D3LandNode.NAME)
-        {
-            floor = nodeB as? D3LandNode
-        }
-        if(nodeA.name == D3MeNode.NAME)             //player
-        {
-            me = nodeA as? D3MeNode
-        }
-        else if(nodeB.name == D3MeNode.NAME)
-        {
-            me = nodeB as? D3MeNode
-        }
-        if(nodeA.name == D3TreeNode.NAME)           //tree
-        {
-            tree = nodeA as? D3TreeNode;
-        }
-        else if(nodeB.name == D3TreeNode.NAME)
-        {
-            tree = nodeB as? D3TreeNode;
-        }
-        if(nodeA.name == D3ShotNode.NAME)           //shot
-        {
-            shot = nodeA as? D3ShotNode;
-        }
-        else if(nodeB.name == D3ShotNode.NAME)
-        {
-            shot = nodeB as? D3ShotNode;
-        }
-        
-        if(tree != nil){ tree!.onCollided(other:nil);  }
-        if(shot != nil){ shot!.onCollided(other:nil);  }
-        if(me   != nil){ me!.onCollided(other:nil);    }
-        
-        if((tree != nil) && (floor != nil))
-        {
-            return;
-        }
-        
-        if((me != nil) && (tree != nil))
-        {
-            me!.onCollidedWithTree(tree:tree!);
+            let contactPoint:SCNVector3 = contact.contactPoint;
+            (nodeA as! D3Node).onCollided(d3Scene: self, other: nodeB, contactPoint:contactPoint);
+            (nodeB as! D3Node).onCollided(d3Scene: self, other: nodeA, contactPoint:contactPoint);
         }
 
-        print("collided:"+contact.nodeA.name!+" & "+contact.nodeB.name!);
+        //print("collided:"+contact.nodeA.name!+" & "+contact.nodeB.name!);
     }
     
     private func sphereNode(pos:SCNVector3) -> SCNNode

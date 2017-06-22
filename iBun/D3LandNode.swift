@@ -54,13 +54,6 @@ class D3LandNode : D3Node
         
         n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.static, geo: floor);
         
-        //which categories this physics body belongs to
-        n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryFloor)
-        //which categories of bodies cause intersection notifications with this physics body
-        //n.physicsBody?.contactTestBitMask =
-        //which categories of physics bodies can collide with this physics body.
-        n.physicsBody?.collisionBitMask = Int(Globals.CollisionCategoryPlayer | Globals.CollisionCategoryTree)
-        
         return n;
     }
 }

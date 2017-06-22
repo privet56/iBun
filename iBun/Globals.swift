@@ -19,7 +19,14 @@ class Globals
     static let CollisionCategoryEnemy  : UInt32 = 0x1 << 3
     static let CollisionCategoryTree   : UInt32 = 0x1 << 4
     static let CollisionCategoryFloor  : UInt32 = 0x1 << 5
+
+    static let D3CollisionCategoryFloor  : Int = 1 << 0
+    static let D3CollisionCategoryPlayer : Int = 1 << 1
+    static let D3CollisionCategoryShot   : Int = 1 << 2
+    static let D3CollisionCategoryEnemy  : Int = 1 << 3
+    static let D3CollisionCategoryTree   : Int = 1 << 4
     
+
     class func rand_bool() -> Bool
     {
         let f:UInt32 = arc4random_uniform(2) + 1;

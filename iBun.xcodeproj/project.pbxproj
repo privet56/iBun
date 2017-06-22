@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07005FA11EFBED85006998E4 /* sunnyday in Resources */ = {isa = PBXBuildFile; fileRef = 07005FA01EFBED85006998E4 /* sunnyday */; };
 		0701B0721EE93DB000861A73 /* water.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0711EE93DB000861A73 /* water.gif */; };
 		0701B0741EE93EB400861A73 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0731EE93EB400861A73 /* left-arrow.png */; };
 		0701B0761EE941AD00861A73 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0751EE941AD00861A73 /* Arrow.swift */; };
@@ -57,9 +58,12 @@
 		07F8D6861EFA88CE00C53D15 /* D3D2Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D6851EFA88CE00C53D15 /* D3D2Gun.swift */; };
 		07F8D68A1EFAA04C00C53D15 /* gun.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 07F8D6891EFAA04C00C53D15 /* gun.atlas */; };
 		07F8D68C1EFABD0100C53D15 /* D3ShotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8D68B1EFABD0100C53D15 /* D3ShotNode.swift */; };
+		07F8D68F1EFBD9F500C53D15 /* D3Fire.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 07F8D68D1EFBD9F500C53D15 /* D3Fire.scnp */; };
+		07F8D6901EFBD9F500C53D15 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F8D68E1EFBD9F500C53D15 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07005FA01EFBED85006998E4 /* sunnyday */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sunnyday; sourceTree = "<group>"; };
 		0701B0711EE93DB000861A73 /* water.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = water.gif; sourceTree = "<group>"; };
 		0701B0731EE93EB400861A73 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
 		0701B0751EE941AD00861A73 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 		07F8D6851EFA88CE00C53D15 /* D3D2Gun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3D2Gun.swift; sourceTree = "<group>"; };
 		07F8D6891EFAA04C00C53D15 /* gun.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = gun.atlas; sourceTree = "<group>"; };
 		07F8D68B1EFABD0100C53D15 /* D3ShotNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3ShotNode.swift; sourceTree = "<group>"; };
+		07F8D68D1EFBD9F500C53D15 /* D3Fire.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = D3Fire.scnp; sourceTree = "<group>"; };
+		07F8D68E1EFBD9F500C53D15 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,7 @@
 		07AE1A9D1EE1AD1A00698EAF /* res */ = {
 			isa = PBXGroup;
 			children = (
+				07005FA01EFBED85006998E4 /* sunnyday */,
 				07F8D6891EFAA04C00C53D15 /* gun.atlas */,
 				0701B08F1EEEBF0E00861A73 /* d2.atlas */,
 				0701B08D1EEE9CFB00861A73 /* sky */,
@@ -235,6 +242,8 @@
 				07F8D6831EF3F3AD00C53D15 /* D3D2Forward.swift */,
 				07F8D6851EFA88CE00C53D15 /* D3D2Gun.swift */,
 				07F8D68B1EFABD0100C53D15 /* D3ShotNode.swift */,
+				07F8D68D1EFBD9F500C53D15 /* D3Fire.scnp */,
+				07F8D68E1EFBD9F500C53D15 /* spark.png */,
 			);
 			name = 3d;
 			sourceTree = "<group>";
@@ -301,8 +310,10 @@
 			files = (
 				0701B08E1EEE9CFB00861A73 /* sky in Resources */,
 				0701B07A1EE9748A00861A73 /* buns in Resources */,
+				07F8D68F1EFBD9F500C53D15 /* D3Fire.scnp in Resources */,
 				07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */,
 				0701B0901EEEBF0E00861A73 /* d2.atlas in Resources */,
+				07F8D6901EFBD9F500C53D15 /* spark.png in Resources */,
 				07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */,
 				0701B0741EE93EB400861A73 /* left-arrow.png in Resources */,
 				07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */,
@@ -313,6 +324,7 @@
 				07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */,
 				07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */,
 				07AE1AA51EE1B64500698EAF /* meadow in Resources */,
+				07005FA11EFBED85006998E4 /* sunnyday in Resources */,
 				07252FB51EE1992C00FC975F /* Main.storyboard in Resources */,
 				0701B0721EE93DB000861A73 /* water.gif in Resources */,
 				07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */,

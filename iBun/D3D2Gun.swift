@@ -35,9 +35,10 @@ class D3D2Gun : SKSpriteNode
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
+
+        fireBullet();
         fireExplosion();
         fireResizeGun();
-        fireBullet();
     }
     func fireExplosion()
     {

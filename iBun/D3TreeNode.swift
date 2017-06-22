@@ -15,6 +15,7 @@ import SceneKit
 class D3TreeNode : D3Node
 {
     static let NAME = "tree";
+    var m_hit:Int = 0;
     
     override init()
     {
@@ -29,9 +30,21 @@ class D3TreeNode : D3Node
     {
         super.init(coder: aDecoder)
     }
-    override func onCollided(other:SCNNode?)->Void
+    override func onCollided(d3Scene:D3Scene, other:SCNNode?, contactPoint:SCNVector3)->Void
     {
-        super.onCollided(other: other);
+        super.onCollided(d3Scene: d3Scene, other: other, contactPoint: contactPoint);
+        
+        if((other != nil) || (other is D3ShotNode))
+        {
+            //let pos = self.convertPosition(contactPoint, to: d3Scene.rootNode);
+            self.explode(d3Scene: d3Scene, pos: contactPoint);
+            m_hit += 1;
+            if(m_hit > 3)
+            {
+                self.removeFromParentNode();
+                return;
+            }
+        }
         
         if(self.physicsBody!.isAffectedByGravity == false) {return;}
         self.physicsBody!.isAffectedByGravity  = false;
@@ -73,15 +86,6 @@ class D3TreeNode : D3Node
         n.name = D3TreeNode.NAME;
         
         n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.dynamic, geo: n.geometry!);
-
-        //which categories this physics body belongs to
-        n.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryTree)
-        //which categories of bodies cause intersection notifications with this physics body
-        n.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryPlayer | Globals.CollisionCategoryFloor | Globals.CollisionCategoryShot)
-        //if you set 0 on this, you fall through the floor!
-        //which categories of physics bodies can collide with this physics body.
-        //n.physicsBody?.collisionBitMask   = 0;
-        
         
         do
         {

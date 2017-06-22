@@ -30,11 +30,15 @@ class D3MeNode : D3Node
         super.init(coder: aDecoder)
     }
     private var m_bOnLandedDone:Bool = false;
-    override func onCollided(other:SCNNode?)->Void
+    override func onCollided(d3Scene:D3Scene, other:SCNNode?, contactPoint:SCNVector3)->Void
     {
-        super.onCollided(other: other);
-        
+        super.onCollided(d3Scene: d3Scene, other: other, contactPoint: contactPoint);
         self.stop();
+        
+        if(other?.name == D3TreeNode.NAME)
+        {
+            self.onCollidedWithTree(tree: other! as! D3TreeNode);
+        }
 
         if(m_bOnLandedDone)
         {
@@ -42,12 +46,6 @@ class D3MeNode : D3Node
         }
         m_bOnLandedDone = true;
         self.fromPresentation();
-        //print("y1:"+String(self.position.y)+" ? "+String(self.presentation.position.y));
-        //self.physicsBody!.isAffectedByGravity  = false;
-        //self.physicsBody!.type = .static;
-        //let pos = SCNVector3Make(self.presentation.position.x, self.presentation.position.y+1, self.presentation.position.z);
-        //self.presentation.position = pos;     //Error: can't set a property on the presentation instance 'player'  | no child> - ignoring
-        //self.position = pos;
     }
     public func jump()
     {
@@ -86,13 +84,6 @@ class D3MeNode : D3Node
         v.z = p.z - v.z;
         return v;
     }*/
-    private func stop()
-    {
-        self.removeAllActions();
-        self.physicsBody?.clearAllForces();
-        self.physicsBody?.velocity = SCNVector3Make(0, 0, 0);
-        self.physicsBody?.angularVelocity = SCNVector4Make(0, 0, 0, 0);
-    }
     private func rotateMeByAction(right:Bool) -> Void
     {
         self.stop();
@@ -151,14 +142,6 @@ class D3MeNode : D3Node
         meNode.camera = SCNCamera();
         meNode.physicsBody = D3Node.createBody(sType: D3MeNode.NAME, type:.dynamic, geo: meNode.geometry!);
         
-        //which categories this physics body belongs to
-        meNode.physicsBody?.categoryBitMask    = Int(Globals.CollisionCategoryPlayer)
-        //which categories of bodies cause intersection notifications with this physics body
-        meNode.physicsBody?.contactTestBitMask = Int(Globals.CollisionCategoryTree | Globals.CollisionCategoryFloor)
-        //if you set 0 on this, you fall through the floor!
-        //which categories of physics bodies can collide with this physics body.
-        //n.physicsBody?.collisionBitMask   = 0;
-        
         //meNode.isHidden = true    //if hidden, no gravitation effects
         
         /*  TODO: fly at the beginning into the scene
@@ -176,8 +159,14 @@ class D3MeNode : D3Node
     public func fire(d3Scene:D3Scene)
     {
         //self.fromPresentation();
-        let d3ShotNode:D3ShotNode = D3ShotNode.create(pos:self.position, rot:self.rotation);
+        let pos = self.getZForward(m: 1, p: self.presentation.position);
+        let d3ShotNode:D3ShotNode = D3ShotNode.create(pos:pos, rot:self.presentation.rotation);
         d3Scene.rootNode.addChildNode(d3ShotNode);
         d3ShotNode.fire();
+        do
+        {
+            //let pos3 = self.getZForward(m: 3, p: self.presentation.position);
+            //d3ShotNode.explode(d3Scene:d3Scene, pos:pos3);
+        }
     }
 }
