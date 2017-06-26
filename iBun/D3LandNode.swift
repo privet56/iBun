@@ -38,8 +38,9 @@ class D3LandNode : D3Node
         floorNode.geometry?.firstMaterial!.diffuse.wrapS            = SCNWrapMode.repeat
         floorNode.geometry?.firstMaterial!.diffuse.wrapT            = SCNWrapMode.repeat
         floorNode.geometry?.firstMaterial!.diffuse.mipFilter        = SCNFilterMode.linear
+        floorNode.geometry?.firstMaterial!.diffuse.contentsTransform = SCNMatrix4MakeScale(2, 2, 1);
         
-        let noiseTexture = SKTexture(noiseWithSmoothness: 0.0, size: CGSize(width: img.size.width, height: img.size.height), grayscale: false);
+        let noiseTexture = SKTexture(noiseWithSmoothness: 0.0, size: CGSize(width: img.size.width / 30, height: img.size.height / 30), grayscale: false);
         let noiseNormalMapTexture = noiseTexture.generatingNormalMap(withSmoothness: 0.1, contrast: 1.0);
         
         floorNode.geometry?.firstMaterial?.normal.contents         = noiseNormalMapTexture;
@@ -48,7 +49,7 @@ class D3LandNode : D3Node
         floorNode.geometry?.firstMaterial!.normal.mipFilter        = SCNFilterMode.linear
         
         floorNode.geometry?.firstMaterial!.shininess = 0.0
-        floorNode.geometry?.firstMaterial!.locksAmbientWithDiffuse  = true
+        //floorNode.geometry?.firstMaterial!.locksAmbientWithDiffuse  = true
         
         let n = D3LandNode(scnNode:floorNode);
         n.name = D3LandNode.NAME;

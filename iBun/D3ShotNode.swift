@@ -34,7 +34,10 @@ class D3ShotNode : D3Node
         super.onCollided(d3Scene:d3Scene, other: other, contactPoint: contactPoint);
         //self.stop();
         //self.explode(d3Scene: d3Scene, pos:contactPoint);
-        self.removeFromParentNode();
+        if(self.parent != nil)
+        {
+            self.removeFromParentNode();
+        }
     }
     func fire()
     {
