@@ -34,7 +34,7 @@ class D3TreeNode : D3Node
     {
         super.onCollided(d3Scene: d3Scene, other: other, contactPoint: contactPoint);
         
-        if((other != nil) || (other is D3ShotNode))
+        if((other != nil) && (other is D3ShotNode))
         {
             //let pos = self.convertPosition(contactPoint, to: d3Scene.rootNode);
             self.explode(d3Scene: d3Scene, pos: contactPoint);
@@ -42,7 +42,7 @@ class D3TreeNode : D3Node
             if(m_hit > 3)
             {
                 self.removeFromParentNode();
-                Globals.Log(message: "tree destroyed");
+                Globals.Log(message: "tree destroyed! other:"+(other?.name)!);
                 return;
             }
         }
@@ -67,9 +67,8 @@ class D3TreeNode : D3Node
         
         if(tree2)//tree2.dae has no mat(colors)
         {
-            let threeOrFive:Bool = (Globals.rand(min: 0, max: 100) < 50) ? true : false;
-            
-            let materials : [SCNMaterial] = threeOrFive ? MAT1 : MAT2;  //use once loaded mats == speedup!
+            let threeOrFive:Bool            = (Globals.rand(min: 0, max: 100) < 50) ? true : false;
+            let materials : [SCNMaterial]   = threeOrFive ? MAT1 : MAT2;  //use once loaded mats == speedup!
             if(scnNode.geometry == nil)
             {
                 scnNode.childNodes.forEach
@@ -86,8 +85,6 @@ class D3TreeNode : D3Node
         let n = D3TreeNode(scnNode:scnNode)
         n.name = D3TreeNode.NAME;
         
-        n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.dynamic, geo: n.geometry!);
-        
         do
         {
             let x:Float = Float(Globals.rand(min: 50, max: 150)) / 100.0
@@ -95,7 +92,6 @@ class D3TreeNode : D3Node
             let z:Float = Float(Globals.rand(min: 50, max: 100)) / 100.0
             n.scale = SCNVector3(x: x, y: y, z: z);
         }
-
         do
         {
             let dx:Float = Float(Globals.rand(min: 0, max: 150)) / 100.0
@@ -105,6 +101,23 @@ class D3TreeNode : D3Node
             let p2 = SCNVector3(x:p.x + dx, y:p.y + dy, z:p.z + dz);
             n.position = p2;
         }
+        
+        //var geometry = n.geometry!;
+        if(tree2)
+        {
+            /*
+            let boudingBoxes = n.geometry!.boundingBox;
+            let w = CGFloat(boudingBoxes.max.x - boudingBoxes.min.x);
+            let h = CGFloat(boudingBoxes.max.y - boudingBoxes.min.y);
+            let l = CGFloat(boudingBoxes.max.z - boudingBoxes.min.z);
+            print("MIN.... w:"+String(describing: boudingBoxes.min.x)+" h:"+String(describing: boudingBoxes.min.y)+" l:"+String(describing: boudingBoxes.min.z));
+            print("MAX.... w:"+String(describing: boudingBoxes.max.x)+" h:"+String(describing: boudingBoxes.max.y)+" l:"+String(describing: boudingBoxes.max.z));
+            print("RESULT: w:"+String(describing: w)+" h:"+String(describing: h)+" l:"+String(describing: l));
+            //geometry = SCNBox(width: w , height: h , length: l, chamferRadius: 0.0);
+            */
+        }
+        
+        n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.dynamic, geo: n.geometry!, scale:n.scale);
         
         return n;
     }

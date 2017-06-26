@@ -32,6 +32,7 @@ class D3Controller : UIViewController
         let sScene = D3Scene()
         sView.scene = sScene
         sView.overlaySKScene = D3D2Scene(size: iView.bounds.size, d3Scene: sScene, viewController:self);
+        sView.debugOptions = [/*.showBoundingBoxes , */.showPhysicsShapes];
         //sView.showsStatistics = true
         //sView.allowsCameraControl = true
         sView.isUserInteractionEnabled = true

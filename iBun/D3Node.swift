@@ -106,12 +106,13 @@ class D3Node : SCNNode
         v.z = p.z - v.z;
         return v;
     }
-    class func createBody(sType:String, type:SCNPhysicsBodyType,geo:SCNGeometry) -> SCNPhysicsBody
+    class func createBody(sType:String, type:SCNPhysicsBodyType,geo:SCNGeometry,scale:SCNVector3=SCNVector3Make(1.0, 1.0, 1.0)) -> SCNPhysicsBody
     {
         //.static = no gravity effect, no forces
         let type:SCNPhysicsBodyType = (sType == D3LandNode.NAME) ? .static : .dynamic;
-        
-        let pb : SCNPhysicsBody = SCNPhysicsBody(type: type, shape: SCNPhysicsShape(geometry:geo, options: nil));
+        let opt = [SCNPhysicsShape.Option.scale:scale];
+        let shape:SCNPhysicsShape = SCNPhysicsShape(geometry:geo, options: opt);
+        let pb : SCNPhysicsBody = SCNPhysicsBody(type: type, shape: shape);
         
         pb.angularVelocityFactor    = SCNVector3Zero    //= avoid rotation
         pb.angularDamping           = 1.0               //a damping factor of 1.0 prevents the body from rotating
