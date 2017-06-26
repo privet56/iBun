@@ -78,6 +78,12 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         }
         do
         {
+            self.fogStartDistance = 30
+            self.fogEndDistance = 90
+            self.fogColor = UIColor.black
+        }
+        do
+        {
             self.d3MeNode = D3MeNode.create()
             self.rootNode.addChildNode(self.d3MeNode!)
 
