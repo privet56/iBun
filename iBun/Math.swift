@@ -86,3 +86,15 @@ extension CGPoint
         self.y = cos(angleRadians)
     }
 }
+
+class Math
+{
+    class func degree2radian(degree:CGFloat) -> CGFloat
+    {
+        return degree * (CGFloat(Double.pi) / 180.0);
+    }
+    class func radian2degree(radian:CGFloat) -> CGFloat
+    {
+        return (radian * CGFloat(180.0 / Double.pi));
+    }
+}

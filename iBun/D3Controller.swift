@@ -14,7 +14,8 @@ import SceneKit
 
 class D3Controller : UIViewController
 {
-    var backgroundImageView:UIImageView? = nil
+    var backgroundImageView:UIImageView? = nil;
+    var scnView:SCNView? = nil;
 
     override func viewDidLoad()
     {
@@ -25,21 +26,11 @@ class D3Controller : UIViewController
         self.backgroundImageView = iView
         iView.isUserInteractionEnabled = true
         
-        let sView:SCNView = SCNView(frame:iView.bounds)
+        let sView:SCNView = SCNView(frame:iView.bounds);
+        self.scnView = sView;
         sView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         iView.addSubview(sView)
-        
-        let sScene = D3Scene()
-        sView.scene = sScene;
-        do
-        {
-            var size:CGSize = iView.bounds.size;
-            if( size.width < size.height)
-            {   //pseudo landscape
-                size = CGSize(width:size.height, height:size.width);
-            }
-            sView.overlaySKScene = D3D2Scene(size: size, d3Scene: sScene, viewController:self);
-        }
+        self.switchScene();
         //sView.debugOptions = [/*.showBoundingBoxes , */.showPhysicsShapes];
         //sView.showsStatistics = true
         //sView.allowsCameraControl = true
@@ -49,13 +40,42 @@ class D3Controller : UIViewController
         /*var timer = */Timer.scheduledTimer(timeInterval: 9.99, target: self, selector: #selector(D3Controller.changeBkg), userInfo: nil, repeats: true)
         self.changeBkg()
     }
+    func isD3LeaScene() -> Bool
+    {
+        let bIsLea = (self.scnView?.scene is D3LScene);
+        return bIsLea;
+    }
+    func switchScene()
+    {
+        let sScene = ((self.scnView?.scene == nil) || isD3LeaScene()) ? D3Scene() : D3LScene();
+        
+        self.scnView?.scene = sScene;
+        do
+        {
+            var size:CGSize = backgroundImageView!.bounds.size;
+            if( size.width < size.height)
+            {   //pseudo landscape
+                size = CGSize(width:size.height, height:size.width);
+            }
+            scnView?.overlaySKScene = D3D2Scene(size: size, d3Scene: sScene, viewController:self, canForward:!(sScene is D3LScene));
+        }
+    }
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
     }
-    @IBAction func onBack(sender:UIButton)
+    @IBAction func onBack(sender:UIButton?)
     {
+        if(isD3LeaScene())
+        {
+            self.switchScene();
+            return;
+        }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func onForward(sender:UIButton?)
+    {
+        self.switchScene();
     }
     //do not allow another orientation!
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask

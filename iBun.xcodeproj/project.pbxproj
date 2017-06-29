@@ -33,6 +33,7 @@
 		07252FB51EE1992C00FC975F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB31EE1992C00FC975F /* Main.storyboard */; };
 		07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB61EE1992C00FC975F /* Assets.xcassets */; };
 		07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB81EE1992C00FC975F /* LaunchScreen.storyboard */; };
+		07261D9B1F0547ED001F839C /* D3LScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261D9A1F0547ED001F839C /* D3LScene.swift */; };
 		07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
 		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
@@ -96,6 +97,7 @@
 		07252FB61EE1992C00FC975F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07252FB91EE1992C00FC975F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07252FBB1EE1992C00FC975F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07261D9A1F0547ED001F839C /* D3LScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3LScene.swift; sourceTree = "<group>"; };
 		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
@@ -219,6 +221,14 @@
 			path = iBun;
 			sourceTree = "<group>";
 		};
+		07261D991F0547AF001F839C /* 3dlea */ = {
+			isa = PBXGroup;
+			children = (
+				07261D9A1F0547ED001F839C /* D3LScene.swift */,
+			);
+			name = 3dlea;
+			sourceTree = "<group>";
+		};
 		07AE1A9D1EE1AD1A00698EAF /* res */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +253,7 @@
 		07F8D66B1EF134BD00C53D15 /* 3d */ = {
 			isa = PBXGroup;
 			children = (
+				07261D991F0547AF001F839C /* 3dlea */,
 				07F8D66C1EF134E800C53D15 /* D3Controller.swift */,
 				07F8D66E1EF136E100C53D15 /* D3Scene.swift */,
 				07F8D6791EF161B400C53D15 /* D3LandNode.swift */,
@@ -382,6 +393,7 @@
 				07F8D66D1EF134E800C53D15 /* D3Controller.swift in Sources */,
 				07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */,
 				07F8D66F1EF136E100C53D15 /* D3Scene.swift in Sources */,
+				07261D9B1F0547ED001F839C /* D3LScene.swift in Sources */,
 				07F8D67E1EF17A1B00C53D15 /* D3TreeNode.swift in Sources */,
 				07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */,
 				0701B0831EEE8C1D00861A73 /* D2Controller.swift in Sources */,

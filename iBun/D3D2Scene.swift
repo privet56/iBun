@@ -18,7 +18,7 @@ class D3D2Scene : SKScene
     {
         super.init(coder: aDecoder)
     }
-    init(size: CGSize, d3Scene:D3Scene, viewController:UIViewController)
+    init(size: CGSize, d3Scene:D3Scene, viewController:UIViewController, canForward:Bool)
     {
         super.init(size: size)
         
@@ -32,8 +32,15 @@ class D3D2Scene : SKScene
         {
             let d3d2Gun:D3D2Gun = D3D2Gun(scene:self, d3Scene:self.d3Scene!)
             self.addChild(d3d2Gun)
-            let backLabel = D2Back(scene:self, viewController:self.viewController!)
-            self.addChild(backLabel)
+            let backLabel = D2Back(scene:self, viewController:self.viewController!) {
+                (self.viewController as! D3Controller).onBack(sender: nil);
+            };
+            self.addChild(backLabel);
+            if(canForward)
+            {
+                let forwardLabel = D3D2Forward(scene:self, d3Scene:self.d3Scene!, viewController:self.viewController!)
+                self.addChild(forwardLabel)
+            }
         }
     }
     

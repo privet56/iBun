@@ -55,7 +55,6 @@ class D3Node : SCNNode
         exp?.stretchFactor = 0.05
         exp?.particleColor = UIColor.blueColor()
         */
-        
         exp?.birthRate /= 5;
         //exp?.particleLifeSpan = 0.25;
         //exp?.stretchFactor = 0.05;
