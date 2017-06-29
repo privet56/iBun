@@ -16,7 +16,7 @@ class D3LScene : D3Scene//, SCNPhysicsContactDelegate
 {
     override init()
     {
-        super.init()
+        super.init();
     }
     override func initWorld()
     {

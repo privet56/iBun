@@ -47,7 +47,7 @@ class D3Controller : UIViewController
     }
     func switchScene()
     {
-        let sScene = ((self.scnView?.scene == nil) || isD3LeaScene()) ? D3Scene() : D3LScene();
+        let sScene = ((self.scnView?.scene == nil) || isD3LeaScene()) ? D3Scene() : D3LScene(/*named:"d3.scnassets/l1.dae"*/);
         
         self.scnView?.scene = sScene;
         do

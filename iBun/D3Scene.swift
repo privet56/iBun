@@ -21,6 +21,11 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         super.init()
         self.initWorld();
     }
+    required init(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)!
+    }
+
     func initWorld()
     {
         do
@@ -98,10 +103,6 @@ class D3Scene : SCNScene, SCNPhysicsContactDelegate
         //rootNode.childNode(withName: "hero", recursively: true)
     }
     
-    required init(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)!
-    }
     public func rotateMe(right:Bool)
     {
         self.d3MeNode?.rotateMe(right:right);
