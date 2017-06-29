@@ -30,8 +30,16 @@ class D3Controller : UIViewController
         iView.addSubview(sView)
         
         let sScene = D3Scene()
-        sView.scene = sScene
-        sView.overlaySKScene = D3D2Scene(size: iView.bounds.size, d3Scene: sScene, viewController:self);
+        sView.scene = sScene;
+        do
+        {
+            var size:CGSize = iView.bounds.size;
+            if( size.width < size.height)
+            {   //pseudo landscape
+                size = CGSize(width:size.height, height:size.width);
+            }
+            sView.overlaySKScene = D3D2Scene(size: size, d3Scene: sScene, viewController:self);
+        }
         //sView.debugOptions = [/*.showBoundingBoxes , */.showPhysicsShapes];
         //sView.showsStatistics = true
         //sView.allowsCameraControl = true

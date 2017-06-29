@@ -56,9 +56,9 @@ class D3Node : SCNNode
         exp?.particleColor = UIColor.blueColor()
         */
         
-        exp?.birthRate /= 10;
-        exp?.particleLifeSpan = 0.25;
-        exp?.stretchFactor = 0.05;
+        exp?.birthRate /= 5;
+        //exp?.particleLifeSpan = 0.25;
+        //exp?.stretchFactor = 0.05;
         //let sphereGeometry  = SCNSphere(radius: 0.01);
         exp?.emitterShape = self.geometry!;//sphereGeometry;
         exp?.birthLocation = .volume;
