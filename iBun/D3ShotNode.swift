@@ -14,6 +14,7 @@ import SceneKit
 
 class D3ShotNode : D3Node
 {
+    
     static let NAME = "shot";
     
     override init()
@@ -34,10 +35,7 @@ class D3ShotNode : D3Node
         super.onCollided(d3Scene:d3Scene, other: other, contactPoint: contactPoint);
         //self.stop();
         //self.explode(d3Scene: d3Scene, pos:contactPoint);
-        if(self.parent != nil)
-        {
-            self.removeFromParentNode();
-        }
+        self.removeFromParentNode();
     }
     func fire()
     {

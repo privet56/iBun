@@ -16,6 +16,7 @@ class D3Lea : D3Destroyable
 {
     static let NAME = "landscape";
     var NAME_OF_MODEL_NODE:String = "";
+    var canDestroy:Bool = false;
     
     override init(scnNode:SCNNode)
     {
@@ -29,8 +30,13 @@ class D3Lea : D3Destroyable
     {
         return super.getName() + ":" + NAME_OF_MODEL_NODE;
     }
-    
-    //static let LEA_BLUEPRINT = Globals.node(name: "d3.scnassets/lea/lea" , ext: "obj", id: nil);
+    override func onCollided(d3Scene:D3Scene, other:SCNNode?, contactPoint:SCNVector3)->Void
+    {
+        if(canDestroy)
+        {
+            super.onCollided(d3Scene: d3Scene, other: other, contactPoint: contactPoint);
+        }
+    }
     
     class func create(scene:D3LScene) -> D3Lea
     {
@@ -42,13 +48,15 @@ class D3Lea : D3Destroyable
         }
         if(scnNode?.geometry == nil)
         {
-            print("WRN: !lea.geometry");
+            //print("WRN: !lea.geometry");  //normal case in case of DAE & OBJ+MTL
             scnNode!.geometry = scnNode!.flattenedClone().geometry;
             if(scnNode?.geometry == nil)
             {
                 print("ERR: !lea.geometry");
             }
-        }/*
+        }
+
+        /*  //case OBJ+MTL
         if(scnNode!.geometry?.firstMaterial == nil)
         {
             print("WRN: !lea.geometry.!firstMaterial");
@@ -60,8 +68,7 @@ class D3Lea : D3Destroyable
         if(scnNode!.geometry?.firstMaterial != nil)
         {
             scnNode!.geometry?.firstMaterial!.lightingModel = SCNMaterial.LightingModel.constant;
-        }
-        */
+        }*/
         
         //OBJ+MTL:
         //[SceneKit] Error: C3DLightingModelPhysicallyBased not supported by OpenGL renderer
@@ -71,6 +78,7 @@ class D3Lea : D3Destroyable
         n.name = D3TreeNode.NAME;
         
         n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.dynamic, geo: n.geometry!, scale:n.scale);
+        n.rotation = SCNVector4Make(1, 0, 0, Float(Math.degree2radian(degree: -90.0)));//Float(-Double.pi/2.8));
         
         return n;
 

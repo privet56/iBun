@@ -45,6 +45,15 @@ class D3Node : SCNNode
     {
         super.init(coder: aDecoder)!
     }
+    var REMOVED:Bool = false;
+    override func removeFromParentNode()
+    {
+        if(!REMOVED && self.parent != nil)
+        {
+            REMOVED = true;
+            super.removeFromParentNode();
+        }
+    }
     func getName() -> String
     {
         return self.name!;

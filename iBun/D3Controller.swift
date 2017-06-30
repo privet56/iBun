@@ -36,7 +36,7 @@ class D3Controller : UIViewController
         
         if(DEVELOPERMODE)
         {
-            sView.debugOptions = [.showBoundingBoxes/*, .showPhysicsShapes*/];
+            //sView.debugOptions = [.showBoundingBoxes/*, .showPhysicsShapes*/];
         }
         //sView.showsStatistics = true
         //sView.allowsCameraControl = true
