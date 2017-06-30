@@ -37,6 +37,7 @@
 		07261D9D1F0551D2001F839C /* congratulations.png in Resources */ = {isa = PBXBuildFile; fileRef = 07261D9C1F0551D2001F839C /* congratulations.png */; };
 		07261D9F1F06643E001F839C /* D3LLandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261D9E1F06643E001F839C /* D3LLandNode.swift */; };
 		07261DA11F067494001F839C /* D3Destroyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261DA01F067494001F839C /* D3Destroyable.swift */; };
+		07261DA31F067E0E001F839C /* D3Lea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261DA21F067E0E001F839C /* D3Lea.swift */; };
 		07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
 		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
@@ -104,6 +105,7 @@
 		07261D9C1F0551D2001F839C /* congratulations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = congratulations.png; sourceTree = "<group>"; };
 		07261D9E1F06643E001F839C /* D3LLandNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3LLandNode.swift; sourceTree = "<group>"; };
 		07261DA01F067494001F839C /* D3Destroyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Destroyable.swift; sourceTree = "<group>"; };
+		07261DA21F067E0E001F839C /* D3Lea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Lea.swift; sourceTree = "<group>"; };
 		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			children = (
 				07261D9A1F0547ED001F839C /* D3LScene.swift */,
 				07261D9E1F06643E001F839C /* D3LLandNode.swift */,
+				07261DA21F067E0E001F839C /* D3Lea.swift */,
 			);
 			name = 3dlea;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				07F8D67A1EF161B400C53D15 /* D3LandNode.swift in Sources */,
 				07F8D67C1EF1797100C53D15 /* D3Node.swift in Sources */,
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
+				07261DA31F067E0E001F839C /* D3Lea.swift in Sources */,
 				0701B0781EE972BB00861A73 /* FlipperViewController.swift in Sources */,
 				0701B07D1EE994A200861A73 /* iCarousel.m in Sources */,
 				07D427F21EFC260E005577F5 /* D2ParallaxScene.swift in Sources */,
