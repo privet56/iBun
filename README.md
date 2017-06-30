@@ -8,8 +8,7 @@ iBun - an iOS App with Swift 3; incl. picture Carousel
 ![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.spritekit.gif)
 
 ## SceneKit 3D game:
-![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.3d.gif)
-![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.3d_2.gif)
+![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.3d.lea.gif)
 ![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.3d_3.gif)
 
 TODO->

@@ -14,7 +14,7 @@ import SceneKit
 
 class D3Controller : UIViewController
 {
-    let DEVELOPERMODE:Bool = true;
+    let DEVELOPERMODE:Bool = false;
     
     var backgroundImageView:UIImageView? = nil;
     var scnView:SCNView? = nil;

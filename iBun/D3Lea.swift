@@ -16,7 +16,7 @@ class D3Lea : D3Destroyable
 {
     static let NAME = "landscape";
     var NAME_OF_MODEL_NODE:String = "";
-    var canDestroy:Bool = false;
+    var canDestroy:Bool = true;
     
     override init(scnNode:SCNNode)
     {
@@ -30,6 +30,56 @@ class D3Lea : D3Destroyable
     {
         return super.getName() + ":" + NAME_OF_MODEL_NODE;
     }
+    override func explode(d3Scene:D3Scene, pos:SCNVector3)
+    {
+        self.m_hit -= 1;//hack
+        
+        let pathToEmitter = Bundle.main.path(forResource: "ConfettiSceneKitParticleSystem", ofType: "scnp")
+        let exp = NSKeyedUnarchiver.unarchiveObject(withFile: pathToEmitter!) as? SCNParticleSystem
+        /*
+         exp?.loops = false
+         exp?.birthRate = 5000
+         exp?.emissionDuration = 0.01
+         exp?.spreadingAngle = 180
+         exp?.particleDiesOnCollision = true
+         exp?.particleLifeSpan = 0.5
+         exp?.particleLifeSpanVariation = 0.3
+         exp?.particleVelocity = 500
+         exp?.particleVelocityVariation = 3
+         exp?.particleSize = 0.05
+         exp?.stretchFactor = 0.05
+         exp?.particleColor = UIColor.blueColor()
+         */
+        //exp?.birthRate /= 5;
+        //exp?.particleLifeSpan = 0.25;
+        //exp?.stretchFactor = 0.05;
+        let sphereGeometry  = SCNSphere(radius: 1);
+        exp?.emitterShape = self.geometry!;//sphereGeometry;
+        exp?.emitterShape = sphereGeometry;
+        exp?.birthLocation = .volume;
+        exp?.birthLocation = .vertex;
+        
+        let particlesNode = SCNNode();
+        particlesNode.addParticleSystem(exp!);
+        d3Scene.rootNode.addChildNode(particlesNode);
+        particlesNode.position = SCNVector3Make(pos.x, pos.y + 6, pos.z);
+        
+        DispatchQueue.main.asyncAfter(
+            deadline: .now() + 5,
+            execute:
+            {_ in
+                particlesNode.removeFromParentNode();
+        }
+        );
+        /* does not work here!
+         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block:
+         {_ in
+         print("removePS-1");
+         particlesNode.removeFromParentNode();
+         print("removePS");
+         });*/
+    }
+
     override func onCollided(d3Scene:D3Scene, other:SCNNode?, contactPoint:SCNVector3)->Void
     {
         if(canDestroy)

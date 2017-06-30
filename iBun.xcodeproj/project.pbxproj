@@ -38,6 +38,8 @@
 		07261D9F1F06643E001F839C /* D3LLandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261D9E1F06643E001F839C /* D3LLandNode.swift */; };
 		07261DA11F067494001F839C /* D3Destroyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261DA01F067494001F839C /* D3Destroyable.swift */; };
 		07261DA31F067E0E001F839C /* D3Lea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261DA21F067E0E001F839C /* D3Lea.swift */; };
+		07261DA61F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 07261DA41F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp */; };
+		07261DA71F06A4A4001F839C /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 07261DA51F06A4A4001F839C /* confetti.png */; };
 		07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
 		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
@@ -106,6 +108,8 @@
 		07261D9E1F06643E001F839C /* D3LLandNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3LLandNode.swift; sourceTree = "<group>"; };
 		07261DA01F067494001F839C /* D3Destroyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Destroyable.swift; sourceTree = "<group>"; };
 		07261DA21F067E0E001F839C /* D3Lea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Lea.swift; sourceTree = "<group>"; };
+		07261DA41F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = ConfettiSceneKitParticleSystem.scnp; sourceTree = "<group>"; };
+		07261DA51F06A4A4001F839C /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 		07F8D66B1EF134BD00C53D15 /* 3d */ = {
 			isa = PBXGroup;
 			children = (
+				07261DA41F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp */,
+				07261DA51F06A4A4001F839C /* confetti.png */,
 				07261D991F0547AF001F839C /* 3dlea */,
 				07F8D66C1EF134E800C53D15 /* D3Controller.swift */,
 				07F8D66E1EF136E100C53D15 /* D3Scene.swift */,
@@ -351,10 +357,12 @@
 				0701B0901EEEBF0E00861A73 /* d2.atlas in Resources */,
 				07F8D6901EFBD9F500C53D15 /* spark.png in Resources */,
 				07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */,
+				07261DA61F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp in Resources */,
 				0701B0741EE93EB400861A73 /* left-arrow.png in Resources */,
 				07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */,
 				07F8D6761EF14DCE00C53D15 /* SceneKitScene.scn in Resources */,
 				07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */,
+				07261DA71F06A4A4001F839C /* confetti.png in Resources */,
 				07F8D68A1EFAA04C00C53D15 /* gun.atlas in Resources */,
 				07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */,
 				07261D9D1F0551D2001F839C /* congratulations.png in Resources */,
