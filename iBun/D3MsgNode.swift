@@ -43,7 +43,10 @@ class D3MsgNode : D3Node
         let moveDown = SCNAction.moveBy(x: -CGFloat(string.characters.count / 10), y: -CGFloat(initHeight * 1.1), z: 0, duration:3.3);
         self.runAction(moveDown, completionHandler:
         {
-            self.removeFromParentNode();
+            if(self.parent != nil)
+            {
+                self.removeFromParentNode();
+            }
         });
     }
 }

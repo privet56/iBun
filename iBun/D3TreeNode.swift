@@ -12,10 +12,10 @@ import UIKit
 import QuartzCore
 import SceneKit
 
-class D3TreeNode : D3Node
+class D3TreeNode : D3Destroyable
 {
     static let NAME = "tree";
-    var m_hit:Int = 0;
+    //var m_hit:Int = 0;
     
     override init()
     {
@@ -33,7 +33,7 @@ class D3TreeNode : D3Node
     override func onCollided(d3Scene:D3Scene, other:SCNNode?, contactPoint:SCNVector3)->Void
     {
         super.onCollided(d3Scene: d3Scene, other: other, contactPoint: contactPoint);
-        
+        /*
         if((other != nil) && (other is D3ShotNode))
         {
             //let pos = self.convertPosition(contactPoint, to: d3Scene.rootNode);
@@ -51,6 +51,7 @@ class D3TreeNode : D3Node
         self.physicsBody!.isAffectedByGravity  = false;
         self.physicsBody!.type = .static;
         self.position = self.presentation.position;
+        */
     }
     
     //Global constants and variables are always computed lazily

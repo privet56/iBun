@@ -35,6 +35,8 @@
 		07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252FB81EE1992C00FC975F /* LaunchScreen.storyboard */; };
 		07261D9B1F0547ED001F839C /* D3LScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261D9A1F0547ED001F839C /* D3LScene.swift */; };
 		07261D9D1F0551D2001F839C /* congratulations.png in Resources */ = {isa = PBXBuildFile; fileRef = 07261D9C1F0551D2001F839C /* congratulations.png */; };
+		07261D9F1F06643E001F839C /* D3LLandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261D9E1F06643E001F839C /* D3LLandNode.swift */; };
+		07261DA11F067494001F839C /* D3Destroyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07261DA01F067494001F839C /* D3Destroyable.swift */; };
 		07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
 		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
@@ -100,6 +102,8 @@
 		07252FBB1EE1992C00FC975F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07261D9A1F0547ED001F839C /* D3LScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3LScene.swift; sourceTree = "<group>"; };
 		07261D9C1F0551D2001F839C /* congratulations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = congratulations.png; sourceTree = "<group>"; };
+		07261D9E1F06643E001F839C /* D3LLandNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3LLandNode.swift; sourceTree = "<group>"; };
+		07261DA01F067494001F839C /* D3Destroyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Destroyable.swift; sourceTree = "<group>"; };
 		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				07261D9A1F0547ED001F839C /* D3LScene.swift */,
+				07261D9E1F06643E001F839C /* D3LLandNode.swift */,
 			);
 			name = 3dlea;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				07F8D68D1EFBD9F500C53D15 /* D3Fire.scnp */,
 				07F8D68E1EFBD9F500C53D15 /* spark.png */,
 				07D427F31EFC28FB005577F5 /* D3MsgNode.swift */,
+				07261DA01F067494001F839C /* D3Destroyable.swift */,
 			);
 			name = 3d;
 			sourceTree = "<group>";
@@ -386,9 +392,11 @@
 				07F8D6801EF1843600C53D15 /* D3MeNode.swift in Sources */,
 				0701B0811EEAC34300861A73 /* PicViewController.swift in Sources */,
 				07252FB01EE1992C00FC975F /* DataViewController.swift in Sources */,
+				07261D9F1F06643E001F839C /* D3LLandNode.swift in Sources */,
 				0701B0921EEEBF6000861A73 /* D2SpaceShip.swift in Sources */,
 				07F8D6861EFA88CE00C53D15 /* D3D2Gun.swift in Sources */,
 				07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */,
+				07261DA11F067494001F839C /* D3Destroyable.swift in Sources */,
 				07F8D6841EF3F3AD00C53D15 /* D3D2Forward.swift in Sources */,
 				0701B09A1EEEE5E400861A73 /* D2Shot.swift in Sources */,
 				0701B0761EE941AD00861A73 /* Arrow.swift in Sources */,

@@ -20,8 +20,8 @@ class D3LScene : D3Scene//, SCNPhysicsContactDelegate
     }
     override func initWorld()
     {
-        //self.physicsWorld.gravity = SCNVector3Make(0.0, -99.0, 0.0);
-        //self.physicsWorld.contactDelegate = self;
+        self.physicsWorld.gravity = SCNVector3Make(0.0, -99.0, 0.0);
+        self.physicsWorld.contactDelegate = self;
         
         do  //LIGHTS
         {
@@ -73,9 +73,10 @@ class D3LScene : D3Scene//, SCNPhysicsContactDelegate
         {
             self.d3MeNode = D3MeNode.create()
             self.rootNode.addChildNode(self.d3MeNode!)
-            
             let floorNode = D3LandNode.create();
             self.rootNode.addChildNode(floorNode);
+            /*let landscapeNode = */D3LLandNode.create(scene:self);
+            //self.rootNode.addChildNode(landscapeNode);
         }
     }
     

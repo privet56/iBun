@@ -14,6 +14,8 @@ import SceneKit
 
 class D3Controller : UIViewController
 {
+    let DEVELOPERMODE:Bool = false;
+    
     var backgroundImageView:UIImageView? = nil;
     var scnView:SCNView? = nil;
 
@@ -31,7 +33,11 @@ class D3Controller : UIViewController
         sView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         iView.addSubview(sView)
         self.switchScene();
-        //sView.debugOptions = [/*.showBoundingBoxes , */.showPhysicsShapes];
+        
+        if(DEVELOPERMODE)
+        {
+            sView.debugOptions = [.showBoundingBoxes/*, .showPhysicsShapes*/];
+        }
         //sView.showsStatistics = true
         //sView.allowsCameraControl = true
         sView.isUserInteractionEnabled = true
@@ -47,7 +53,7 @@ class D3Controller : UIViewController
     }
     func switchScene()
     {
-        let sScene = ((self.scnView?.scene == nil) || isD3LeaScene()) ? D3Scene() : D3LScene(/*named:"d3.scnassets/l1.dae"*/);
+        let sScene = DEVELOPERMODE ? D3LScene(/*named:"d3.scnassets/l1.dae"*/) : ((self.scnView?.scene == nil) || isD3LeaScene()) ? D3Scene() : D3LScene(/*named:"d3.scnassets/l1.dae"*/);
         
         self.scnView?.scene = sScene;
         do

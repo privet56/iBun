@@ -143,7 +143,7 @@ class D3MeNode : D3Node
     class func create() -> D3MeNode
     {
         //let meNode = D3MeNode()   //if !gemoetry, no gravitation effects
-        let meNode = D3MeNode(geometry: SCNBox(width: 1, height: 3, length: 1, chamferRadius: 0))
+        let meNode = D3MeNode(geometry: SCNBox(width: 0.01, height: 3, length: 0.01, chamferRadius: 0))
         meNode.name = D3MeNode.NAME;
         
         meNode.camera = SCNCamera();

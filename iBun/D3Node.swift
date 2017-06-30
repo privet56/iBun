@@ -23,10 +23,12 @@ class D3Node : SCNNode
     {
         super.init()
         
-        geometry = scnNode.geometry;
-        position = scnNode.position;
-        physicsBody = scnNode.physicsBody;
-        name = scnNode.name;
+        self.geometry       = scnNode.geometry;
+        self.position       = scnNode.position;
+        self.physicsBody    = scnNode.physicsBody;
+        self.name           = scnNode.name;
+        self.scale          = scnNode.scale;
+        self.transform      = scnNode.transform;
         
         scnNode.childNodes.forEach
         {
@@ -108,7 +110,7 @@ class D3Node : SCNNode
     class func createBody(sType:String, type:SCNPhysicsBodyType,geo:SCNGeometry,scale:SCNVector3=SCNVector3Make(1.0, 1.0, 1.0)) -> SCNPhysicsBody
     {
         //.static = no gravity effect, no forces
-        let type:SCNPhysicsBodyType = (sType == D3LandNode.NAME) ? .static : .dynamic;
+        let type:SCNPhysicsBodyType = ((sType == D3LandNode.NAME) || (sType == D3LLandNode.NAME)) ? .static : .dynamic;
         let opt = [SCNPhysicsShape.Option.scale:scale];
         let shape:SCNPhysicsShape = SCNPhysicsShape(geometry:geo, options: opt);
         let pb : SCNPhysicsBody = SCNPhysicsBody(type: type, shape: shape);
@@ -120,7 +122,8 @@ class D3Node : SCNNode
         
         switch sType
         {
-            case D3LandNode.NAME:
+        case D3LandNode.NAME,
+             D3LLandNode.NAME:
                 pb.isAffectedByGravity  = false
                 break;
             case D3TreeNode.NAME:
@@ -153,7 +156,8 @@ class D3Node : SCNNode
 
         switch sType
         {
-        case D3LandNode.NAME:
+        case D3LandNode.NAME,
+             D3LLandNode.NAME:
             pb.categoryBitMask      = Globals.D3CollisionCategoryFloor
             pb.collisionBitMask     = Globals.D3CollisionCategoryPlayer | Globals.D3CollisionCategoryTree | Globals.D3CollisionCategoryShot
             break;

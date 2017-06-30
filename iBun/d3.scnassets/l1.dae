@@ -2896,7 +2896,7 @@
   <library_controllers/>
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
-      <node id="Landscape" name="Landscape" type="NODE">
+      <!-- node id="Landscape" name="Landscape" type="NODE">
         <matrix sid="transform">35 0 0 0 0 35 0 0 0 0 9 0 0 0 0 1</matrix>
         <instance_geometry url="#Plane-mesh" name="Landscape">
           <bind_material>
@@ -2905,7 +2905,7 @@
             </technique_common>
           </bind_material>
         </instance_geometry>
-      </node>
+      </node -->
       <node id="Road" name="Road" type="NODE">
         <matrix sid="transform">1.299338 0 0 -2.553959 0 1.870322 0 33.94113 0 0 0.05189187 0.1175792 0 0 0 1</matrix>
         <instance_geometry url="#Cube_001-mesh" name="Road">
@@ -3430,7 +3430,7 @@
           </bind_material>
         </instance_geometry>
       </node>
-      <node id="Cube" name="Cube" type="NODE">
+      <!-- node id="Cube" name="Cube" type="NODE">
         <matrix sid="transform">0.0260179 0 0 2.600998 0 0.07927901 0 13.70444 0 0 0.07927901 0.1542569 0 0 0 1</matrix>
         <instance_geometry url="#Topper-mesh" name="Cube">
           <bind_material>
@@ -3439,7 +3439,7 @@
             </technique_common>
           </bind_material>
         </instance_geometry>
-      </node>
+      </node-->
       <node id="Roof_001" name="Roof_001" type="NODE">
         <matrix sid="transform">-0.6466026 -9.76343e-8 0 3.796377 9.76343e-8 -0.6466026 0 4.964516 0 0 0.6466026 0.1554169 0 0 0 1</matrix>
         <instance_geometry url="#Room_012-mesh" name="Roof_001">
@@ -3482,7 +3482,7 @@
           </bind_material>
         </instance_geometry>
       </node>
-      <node id="Grass" name="Grass" type="NODE">
+      <!-- node id="Grass" name="Grass" type="NODE">
         <matrix sid="transform">0.1162996 0 0 -7.498123 0 4.02762e-8 -0.5334738 27.30177 0 0.5334738 4.02762e-8 0.1058743 0 0 0 1</matrix>
         <instance_geometry url="#Plane_003-mesh" name="Grass">
           <bind_material>
@@ -3491,7 +3491,7 @@
             </technique_common>
           </bind_material>
         </instance_geometry>
-      </node>
+      </node -->
       <node id="Roof_003" name="Roof_003" type="NODE">
         <matrix sid="transform">-1.87558e-7 0.6466026 0 -5.200784 -0.6466026 -1.87558e-7 0 6.515902 0 0 0.6466026 0.1554169 0 0 0 1</matrix>
         <instance_geometry url="#Room_000-mesh" name="Roof_003">
