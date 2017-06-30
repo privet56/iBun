@@ -41,7 +41,14 @@ class D3Destroyable : D3Node
             if(m_hit > 3)
             {
                 self.removeFromParentNode();
-                Globals.Log(message: "i am("+self.name!+") destroyed! other:"+(other?.name)!);
+                if(other is D3Node)
+                {
+                    Globals.Log(message: "i am("+self.getName()+") destroyed! other:"+(other as! D3Node).getName());
+                }
+                else
+                {
+                    Globals.Log(message: "i am("+self.getName()+") destroyed! other:"+(other?.name)!);
+                }
                 return;
             }
         }

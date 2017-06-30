@@ -29,6 +29,12 @@ class D3Node : SCNNode
         self.name           = scnNode.name;
         self.scale          = scnNode.scale;
         self.transform      = scnNode.transform;
+        self.rotation       = scnNode.rotation;
+        self.morpher        = scnNode.morpher;
+        self.opacity        = scnNode.opacity;
+        self.orientation    = scnNode.orientation;
+        self.pivot          = scnNode.pivot;
+        self.skinner        = scnNode.skinner;
         
         scnNode.childNodes.forEach
         {
@@ -38,6 +44,10 @@ class D3Node : SCNNode
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)!
+    }
+    func getName() -> String
+    {
+        return self.name!;
     }
     func explode(d3Scene:D3Scene, pos:SCNVector3)
     {
