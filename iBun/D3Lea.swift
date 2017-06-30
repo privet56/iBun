@@ -34,18 +34,41 @@ class D3Lea : D3Destroyable
     
     class func create(scene:D3LScene) -> D3Lea
     {
-        let scnScene = SCNScene(named:"d3.scnassets/lea/lea.obj");
-        let scnNode = scnScene?.rootNode;
-        /*let url = NSURL(string: "d3.scnassets/lea/lea.obj")
-        let url = URL.init(fileURLWithPath: "d3.scnassets/lea/lea.obj")
-        let asset = MDLAsset(url: url);
-        let object = asset.object(at: 0);
-        let scnScene = SCNScene(MDLAsset: object);
-        let scnNode = SCNNode(MDLAsset: object);
+        let scnScene = SCNScene(named:"d3.scnassets/lea/lea.dae");
+        let scnNode  = scnScene?.rootNode;
+        if( scnNode == nil)
+        {
+            print("!lea");
+        }
+        if(scnNode?.geometry == nil)
+        {
+            print("WRN: !lea.geometry");
+            scnNode!.geometry = scnNode!.flattenedClone().geometry;
+            if(scnNode?.geometry == nil)
+            {
+                print("ERR: !lea.geometry");
+            }
+        }/*
+        if(scnNode!.geometry?.firstMaterial == nil)
+        {
+            print("WRN: !lea.geometry.!firstMaterial");
+            let material:SCNMaterial = SCNMaterial();
+            material.diffuse.contents = UIImage(named:"d3.scnassets/lea/lea_Texture_0.jpg");
+            //scnNode!.geometry?.materials = [material];
+            //scnNode!.geometry?.materials = Globals.matsFromPic(pathFN: "d3.scnassets/lea/lea_Texture_0", ext: "jpg");
+        }
+        if(scnNode!.geometry?.firstMaterial != nil)
+        {
+            scnNode!.geometry?.firstMaterial!.lightingModel = SCNMaterial.LightingModel.constant;
+        }
         */
+        
+        //OBJ+MTL:
+        //[SceneKit] Error: C3DLightingModelPhysicallyBased not supported by OpenGL renderer
+        //The simulator only supports OpenGL, but spherical maps are only available when SceneKit runs on Metal.
+        
         let n = D3Lea(scnNode:scnNode!);
         n.name = D3TreeNode.NAME;
-        
         
         n.physicsBody = D3Node.createBody(sType: D3LandNode.NAME, type:.dynamic, geo: n.geometry!, scale:n.scale);
         

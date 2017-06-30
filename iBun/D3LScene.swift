@@ -75,8 +75,11 @@ class D3LScene : D3Scene//, SCNPhysicsContactDelegate
             self.rootNode.addChildNode(self.d3MeNode!)
             let floorNode = D3LandNode.create();
             self.rootNode.addChildNode(floorNode);
-            /*let landscapeNode = */D3LLandNode.create(scene:self);
-            //self.rootNode.addChildNode(landscapeNode);
+            D3LLandNode.create(scene:self);
+            let leaNode = D3Lea.create(scene:self);
+            let leaPos = SCNVector3Make(0, 7, -30);
+            leaNode.position = leaPos;
+            self.rootNode.addChildNode(leaNode);
         }
     }
     
