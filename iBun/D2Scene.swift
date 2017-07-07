@@ -47,6 +47,17 @@ class D2Scene: SKScene, SKPhysicsContactDelegate
                 scene!.addChild(fox)
             }
         }
+        
+        if(Globals.DEVELOPERMODE)
+        {
+            DispatchQueue.main.asyncAfter(
+                deadline: .now() + 1,
+                execute:
+                {_ in
+                    self.enemiesDestroyed();
+                }
+            );
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact)

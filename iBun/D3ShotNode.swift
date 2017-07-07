@@ -14,7 +14,6 @@ import SceneKit
 
 class D3ShotNode : D3Node
 {
-    
     static let NAME = "shot";
     
     override init()

@@ -49,6 +49,11 @@
 		07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */; };
 		07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */; };
 		07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1AAC1EE6C96500698EAF /* Page2DViewController.swift */; };
+		07AF36551F0F7D3800B7BA62 /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF36541F0F7D2C00B7BA62 /* PDFKit.framework */; };
+		07AF36571F0F7D4F00B7BA62 /* ModelIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF36561F0F7D4200B7BA62 /* ModelIO.framework */; };
+		07AF36591F0F7D7000B7BA62 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF36581F0F7D6700B7BA62 /* CoreML.framework */; };
+		07AF365B1F0F811200B7BA62 /* D2Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF365A1F0F811200B7BA62 /* D2Certificate.swift */; };
+		07AF365D1F0F994E00B7BA62 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF365C1F0F994700B7BA62 /* SafariServices.framework */; };
 		07D427F01EFC24EC005577F5 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D427EF1EFC24EC005577F5 /* Math.swift */; };
 		07D427F21EFC260E005577F5 /* D2ParallaxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D427F11EFC260E005577F5 /* D2ParallaxScene.swift */; };
 		07D427F41EFC28FB005577F5 /* D3MsgNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D427F31EFC28FB005577F5 /* D3MsgNode.swift */; };
@@ -121,6 +126,11 @@
 		07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.1.gif; sourceTree = "<group>"; };
 		07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.2.gif; sourceTree = "<group>"; };
 		07AE1AAC1EE6C96500698EAF /* Page2DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2DViewController.swift; sourceTree = "<group>"; };
+		07AF36541F0F7D2C00B7BA62 /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
+		07AF36561F0F7D4200B7BA62 /* ModelIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ModelIO.framework; path = System/Library/Frameworks/ModelIO.framework; sourceTree = SDKROOT; };
+		07AF36581F0F7D6700B7BA62 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		07AF365A1F0F811200B7BA62 /* D2Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D2Certificate.swift; sourceTree = "<group>"; };
+		07AF365C1F0F994700B7BA62 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		07D427EF1EFC24EC005577F5 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		07D427F11EFC260E005577F5 /* D2ParallaxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2ParallaxScene.swift; sourceTree = "<group>"; };
 		07D427F31EFC28FB005577F5 /* D3MsgNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3MsgNode.swift; sourceTree = "<group>"; };
@@ -150,6 +160,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07AF365D1F0F994E00B7BA62 /* SafariServices.framework in Frameworks */,
+				07AF36591F0F7D7000B7BA62 /* CoreML.framework in Frameworks */,
+				07AF36571F0F7D4F00B7BA62 /* ModelIO.framework in Frameworks */,
+				07AF36551F0F7D3800B7BA62 /* PDFKit.framework in Frameworks */,
 				0701B0881EEE8CB900861A73 /* SceneKit.framework in Frameworks */,
 				0701B0861EEE8CB100861A73 /* SpriteKit.framework in Frameworks */,
 			);
@@ -161,6 +175,10 @@
 		0701B0841EEE8CB100861A73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07AF365C1F0F994700B7BA62 /* SafariServices.framework */,
+				07AF36581F0F7D6700B7BA62 /* CoreML.framework */,
+				07AF36561F0F7D4200B7BA62 /* ModelIO.framework */,
+				07AF36541F0F7D2C00B7BA62 /* PDFKit.framework */,
 				0701B0871EEE8CB900861A73 /* SceneKit.framework */,
 				0701B0851EEE8CB100861A73 /* SpriteKit.framework */,
 			);
@@ -179,6 +197,7 @@
 				07F8D6671EF0266F00C53D15 /* D2SceneFinish.swift */,
 				07F8D6691EF02EE800C53D15 /* D2Back.swift */,
 				07D427F11EFC260E005577F5 /* D2ParallaxScene.swift */,
+				07AF365A1F0F811200B7BA62 /* D2Certificate.swift */,
 			);
 			name = 2d;
 			sourceTree = "<group>";
@@ -417,6 +436,7 @@
 				07F8D66D1EF134E800C53D15 /* D3Controller.swift in Sources */,
 				07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */,
 				07F8D66F1EF136E100C53D15 /* D3Scene.swift in Sources */,
+				07AF365B1F0F811200B7BA62 /* D2Certificate.swift in Sources */,
 				07261D9B1F0547ED001F839C /* D3LScene.swift in Sources */,
 				07F8D67E1EF17A1B00C53D15 /* D3TreeNode.swift in Sources */,
 				07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */,
@@ -487,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -531,7 +551,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

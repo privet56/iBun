@@ -51,6 +51,11 @@ class D2SceneFinish : SKScene
             simpleLabel.position = CGPoint(x: size.width / 2.0, y: size.height - simpleLabel.frame.size.height)
             addChild(simpleLabel)
         }
+        do
+        {
+            let cert = D2Certificate(scene:self, viewController:d2Controller, onPressed:nil);
+            addChild(cert)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)

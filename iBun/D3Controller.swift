@@ -14,8 +14,6 @@ import SceneKit
 
 class D3Controller : UIViewController
 {
-    let DEVELOPERMODE:Bool = false;
-    
     var backgroundImageView:UIImageView? = nil;
     var scnView:SCNView? = nil;
 
@@ -34,7 +32,7 @@ class D3Controller : UIViewController
         iView.addSubview(sView)
         self.switchScene();
         
-        if(DEVELOPERMODE)
+        if(Globals.DEVELOPERMODE)
         {
             //sView.debugOptions = [.showBoundingBoxes/*, .showPhysicsShapes*/];
         }
@@ -53,7 +51,7 @@ class D3Controller : UIViewController
     }
     func switchScene()
     {
-        let sScene = DEVELOPERMODE ? D3LScene(/*named:"d3.scnassets/l1.dae"*/) : ((self.scnView?.scene == nil) || isD3LeaScene()) ? D3Scene() : D3LScene(/*named:"d3.scnassets/l1.dae"*/);
+        let sScene = Globals.DEVELOPERMODE ? D3LScene(/*named:"d3.scnassets/l1.dae"*/) : ((self.scnView?.scene == nil) || isD3LeaScene()) ? D3Scene() : D3LScene(/*named:"d3.scnassets/l1.dae"*/);
         
         self.scnView?.scene = sScene;
         do

@@ -14,6 +14,8 @@ import SceneKit
 
 class Globals
 {
+    static let DEVELOPERMODE:Bool = true;
+    
     static let CollisionCategoryPlayer : UInt32 = 0x1 << 1
     static let CollisionCategoryShot   : UInt32 = 0x1 << 2
     static let CollisionCategoryEnemy  : UInt32 = 0x1 << 3
@@ -26,7 +28,6 @@ class Globals
     static let D3CollisionCategoryEnemy  : Int = 1 << 3
     static let D3CollisionCategoryTree   : Int = 1 << 4
     
-
     class func rand_bool() -> Bool
     {
         let f:UInt32 = arc4random_uniform(2) + 1;
