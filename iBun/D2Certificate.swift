@@ -13,14 +13,14 @@ import SafariServices
 
 class D2Certificate : SKSpriteNode, UIDocumentInteractionControllerDelegate
 {
-    var viewController:UIViewController? = nil;
+    var viewController:D2Controller? = nil;
     var onPressed:(()->())? = nil;
     
     required init?(coder aDecoder: NSCoder)
     {
         fatalError("init(coder:) has not been implemented")
     }
-    init(scene:SKScene, viewController:UIViewController, onPressed:(()->())?) //constructor needs the scene to be able to scale & position the object in the scene
+    init(scene:SKScene, viewController:D2Controller, onPressed:(()->())?) //constructor needs the scene to be able to scale & position the object in the scene
     {
         self.viewController = viewController;
         self.onPressed = onPressed;
@@ -88,28 +88,20 @@ class D2Certificate : SKSpriteNode, UIDocumentInteractionControllerDelegate
     }
     func getScreenshot(cert:UIImage) -> UIImage
     {
-        return cert;
-        
         let view = (self.viewController?.view)!;
         UIGraphicsBeginImageContext(view.frame.size);
-        view.layer.render(in:UIGraphicsGetCurrentContext()!);
-        let image = UIGraphicsGetImageFromCurrentImageContext()!;
+        //UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0);
+        //view.layer.render(in:UIGraphicsGetCurrentContext()!);
+        view.drawHierarchy(in: CGRect(x:0,y:0,width:view.frame.size.width, height:view.frame.size.height), afterScreenUpdates:false);
+        var image = UIGraphicsGetImageFromCurrentImageContext()!;
         UIGraphicsEndImageContext();
         
-        return image;
+        image = UIImage.init(cgImage: image.cgImage!, scale: 1.0, orientation: .downMirrored);    //rotate!
         
-        do
-        {   /*
-            let certSize = cert.size;
-            let scrsSize = image.size;
-            //  1,5     = 1500 / 960;
-            let scalefactor  = certSize.width / scrsSize.width;
-            let targetSize = CGSize(width:scrsSize.width / scalefactor, height:scrsSize.height / scalefactor);
-            */
-            let resizedImage = self.resize(imageToResize: image, certSize:cert.size);
-            let rect = CGRect(x: cert.size.width / 4, y: cert.size.height / 2, width: resizedImage.size.width, height: resizedImage.size.height);
-            let result = self.imageOntoCert(cert:cert, byDrawingImage: resizedImage, inRect:rect);
-        }
+        let resizedImage = self.resize(imageToResize: image, certSize:cert.size);
+        let rect = CGRect(x: cert.size.width / 4, y: cert.size.height / 5, width: resizedImage.size.width, height: resizedImage.size.height);
+        let result = self.imageOntoCert(cert:cert, byDrawingImage: resizedImage, inRect:rect);
+        return result;
     }
     private func resize(imageToResize: UIImage, certSize: CGSize) -> UIImage
     {
@@ -127,7 +119,7 @@ class D2Certificate : SKSpriteNode, UIDocumentInteractionControllerDelegate
             scaleFactor = certSize.width / width;
         }
         
-        scaleFactor /= 2;
+        scaleFactor /= 2.5;
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width:width * scaleFactor, height:height * scaleFactor), false, 0.0)
         imageToResize.draw(in: CGRect(x:0, y:0, width:width * scaleFactor, height:height * scaleFactor))
