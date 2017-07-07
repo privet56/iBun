@@ -51,17 +51,34 @@ class D2Certificate : SKSpriteNode, UIDocumentInteractionControllerDelegate
         {
             try FileManager.default.removeItem (atPath:path)
         }
-        catch let error as NSError
+        catch _ as NSError
         {
             
         }
         do
         {
-            var i:UIImage           = UIImage(named:"div/certificate.png")!;
-            var ii:UIImage          = UIImage.init(cgImage: i.cgImage!, scale: 1.0, orientation: .downMirrored);    //rotate!
-            var i2:UIImage          = getScreenshot(cert:ii);
-            var pdfpage:PDFPage     = PDFPage(image:i2)!;
-            var pdfdoc:PDFDocument  = PDFDocument();
+            let i:UIImage           = UIImage(named:"div/certificate.png")!;
+            let ii:UIImage          = UIImage.init(cgImage: i.cgImage!, scale: 1.0, orientation: .downMirrored);    //rotate!
+            let i2:UIImage          = getScreenshot(cert:ii);
+            let pdfpage:PDFPage     = PDFPage(image:i2)!;
+            /*do
+            {
+                let pageBounds = pdfpage.bounds(for: .cropBox)
+                let textFieldNameBounds = CGRect(x: 169, y: pageBounds.size.height - 102, width: 371, height: 23)
+                let textFieldName = PDFAnnotation(bounds: textFieldNameBounds, forType: PDFAnnotationSubtype.link, withProperties: nil)
+                textFieldName.backgroundColor = UIColor.blue.withAlphaComponent(0.25)
+                textFieldName.font = UIFont.systemFont(ofSize: 18)
+                pdfpage.addAnnotation(textFieldName);
+                
+                let textFieldMultilineBounds = CGRect(x: 90, y: pageBounds.size.height - 632, width: 276, height: 80)
+                let textFieldMultiline = PDFAnnotation(bounds: textFieldMultilineBounds, forType: PDFAnnotationSubtype.widget, withProperties: nil)
+                textFieldMultiline.widgetFieldType = PDFAnnotationWidgetSubtype.text
+                textFieldMultiline.backgroundColor = UIColor.red.withAlphaComponent(0.25)
+                textFieldMultiline.font = UIFont.systemFont(ofSize: 24)
+                textFieldMultiline.isMultiline = true
+                pdfpage.addAnnotation(textFieldMultiline)
+            }*/
+            let pdfdoc:PDFDocument  = PDFDocument();
             pdfdoc.insert(pdfpage, at: 0);
             pdfdoc.write(toFile:path);
         }

@@ -41,6 +41,7 @@
 		07261DA61F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 07261DA41F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp */; };
 		07261DA71F06A4A4001F839C /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 07261DA51F06A4A4001F839C /* confetti.png */; };
 		07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */; };
+		076739FC1F0FBAFA005B82B4 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076739FB1F0FBAF4005B82B4 /* Vision.framework */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
 		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
 		07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */; };
@@ -116,6 +117,7 @@
 		07261DA41F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = ConfettiSceneKitParticleSystem.scnp; sourceTree = "<group>"; };
 		07261DA51F06A4A4001F839C /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
+		076739FB1F0FBAF4005B82B4 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076739FC1F0FBAFA005B82B4 /* Vision.framework in Frameworks */,
 				07AF365D1F0F994E00B7BA62 /* SafariServices.framework in Frameworks */,
 				07AF36591F0F7D7000B7BA62 /* CoreML.framework in Frameworks */,
 				07AF36571F0F7D4F00B7BA62 /* ModelIO.framework in Frameworks */,
@@ -175,6 +178,7 @@
 		0701B0841EEE8CB100861A73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				076739FB1F0FBAF4005B82B4 /* Vision.framework */,
 				07AF365C1F0F994700B7BA62 /* SafariServices.framework */,
 				07AF36581F0F7D6700B7BA62 /* CoreML.framework */,
 				07AF36561F0F7D4200B7BA62 /* ModelIO.framework */,
