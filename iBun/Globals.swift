@@ -14,7 +14,7 @@ import SceneKit
 
 class Globals
 {
-    static let DEVELOPERMODE:Bool = true;
+    static let DEVELOPERMODE:Bool = false;
     
     static let CollisionCategoryPlayer : UInt32 = 0x1 << 1
     static let CollisionCategoryShot   : UInt32 = 0x1 << 2
