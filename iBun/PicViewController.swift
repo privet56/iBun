@@ -49,19 +49,24 @@ class PicViewController : UIViewController
                 do
                 {
                     let lblHeight:CGFloat = 55;
-                    let label = UILabel(frame:CGRect(x:0, y:self.view.frame.size.height - lblHeight, width:self.view.frame.size.width, height:lblHeight));
+                    let y:CGFloat = UIApplication.shared.statusBarFrame.height;//self.view.frame.size.height - lblHeight
+                    let label = UILabel(frame:CGRect(x:0, y:y, width:self.view.frame.size.width, height:lblHeight));
                     //label.center = CGPoint(x:9, y:9)
                     label.textAlignment = .left
-                    label.numberOfLines = 0;
+                    label.numberOfLines = 2;//0 would allow arbitrary number of lines
                     label.lineBreakMode = .byWordWrapping
                     label.font = UIFont.systemFont(ofSize:16.0);
                     let s:String = " ? \n ?"
                     let attrString:NSMutableAttributedString = NSMutableAttributedString(string:s);
                     label.attributedText = attrString;
-                    label.backgroundColor = UIColor.white;
+                    //label.backgroundColor = UIColor.white;
+                    label.textColor = UIColor.white;
                     //label.text = s;
                     self.view.addSubview(label);
                     self.labelRecognitionResult = label;
+                    
+                    //label.sizeToFit()
+                    //label.adjustsFontSizeToFitWidth = true
                 }
             }
             
@@ -87,6 +92,8 @@ class PicViewController : UIViewController
                     DispatchQueue.main.async
                     {
                         self.labelRecognitionResult?.text = recoResult1 + "\n" + recoResult2;
+                        //self.labelRecognitionResult?.sizeToFit()
+                        //self.labelRecognitionResult?.adjustsFontSizeToFitWidth = true
                     }
                 }
                 var loadingOperations : [Operation] = [];
