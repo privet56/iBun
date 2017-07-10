@@ -4,6 +4,9 @@ iBun - an iOS App with Swift 3; incl. picture Carousel, PDF Generation and 3D ga
 ## Pic Carousel:
 ![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.gif)
 
+## Pic Carousel with machine learning algorithms for image recognition:
+![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.recognition.gif)
+
 ## SpriteKit 2D game:
 ![iBun](https://raw.githubusercontent.com/privet56/iBun/master/ibun.spritekit.gif)
 

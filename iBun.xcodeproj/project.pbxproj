@@ -42,6 +42,10 @@
 		07261DA71F06A4A4001F839C /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 07261DA51F06A4A4001F839C /* confetti.png */; };
 		07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */; };
 		076739FC1F0FBAFA005B82B4 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076739FB1F0FBAF4005B82B4 /* Vision.framework */; };
+		07673A041F136850005B82B4 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 076739FE1F136833005B82B4 /* Resnet50.mlmodel */; };
+		07673A051F136850005B82B4 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 076739FF1F136838005B82B4 /* Inceptionv3.mlmodel */; };
+		07673A061F136850005B82B4 /* Resnet50.labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07673A001F136838005B82B4 /* Resnet50.labels.txt */; };
+		07673A091F136850005B82B4 /* Inceptionv3.labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07673A031F136850005B82B4 /* Inceptionv3.labels.txt */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
 		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
 		07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */; };
@@ -118,6 +122,10 @@
 		07261DA51F06A4A4001F839C /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		076739FB1F0FBAF4005B82B4 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		076739FE1F136833005B82B4 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../res/lm/Resnet50.mlmodel; sourceTree = "<group>"; };
+		076739FF1F136838005B82B4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../res/lm/Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		07673A001F136838005B82B4 /* Resnet50.labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Resnet50.labels.txt; path = ../../../../res/lm/Resnet50.labels.txt; sourceTree = "<group>"; };
+		07673A031F136850005B82B4 /* Inceptionv3.labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Inceptionv3.labels.txt; path = ../../../../res/lm/Inceptionv3.labels.txt; sourceTree = "<group>"; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
@@ -226,6 +234,7 @@
 		07252FAA1EE1992C00FC975F /* iBun */ = {
 			isa = PBXGroup;
 			children = (
+				076739FD1F1367C6005B82B4 /* ml */,
 				07F8D66B1EF134BD00C53D15 /* 3d */,
 				07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */,
 				0701B08A1EEE93BA00861A73 /* 2d */,
@@ -264,6 +273,17 @@
 				07261DA21F067E0E001F839C /* D3Lea.swift */,
 			);
 			name = 3dlea;
+			sourceTree = "<group>";
+		};
+		076739FD1F1367C6005B82B4 /* ml */ = {
+			isa = PBXGroup;
+			children = (
+				07673A031F136850005B82B4 /* Inceptionv3.labels.txt */,
+				076739FF1F136838005B82B4 /* Inceptionv3.mlmodel */,
+				07673A001F136838005B82B4 /* Resnet50.labels.txt */,
+				076739FE1F136833005B82B4 /* Resnet50.mlmodel */,
+			);
+			path = ml;
 			sourceTree = "<group>";
 		};
 		07AE1A9D1EE1AD1A00698EAF /* res */ = {
@@ -384,11 +404,13 @@
 				0701B0741EE93EB400861A73 /* left-arrow.png in Resources */,
 				07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */,
 				07F8D6761EF14DCE00C53D15 /* SceneKitScene.scn in Resources */,
+				07673A061F136850005B82B4 /* Resnet50.labels.txt in Resources */,
 				07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */,
 				07261DA71F06A4A4001F839C /* confetti.png in Resources */,
 				07F8D68A1EFAA04C00C53D15 /* gun.atlas in Resources */,
 				07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */,
 				07261D9D1F0551D2001F839C /* congratulations.png in Resources */,
+				07673A091F136850005B82B4 /* Inceptionv3.labels.txt in Resources */,
 				07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */,
 				07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */,
 				07AE1AA51EE1B64500698EAF /* meadow in Resources */,
@@ -412,6 +434,7 @@
 				07252FAE1EE1992C00FC975F /* RootViewController.swift in Sources */,
 				07F8D66A1EF02EE800C53D15 /* D2Back.swift in Sources */,
 				07F8D67A1EF161B400C53D15 /* D3LandNode.swift in Sources */,
+				07673A051F136850005B82B4 /* Inceptionv3.mlmodel in Sources */,
 				07F8D67C1EF1797100C53D15 /* D3Node.swift in Sources */,
 				07252FB21EE1992C00FC975F /* ModelController.swift in Sources */,
 				07261DA31F067E0E001F839C /* D3Lea.swift in Sources */,
@@ -441,6 +464,7 @@
 				07AE1AAD1EE6C96500698EAF /* Page2DViewController.swift in Sources */,
 				07F8D66F1EF136E100C53D15 /* D3Scene.swift in Sources */,
 				07AF365B1F0F811200B7BA62 /* D2Certificate.swift in Sources */,
+				07673A041F136850005B82B4 /* Resnet50.mlmodel in Sources */,
 				07261D9B1F0547ED001F839C /* D3LScene.swift in Sources */,
 				07F8D67E1EF17A1B00C53D15 /* D3TreeNode.swift in Sources */,
 				07252FAC1EE1992C00FC975F /* AppDelegate.swift in Sources */,
