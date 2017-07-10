@@ -108,10 +108,21 @@ class PicViewController : UIViewController
         {
             print("ERR: !imagePath")
         }
-        
     }
     func recognize1(img:UIImage) -> String
     {
+        let start = DispatchTime.now()
+        do
+        {
+            defer
+            {
+                let end = DispatchTime.now();
+                let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds
+                let milliSecondsTime    = Int32(Double(nanoTime) / 1_000_000)
+                let secondsTime         = Int32(Double(nanoTime) / 1_000_000_000)
+                print("recognize1 took \(milliSecondsTime) ms = \(secondsTime) sec");
+            }
+            
         //input: Image<RGB,299,299>
         //otherwise:
         //  "Input image feature image does not match model description"
@@ -124,10 +135,22 @@ class PicViewController : UIViewController
             print("ERR:recognize1: !img.resize.cvPixelBuffer");
             fatalError()
         }
-        //TODO: list MLModel.prediction return object members
         if let prediction = try? inceptionv3.prediction(image: cvPixelBuffer)
         {
-            let probs = prediction.classLabelProbs.sorted { $0.value > $1.value }
+            let probs = prediction.classLabelProbs.sorted { $0.value > $1.value };
+            
+            /*for var prob in probs
+            {
+                let val:Int     = Int(prob.value * 100.00);
+                print("\(prob.key) [probability: \(val)%]");
+            }*//*
+            var i:Int = -1;
+            for featureName in prediction.outFeatures!.featureNames
+            {
+                i+=1;
+                print("feature \(i):>\(featureName)<");
+            }*/
+            
             if let prob = probs.first
             {
                 let val:Int     = Int(prob.value * 100.00);
@@ -141,8 +164,20 @@ class PicViewController : UIViewController
         }
         return "";
     }
+    }
     func recognize2(img:UIImage) -> String
     {
+        let start = DispatchTime.now()
+        do
+        {
+            defer
+            {
+                let end = DispatchTime.now();
+                let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds
+                let milliSecondsTime    = Int32(Double(nanoTime) / 1_000_000)
+                let secondsTime         = Int32(Double(nanoTime) / 1_000_000_000)
+                print("recognize2 took \(milliSecondsTime) ms = \(secondsTime) sec");
+            }
         let sizeResnet50  = 224;
         
         guard let cvPixelBuffer:CVPixelBuffer = img.resize(to: CGSize(width: sizeResnet50, height: sizeResnet50)).pixelBuffer() else
@@ -153,7 +188,15 @@ class PicViewController : UIViewController
         
         if let prediction = try? resnet50.prediction(image: cvPixelBuffer)
         {
-            let probs = prediction.classLabelProbs.sorted { $0.value > $1.value }
+            let probs = prediction.classLabelProbs.sorted { $0.value > $1.value };
+            /*
+            var i:Int = -1;
+            for featureName in prediction.outFeatures!.featureNames
+            {
+                i+=1;
+                print("recognize2:feature \(i):>\(featureName)<");
+            }*/
+            
             if let prob = probs.first
             {
                 let val:Int     = Int(prob.value * 100.00);
@@ -166,6 +209,7 @@ class PicViewController : UIViewController
             print("ERR:resize2: !prediction");
         }
         return "";
+        }
     }
     
     func pinchedView(sender:UIPinchGestureRecognizer)
