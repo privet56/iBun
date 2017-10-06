@@ -53,7 +53,7 @@ class D2Scene: SKScene, SKPhysicsContactDelegate
             DispatchQueue.main.asyncAfter(
                 deadline: .now() + 1,
                 execute:
-                {_ in
+                {
                     self.enemiesDestroyed();
                 }
             );

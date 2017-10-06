@@ -67,7 +67,7 @@ class D3Lea : D3Destroyable
         DispatchQueue.main.asyncAfter(
             deadline: .now() + 5,
             execute:
-            {_ in
+            {
                 particlesNode.removeFromParentNode();
         }
         );

@@ -84,7 +84,7 @@ class D2Fox: SKSpriteNode
         
         /*var timer = */Timer.scheduledTimer(timeInterval: 2.99, target: self, selector: #selector(D2Fox.explodeFinish), userInfo: nil, repeats: false)
     }
-    func explodeFinish()
+    @objc func explodeFinish()
     {
         self.scene?.enumerateChildNodes(withName: D2ScoreLabel.colliderName, using:
         {

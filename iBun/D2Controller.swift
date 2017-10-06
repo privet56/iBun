@@ -54,13 +54,13 @@ class D2Controller : UIViewController
     {
         return UIInterfaceOrientationIsLandscape(interfaceOrientation);
     }
-    func changeBkg()
+    @objc func changeBkg()
     {
         let min:UInt32 = 1
-        let max:UInt32 = 11
+        let max:UInt32 = 13
         let val = Int(arc4random_uniform(max) + min)
         let indexWithLeadingZero = val > 9 ? String(val) : String(format: "%02d", val)
-        let path = Bundle.main.path(forResource:"sky/sky"+indexWithLeadingZero, ofType:"gif")
+        let path = Bundle.main.path(forResource:"sunnyday/sunnyday"+indexWithLeadingZero, ofType:"gif")
         let url : URL = URL.init(fileURLWithPath: path!)
         
         self.backgroundImageView?.image = UIImage.animatedImage(withAnimatedGIFURL:url)

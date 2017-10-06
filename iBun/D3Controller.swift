@@ -90,7 +90,7 @@ class D3Controller : UIViewController
     {
         return UIInterfaceOrientationIsLandscape(interfaceOrientation);
     }
-    func changeBkg()
+    @objc func changeBkg()
     {
         let min:UInt32 = 1
         let max:UInt32 = 13

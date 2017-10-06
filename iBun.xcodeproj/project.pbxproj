@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06FC15CC1F87D19600890544 /* fox.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15CB1F87D19600890544 /* fox.png */; };
+		06FC15D31F87DF5800890544 /* spaceship3.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15CD1F87DF5700890544 /* spaceship3.png */; };
+		06FC15D41F87DF5800890544 /* spaceship2.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15CE1F87DF5800890544 /* spaceship2.png */; };
+		06FC15D51F87DF5800890544 /* spaceship5.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15CF1F87DF5800890544 /* spaceship5.png */; };
+		06FC15D61F87DF5800890544 /* spaceship4.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15D01F87DF5800890544 /* spaceship4.png */; };
+		06FC15D71F87DF5800890544 /* spaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15D11F87DF5800890544 /* spaceship1.png */; };
+		06FC15D81F87DF5800890544 /* spaceship6.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15D21F87DF5800890544 /* spaceship6.png */; };
+		06FC15DA1F87DFEE00890544 /* d2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06FC15D91F87DFEE00890544 /* d2.xcassets */; };
 		07005FA11EFBED85006998E4 /* sunnyday in Resources */ = {isa = PBXBuildFile; fileRef = 07005FA01EFBED85006998E4 /* sunnyday */; };
 		07005FA31EFBF957006998E4 /* div in Resources */ = {isa = PBXBuildFile; fileRef = 07005FA21EFBF957006998E4 /* div */; };
 		0701B0721EE93DB000861A73 /* water.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0701B0711EE93DB000861A73 /* water.gif */; };
@@ -79,6 +87,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06FC15CB1F87D19600890544 /* fox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fox.png; sourceTree = "<group>"; };
+		06FC15CD1F87DF5700890544 /* spaceship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship3.png; sourceTree = "<group>"; };
+		06FC15CE1F87DF5800890544 /* spaceship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship2.png; sourceTree = "<group>"; };
+		06FC15CF1F87DF5800890544 /* spaceship5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship5.png; sourceTree = "<group>"; };
+		06FC15D01F87DF5800890544 /* spaceship4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship4.png; sourceTree = "<group>"; };
+		06FC15D11F87DF5800890544 /* spaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship1.png; sourceTree = "<group>"; };
+		06FC15D21F87DF5800890544 /* spaceship6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship6.png; sourceTree = "<group>"; };
+		06FC15D91F87DFEE00890544 /* d2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = d2.xcassets; sourceTree = "<group>"; };
 		07005FA01EFBED85006998E4 /* sunnyday */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sunnyday; sourceTree = "<group>"; };
 		07005FA21EFBF957006998E4 /* div */ = {isa = PBXFileReference; lastKnownFileType = folder; path = div; sourceTree = "<group>"; };
 		0701B0711EE93DB000861A73 /* water.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = water.gif; sourceTree = "<group>"; };
@@ -251,6 +267,7 @@
 				07F8D6751EF14DCE00C53D15 /* SceneKitScene.scn */,
 				07F8D6771EF14F3C00C53D15 /* d3.scnassets */,
 				07D427EF1EFC24EC005577F5 /* Math.swift */,
+				06FC15D91F87DFEE00890544 /* d2.xcassets */,
 			);
 			path = iBun;
 			sourceTree = "<group>";
@@ -279,6 +296,13 @@
 		07AE1A9D1EE1AD1A00698EAF /* res */ = {
 			isa = PBXGroup;
 			children = (
+				06FC15D11F87DF5800890544 /* spaceship1.png */,
+				06FC15CE1F87DF5800890544 /* spaceship2.png */,
+				06FC15CD1F87DF5700890544 /* spaceship3.png */,
+				06FC15D01F87DF5800890544 /* spaceship4.png */,
+				06FC15CF1F87DF5800890544 /* spaceship5.png */,
+				06FC15D21F87DF5800890544 /* spaceship6.png */,
+				06FC15CB1F87D19600890544 /* fox.png */,
 				07261D9C1F0551D2001F839C /* congratulations.png */,
 				07005FA21EFBF957006998E4 /* div */,
 				07005FA01EFBED85006998E4 /* sunnyday */,
@@ -344,12 +368,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = h;
 				TargetAttributes = {
 					07252FA71EE1992C00FC975F = {
 						CreatedOnToolsVersion = 8.3.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -380,6 +404,8 @@
 				0701B07A1EE9748A00861A73 /* buns in Resources */,
 				07F8D68F1EFBD9F500C53D15 /* D3Fire.scnp in Resources */,
 				07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */,
+				06FC15D41F87DF5800890544 /* spaceship2.png in Resources */,
+				06FC15CC1F87D19600890544 /* fox.png in Resources */,
 				07005FA31EFBF957006998E4 /* div in Resources */,
 				07F8D6901EFBD9F500C53D15 /* spark.png in Resources */,
 				07261DA61F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp in Resources */,
@@ -389,16 +415,22 @@
 				07673A061F136850005B82B4 /* Resnet50.labels.txt in Resources */,
 				07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */,
 				07261DA71F06A4A4001F839C /* confetti.png in Resources */,
+				06FC15D71F87DF5800890544 /* spaceship1.png in Resources */,
 				07F8D68A1EFAA04C00C53D15 /* gun.atlas in Resources */,
 				07548B8C1EEFE28B00DEDD77 /* FireParticle.sks in Resources */,
 				07261D9D1F0551D2001F839C /* congratulations.png in Resources */,
 				07673A091F136850005B82B4 /* Inceptionv3.labels.txt in Resources */,
 				07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */,
+				06FC15D61F87DF5800890544 /* spaceship4.png in Resources */,
 				07AE1AA51EE1B64500698EAF /* meadow in Resources */,
 				07005FA11EFBED85006998E4 /* sunnyday in Resources */,
+				06FC15D81F87DF5800890544 /* spaceship6.png in Resources */,
+				06FC15D31F87DF5800890544 /* spaceship3.png in Resources */,
 				07252FB51EE1992C00FC975F /* Main.storyboard in Resources */,
 				0701B0721EE93DB000861A73 /* water.gif in Resources */,
+				06FC15D51F87DF5800890544 /* spaceship5.png in Resources */,
 				07F8D6781EF14F3C00C53D15 /* d3.scnassets in Resources */,
+				06FC15DA1F87DFEE00890544 /* d2.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +516,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -492,7 +526,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -534,7 +572,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -542,7 +582,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -581,7 +625,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iBun/iBun-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -598,7 +643,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iBun/iBun-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

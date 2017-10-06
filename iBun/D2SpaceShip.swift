@@ -37,7 +37,7 @@ class D2SpaceShip: SKSpriteNode
         
         self.isUserInteractionEnabled = true
     }
-    func changeBkg()
+    @objc func changeBkg()
     {
         let min:UInt32 = 1
         let max:UInt32 = 6

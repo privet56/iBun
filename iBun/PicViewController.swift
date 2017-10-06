@@ -219,7 +219,7 @@ class PicViewController : UIViewController
         }
     }
     
-    func pinchedView(sender:UIPinchGestureRecognizer)
+    @objc func pinchedView(sender:UIPinchGestureRecognizer)
     {
         sender.view!.transform = sender.view!.transform.scaledBy(x: sender.scale, y: sender.scale)
         sender.scale = 1.0
@@ -228,7 +228,7 @@ class PicViewController : UIViewController
     {
         super.viewDidAppear(animated)
     }
-    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
