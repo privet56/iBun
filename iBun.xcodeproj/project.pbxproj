@@ -21,8 +21,6 @@
 		0701B0861EEE8CB100861A73 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701B0851EEE8CB100861A73 /* SpriteKit.framework */; };
 		0701B0881EEE8CB900861A73 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0701B0871EEE8CB900861A73 /* SceneKit.framework */; };
 		0701B08C1EEE93D100861A73 /* D2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B08B1EEE93D100861A73 /* D2Scene.swift */; };
-		0701B08E1EEE9CFB00861A73 /* sky in Resources */ = {isa = PBXBuildFile; fileRef = 0701B08D1EEE9CFB00861A73 /* sky */; };
-		0701B0901EEEBF0E00861A73 /* d2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0701B08F1EEEBF0E00861A73 /* d2.atlas */; };
 		0701B0921EEEBF6000861A73 /* D2SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0911EEEBF6000861A73 /* D2SpaceShip.swift */; };
 		0701B0941EEEC4B200861A73 /* D2ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0931EEEC4B200861A73 /* D2ScoreLabel.swift */; };
 		0701B09A1EEEE5E400861A73 /* D2Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0701B0991EEEE5E400861A73 /* D2Shot.swift */; };
@@ -47,9 +45,6 @@
 		07673A061F136850005B82B4 /* Resnet50.labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07673A001F136838005B82B4 /* Resnet50.labels.txt */; };
 		07673A091F136850005B82B4 /* Inceptionv3.labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07673A031F136850005B82B4 /* Inceptionv3.labels.txt */; };
 		07AE1A9C1EE1ABA500698EAF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */; };
-		07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */; };
-		07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */; };
-		07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA01EE1AD2C00698EAF /* anibun3.gif */; };
 		07AE1AA51EE1B64500698EAF /* meadow in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA41EE1B64500698EAF /* meadow */; };
 		07AE1AA81EE69CF300698EAF /* falling_leaves.1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */; };
 		07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */; };
@@ -99,8 +94,6 @@
 		0701B0851EEE8CB100861A73 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		0701B0871EEE8CB900861A73 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0701B08B1EEE93D100861A73 /* D2Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2Scene.swift; sourceTree = "<group>"; };
-		0701B08D1EEE9CFB00861A73 /* sky */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sky; path = ../../../res/sky; sourceTree = "<group>"; };
-		0701B08F1EEEBF0E00861A73 /* d2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = d2.atlas; path = ../../../res/d2.atlas; sourceTree = "<group>"; };
 		0701B0911EEEBF6000861A73 /* D2SpaceShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2SpaceShip.swift; sourceTree = "<group>"; };
 		0701B0931EEEC4B200861A73 /* D2ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2ScoreLabel.swift; sourceTree = "<group>"; };
 		0701B0991EEEE5E400861A73 /* D2Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D2Shot.swift; sourceTree = "<group>"; };
@@ -122,16 +115,13 @@
 		07261DA51F06A4A4001F839C /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		07548B8B1EEFE28B00DEDD77 /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticle.sks; sourceTree = "<group>"; };
 		076739FB1F0FBAF4005B82B4 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
-		076739FE1F136833005B82B4 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../res/lm/Resnet50.mlmodel; sourceTree = "<group>"; };
-		076739FF1F136838005B82B4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../res/lm/Inceptionv3.mlmodel; sourceTree = "<group>"; };
-		07673A001F136838005B82B4 /* Resnet50.labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Resnet50.labels.txt; path = ../../../../res/lm/Resnet50.labels.txt; sourceTree = "<group>"; };
-		07673A031F136850005B82B4 /* Inceptionv3.labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Inceptionv3.labels.txt; path = ../../../../res/lm/Inceptionv3.labels.txt; sourceTree = "<group>"; };
+		076739FE1F136833005B82B4 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		076739FF1F136838005B82B4 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		07673A001F136838005B82B4 /* Resnet50.labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Resnet50.labels.txt; sourceTree = "<group>"; };
+		07673A031F136850005B82B4 /* Inceptionv3.labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inceptionv3.labels.txt; sourceTree = "<group>"; };
 		07AE1A991EE1ABA500698EAF /* iBun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBun-Bridging-Header.h"; sourceTree = "<group>"; };
 		07AE1A9A1EE1ABA500698EAF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		07AE1A9B1EE1ABA500698EAF /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
-		07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = anibun1.gif; path = ../../../res/anibun1.gif; sourceTree = "<group>"; };
-		07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = anibun2.gif; path = ../../../res/anibun2.gif; sourceTree = "<group>"; };
-		07AE1AA01EE1AD2C00698EAF /* anibun3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = anibun3.gif; path = ../../../res/anibun3.gif; sourceTree = "<group>"; };
 		07AE1AA41EE1B64500698EAF /* meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; path = meadow; sourceTree = "<group>"; };
 		07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.1.gif; sourceTree = "<group>"; };
 		07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = falling_leaves.2.gif; sourceTree = "<group>"; };
@@ -293,17 +283,12 @@
 				07005FA21EFBF957006998E4 /* div */,
 				07005FA01EFBED85006998E4 /* sunnyday */,
 				07F8D6891EFAA04C00C53D15 /* gun.atlas */,
-				0701B08F1EEEBF0E00861A73 /* d2.atlas */,
-				0701B08D1EEE9CFB00861A73 /* sky */,
 				0701B0791EE9748A00861A73 /* buns */,
 				0701B0731EE93EB400861A73 /* left-arrow.png */,
 				0701B0711EE93DB000861A73 /* water.gif */,
 				07AE1AA61EE69CF300698EAF /* falling_leaves.1.gif */,
 				07AE1AA71EE69CF300698EAF /* falling_leaves.2.gif */,
 				07AE1AA41EE1B64500698EAF /* meadow */,
-				07AE1A9E1EE1AD2C00698EAF /* anibun1.gif */,
-				07AE1A9F1EE1AD2C00698EAF /* anibun2.gif */,
-				07AE1AA01EE1AD2C00698EAF /* anibun3.gif */,
 			);
 			name = res;
 			sourceTree = "<group>";
@@ -365,7 +350,7 @@
 					07252FA71EE1992C00FC975F = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -392,14 +377,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0701B08E1EEE9CFB00861A73 /* sky in Resources */,
 				0701B07A1EE9748A00861A73 /* buns in Resources */,
 				07F8D68F1EFBD9F500C53D15 /* D3Fire.scnp in Resources */,
 				07252FBA1EE1992C00FC975F /* LaunchScreen.storyboard in Resources */,
 				07005FA31EFBF957006998E4 /* div in Resources */,
-				0701B0901EEEBF0E00861A73 /* d2.atlas in Resources */,
 				07F8D6901EFBD9F500C53D15 /* spark.png in Resources */,
-				07AE1AA11EE1AD2C00698EAF /* anibun1.gif in Resources */,
 				07261DA61F06A4A4001F839C /* ConfettiSceneKitParticleSystem.scnp in Resources */,
 				0701B0741EE93EB400861A73 /* left-arrow.png in Resources */,
 				07252FB71EE1992C00FC975F /* Assets.xcassets in Resources */,
@@ -412,12 +394,10 @@
 				07261D9D1F0551D2001F839C /* congratulations.png in Resources */,
 				07673A091F136850005B82B4 /* Inceptionv3.labels.txt in Resources */,
 				07AE1AA91EE69CF300698EAF /* falling_leaves.2.gif in Resources */,
-				07AE1AA31EE1AD2C00698EAF /* anibun3.gif in Resources */,
 				07AE1AA51EE1B64500698EAF /* meadow in Resources */,
 				07005FA11EFBED85006998E4 /* sunnyday in Resources */,
 				07252FB51EE1992C00FC975F /* Main.storyboard in Resources */,
 				0701B0721EE93DB000861A73 /* water.gif in Resources */,
-				07AE1AA21EE1AD2C00698EAF /* anibun2.gif in Resources */,
 				07F8D6781EF14F3C00C53D15 /* d3.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,10 +572,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iBun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibun.iBun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iBun/iBun-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -607,10 +590,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iBun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibun.iBun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iBun/iBun-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
