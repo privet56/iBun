@@ -20,3 +20,8 @@ iBun - an iOS App with Swift 4; incl. picture Carousel, image recognition, PDF G
 TODO->
 
 - windows build with VS
+
+
+## intellisense in XCode after upgrading the Swift version
+
+![xcode](https://raw.githubusercontent.com/privet56/iBun/master/xcode.intellisense.fix.it.png)

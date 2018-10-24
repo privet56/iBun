@@ -1,0 +1,1 @@
+https://github.com/Microsoft/WinObjC	install vs2017 with the mobile .net package	install chocolatey		exec: 'choco upgrade winobjc-tools'	drive:projectdir>vsimporter.exe		(generates .sln)		open .sln		check conversion success with https://developer.microsoft.com/en-us/windows/bridges/ios/app-analyzer-tool
